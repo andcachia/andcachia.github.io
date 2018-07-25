@@ -7,7 +7,7 @@ body
     src: url('../_fonts/SF Pale/SFPaleBottom.ttf'); /*URL to font*/
 }
 #game_area{
-	cursor: url("../_img/cursor.png") 50 50,default;
+	cursor: url("../img/cursor.png") 50 50,default;
 	color: yellow;
 	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 	visibility: hidden;
@@ -19,7 +19,7 @@ body
 	top: 0;
 	width: 100%;
 	height: 100%;
-	background-image: url("../_img/background.png");
+	background-image: url("../img/background.png");
 	background-size: 100% 100%;
 	visibility: visible;
 }
@@ -31,7 +31,7 @@ body
 	max-width: 100%;
     height: 100%;
 	transform: translate(-50%, -50%);
-	background-image: url("../_img/title.png");
+	background-image: url("../img/title.png");
 
 }
 #right_pane
