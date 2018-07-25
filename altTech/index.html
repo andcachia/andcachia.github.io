@@ -1,0 +1,217 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<meta content="utf-8" http-equiv="encoding">
+	<title>Alternative Technologies</title>
+	<link href="_css/main.css" rel="stylesheet">
+	<script src="_js/modernizr.js"></script>
+	<script>
+		Modernizr.load([
+			"https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenLite.min.js",
+			"https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TimelineLite.min.js",
+			"https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/easing/EasePack.min.js",
+			"https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/plugins/CSSPlugin.min.js",
+			"_js/products-info.json",
+			"_js/animations.js",
+			"_js/products.js",
+			{
+			load : "_js/main.js",
+			complete: function(){
+				init();
+				startMainAnim();
+			}
+		}]);
+	</script>
+</head>
+<body>
+
+	<!-- Home screen icons -->
+	<div class="icon-container" id="icon-con-1">
+		<div class="myIcon" id="icon1"></div>
+		<p class="icon-caption" id="products">Products</p>
+	</div>
+	<div class="icon-container" id="icon-con-2">
+		<div class="myIcon" id="icon2"></div>
+		<p class="icon-caption" id="projects">Projects</p>
+	</div>
+	<div class="icon-container" id="icon-con-3">
+		<div class="myIcon" id="icon3"></div>
+		<p class="icon-caption" id="aboutus">About Us</p>
+	</div>
+	<div class="icon-container" id="icon-con-4">
+		<div class="myIcon" id="icon4"></div>
+		<p class="icon-caption" id="partners">Partners</p>
+	</div>
+
+
+	<div class="page" id="main-page">
+		<div id="background"></div>
+		<div id="titleContainer">
+			<div class="center-align" id="logo"></div>
+			<h1 class="center-align" id="title">Alternative Technologies</h1>
+			<h3 class="center-align" id="motto">we power your future</h3>
+		</div>
+		<div id="aboutus-page">
+			<div class="container">
+				<h1>Who We Are</h1>
+				<div class="row">
+					<div class="col s12 m6 l8">
+						<h4>Experience</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					</div>
+					<img class="col s12 m6 l4" src="_img/mario1.jpg">
+				</div>
+				<div class="row">
+					<img class="col s12 m6 l4" src="_img/mario2.jpg">
+					<div class="col s12 m6 l8">
+						<h4>Reliability</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					</div>			
+				</div>
+				<div class="row">
+					<div class="col s12 m6 l8">
+						<h4>Commitment</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					</div>
+					<img class="col s12 m6 l4" src="_img/mario3.jpg">
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="page" id="projects-page">
+		<div class="background" id="projects-background">
+			<video id="projects-video">
+		        <source src="_img/Demand_Better_Solar.mp4" type="video/mp4">
+		    </video>
+		</div>
+		<div class="container">
+			<div class="tile">
+		    	<img src="_img/parliament.jpg">
+		    	<h2 class="caption">Photovoltaic system on parliament building</h2>
+		    	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+		    </div>
+		    <div class="tile">
+		    	<img src="_img/membrane.jpg">
+		    	<h2 class="caption">Membrane on rooftop</h2>
+		    	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+		    </div>
+		    <div class="tile">
+		    	<img src="_img/boat.jpg">
+		    	<h2 class="caption">Solar powered boat</h2>
+		    	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+		    </div>
+			<div class="tile">
+		    	<img src="_img/large.jpg">
+		    	<h2 class="caption">Large installation</h2>
+		    	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+		    </div>
+		    <div class="tile">
+		    	<img src="_img/carpark.jpg">
+		    	<h2 class="caption">Carpark</h2>
+		    	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+		    </div>
+		    <div class="tile">
+		    	<img src="_img/rooftop.jpg">
+		    	<h2 class="caption">Rooftop</h2>
+		    	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+		    </div>
+		</div>
+	</div>
+
+
+	<div class="page" id="products-page">
+		<div class="background" id="prod-background-0">
+			<h2>SUNPOWER Photovoltaic Panels</h2>
+			<h3>Malta's ONLY authorized partners</h3>
+		</div>
+		<div class="background" id="prod-background-1">
+			<h2>Chromagen Solar Water Heaters</h2>
+			<h3>World's Best</h3>
+		</div>
+		<div class="container">
+			<div class="product-icon" id="pv1">
+				<img src="_img/pv5.jpg" />
+				<h2>Photovoltaic</h2>
+			</div>
+			<div class="product-icon" id="swh1">
+				<img src="_img/swh2.jpg" />
+				<h2>Solar Water Heaters</h2>
+			</div>
+			<div class="product-icon" id="ifr">
+				<img src="_img/ifr2.jpg" />
+				<h2>Infrared Heaters</h2>
+			</div>
+			<div class="product-icon" id="ufh">
+				<img src="_img/ufh2.jpg" />
+				<h2>Underfloor Heating</h2>
+			</div>
+			<div class="product-icon" id="pv">
+				<img src="_img/wf.jpg" />
+				<h2>Water Treatment</h2>
+			</div>
+			<div class="product-icon" id="pv">
+				<img src="_img/offg.gif" />
+				<h2>Off Grid Systems</h2>
+			</div>
+			<div class="product-icon" id="pv">
+				<img src="_img/sb.jpg" />
+				<h2>Scoreboards</h2>
+			</div>
+			<div class="product-icon" id="pv">
+				<img src="_img/ste.jpg" />
+				<h2>Sports Timing Equpment</h2>
+			</div>
+		</div>
+	</div>
+
+	<div class="popup" id="products-popup">
+		<div class="popup-background">
+			<h1 id="popup-title"></h1>
+			<button class="close-popup-button" id="pv">Close</button>
+			<div class="info-panel">
+				<div class="popup-table">
+					<table>
+						<tr><th>Title</th></tr>
+						<tr><td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td></tr>
+						<tr><th>Title</th></tr>
+						<tr><td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td></tr>
+						<tr><th>Title</th></tr>
+						<tr><td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td></tr>
+					</table>
+				</div>
+				<img id="popup-main-image" />
+				<div class="popup-table">
+					<table>
+						<tr><th>Title</th></tr>
+						<tr><td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td></tr>
+						<tr><th>Title</th></tr>
+						<tr><td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td></tr>
+						<tr><th>Title</th></tr>
+						<tr><td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td></tr>
+					</table>
+				</div>
+			</div>
+			<div class="gallery">
+				<img class="popup-gallery" />
+				<img id="gallery2" />
+				<img id="gallery3" />
+				<img id="gallery4" />
+			</div>
+		</div>
+	</div>
+	
+
+	<div class="page" id="partners-page">
+		<div id="imageContainer"></div>
+		<div id="partner-logo-container">
+			<img class="partner-logo" src="_img/logo_sp.jpg" />
+			<img class="partner-logo" src="_img/logo_gel.png" />
+			<img class="partner-logo" src="_img/logo.png" />
+			<img class="partner-logo" src="_img/logo.png" />
+		</div>
+	</div>
+</body>
+</html>

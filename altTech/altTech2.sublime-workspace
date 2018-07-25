@@ -1,0 +1,573 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"get",
+				"getElementById"
+			],
+			[
+				"paddi",
+				"padding-bottom"
+			],
+			[
+				"ma",
+				"margin-left"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"products",
+				"products-page"
+			],
+			[
+				"backg",
+				"background"
+			],
+			[
+				"margin",
+				"margin-left"
+			],
+			[
+				"marg",
+				"margin-top"
+			],
+			[
+				"prod",
+				"Products"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"onM",
+				"onmouseleave"
+			],
+			[
+				"padding",
+				"padding-top"
+			],
+			[
+				"backro",
+				"background"
+			],
+			[
+				"ini",
+				"inline-block"
+			],
+			[
+				"margin-",
+				"margin-bottom"
+			],
+			[
+				"backgro",
+				"background-position"
+			],
+			[
+				"back",
+				"background"
+			],
+			[
+				"sprite",
+				"spriteNumber"
+			],
+			[
+				"sp",
+				"spriteNumber"
+			],
+			[
+				"getD",
+				"getDestCoords"
+			],
+			[
+				"anim",
+				"animateTarget"
+			],
+			[
+				"ani",
+				"animateRightPane"
+			],
+			[
+				"ea",
+				"easeOut"
+			],
+			[
+				"vi",
+				"visible"
+			],
+			[
+				"background",
+				"background-size"
+			],
+			[
+				"vis",
+				"visibility"
+			],
+			[
+				"points",
+				"pointsText"
+			],
+			[
+				"From",
+				"fromTo"
+			],
+			[
+				"proceed",
+				"proceedButton"
+			],
+			[
+				"win",
+				"winScreen"
+			],
+			[
+				"Gam",
+				"GAME_SCREEN_HEIGHT"
+			],
+			[
+				"Tween",
+				"TweenLite"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"time",
+				"timeUntilNext"
+			],
+			[
+				"scr",
+				"screenHeight"
+			],
+			[
+				"screen",
+				"screenWidth"
+			],
+			[
+				"create",
+				"createNewTarget"
+			],
+			[
+				"SCREEN",
+				"SCREEN_WIDTH"
+			],
+			[
+				"game",
+				"gameArea"
+			],
+			[
+				"draw",
+				"drawBoard"
+			],
+			[
+				"Bu",
+				"BUBBLE_DIMS"
+			],
+			[
+				"Bubble",
+				"BubbleShoot"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "_js/main.js",
+			"settings":
+			{
+				"buffer_size": 4056,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "_js/products-info.json",
+			"settings":
+			{
+				"buffer_size": 474,
+				"line_ending": "Windows",
+				"name": "'{"
+			}
+		},
+		{
+			"file": "_js/products.js",
+			"settings":
+			{
+				"buffer_size": 526,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "_js/animations.js",
+			"settings":
+			{
+				"buffer_size": 1093,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 8727,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "_css/main.css",
+			"settings":
+			{
+				"buffer_size": 5084,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 81.0,
+		"selected_items":
+		[
+		],
+		"width": 392.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/A/Program Files/XAMPP/htdocs/workspace/shooter/_js/main.js",
+		"/A/Program Files/XAMPP/htdocs/workspace/shooter/_css/main.css",
+		"/A/Program Files/XAMPP/htdocs/workspace/shooter/index.html",
+		"/A/Program Files/XAMPP/htdocs/workspace/shooter/_js/target.js",
+		"/A/Program Files/XAMPP/htdocs/workspace/shooter - Backup (16-02-10)/_js/target.js",
+		"/A/Program Files/XAMPP/htdocs/workspace/shooter/_css/game.css",
+		"/A/Program Files/XAMPP/htdocs/workspace/shooter - Backup (16-01-26)/_js/ui.js",
+		"/A/Program Files/XAMPP/htdocs/workspace/shooter/_css/title.css",
+		"/A/Program Files/XAMPP/htdocs/workspace/shooter/_js/anim",
+		"/A/Program Files/XAMPP/htdocs/workspace/shooter/_js/jQuery.js",
+		"/A/Program Files/XAMPP/htdocs/workspace/shooter/_js/collision-detector.js",
+		"/A/Program Files/XAMPP/htdocs/workspace/shooter/_js/board.js",
+		"/A/Downloads (HDD)/Chapter_2/index.html",
+		"/A/Downloads (HDD)/Chapter_2/_js/bubble.js",
+		"/A/Downloads (HDD)/Chapter_2/_js/ui.js",
+		"/A/Downloads (HDD)/Chapter_2/_js/game.js",
+		"/A/Downloads (HDD)/Chapter_2/_css/main.css",
+		"/A/Downloads (HDD)/Chapter_2/_css/game.css",
+		"/A/Program Files/XAMPP/htdocs/workspace/bubbleshooter/_js/jQuery.js",
+		"/A/Program Files/XAMPP/htdocs/workspace/bubbleshoot/index.html",
+		"/A/Program Files/XAMPP/htdocs/workspace/bubbleshoot/main.css",
+		"/A/Program Files/XAMPP/htdocs/xampp/Test/Hello World.html",
+		"/C/Users/Andrew/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"<p\n",
+			";\n",
+			"id=",
+			"levelomplete",
+			"levelPoints",
+			"levelCompletePoints",
+			"levelPoints",
+			"board",
+			"screen",
+			"board",
+			"();\n",
+			"40px",
+			"board",
+			"bubble",
+			"relative",
+			"absolute",
+			"BubbleShoot",
+			"getCoords",
+			"BubbleShoot"
+		],
+		"highlight": true,
+		"in_selection": true,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"<h2",
+			"target",
+			"static",
+			"relative",
+			"Shooter"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"selected": 4,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "_js/main.js",
+					"settings":
+					{
+						"buffer_size": 4056,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3787,
+								3787
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "_js/products-info.json",
+					"settings":
+					{
+						"buffer_size": 474,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								239,
+								239
+							]
+						],
+						"settings":
+						{
+							"auto_name": "'{",
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "_js/products.js",
+					"settings":
+					{
+						"buffer_size": 526,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								526,
+								526
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "_js/animations.js",
+					"settings":
+					{
+						"buffer_size": 1093,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								225,
+								225
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "index.html",
+					"settings":
+					{
+						"buffer_size": 8727,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3690,
+								3690
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1745.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 5,
+					"file": "_css/main.css",
+					"settings":
+					{
+						"buffer_size": 5084,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								201,
+								201
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 209.0,
+	"status_bar_visible": true
+}

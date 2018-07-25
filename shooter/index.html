@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<meta content="utf-8" http-equiv="encoding">
+	<title>Bubble Shoot</title>
+	<link href="./_css/main.css" rel="stylesheet">
+	<link href="./_css/game.css" rel="stylesheet" />
+	<link href="./_css/titleScreen.css" rel="stylesheet" />
+	<script src="./_js/modernizr.js"></script>
+	<script>
+		Modernizr.load([
+			{
+				load: "//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.js",
+				complete: function () {
+					if(!window.jQuery){
+						Modernizr.load("_js/jQuery.js");
+					}
+				}
+			},
+			"http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js",
+			"https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TimelineLite.min.js",
+			"http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js",
+			"http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/easing/EasePack.min.js",
+			"./_js/game.js",
+			"./_js/ui.js",
+			"./_js/target.js",
+			"./_js/audio.js",
+			"./_js/anim.js",
+			{
+			load : "./_js/main.js",
+			complete: function(){
+				$(function(){
+					var main = new Shooter.Main();
+					main.startApp();
+				})
+			}
+		}]);
+	</script>
+</head>
+<body>
+	<div id="screen">
+		<div id="title_screen">
+			<div id="main_background"></div>
+			<button id="play_button">PLAY</button>
+		</div>
+		<div id="game_screen">
+			<div id="game_background"></div>
+			<div id="game_board"></div>
+			<div id="timer_label">
+				<p>Time remaining: </p>
+				<p id="timer">60</p>
+			</div>
+			<div id="total_points_label">
+				<p>Total Points: </p>
+				<p id="total_points">0</p>
+			</div>
+			<div id="level_points_label">
+				<p>Level Points: </p>
+				<p id="level_points">0</p>
+			</div>
+			<div id="dialog_window">
+			  <p id="dialog_text"></p>
+			  <button id="dialog_button">
+			  </button>
+		  	</div>
+		  	<h1 id="screen_alert_text">TEST</h1>
+		</div>
+		<div id="title"></div>
+	</div>
+</body>
+</html>

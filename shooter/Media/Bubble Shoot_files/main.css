@@ -1,0 +1,115 @@
+body
+{
+	margin: 0;
+}
+@font-face {
+    font-family: 'PanelFont'; /*a name to be used later*/
+    src: url('../_fonts/SF Pale/SFPaleBottom.ttf'); /*URL to font*/
+}
+#game_area{
+	cursor: url("../_img/cursor.png") 50 50,default;
+	color: yellow;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	visibility: hidden;
+}
+#board
+{
+	position: absolute;
+	left: 0;	
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url("../_img/background.png");
+	background-size: 100% 100%;
+	visibility: visible;
+}
+#title
+{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	max-width: 100%;
+    height: 100%;
+	transform: translate(-50%, -50%);
+	background-image: url("../_img/title.png");
+
+}
+#right_pane
+{
+	position: absolute;
+	left: 87%;
+	top: 20%;
+}
+#points_label
+{
+	position:absolute;
+	left: 70%;
+	top: 12%;
+}
+#timer_label
+{
+	position:absolute;
+	left: 80%;
+	top: 12%;
+}
+#points_label h2,
+#timer_label h2
+{
+	position: relative;
+	display: inline;
+}
+#right_pane h3,
+#points_label h2
+{
+	font-family: 'PanelFont';
+	font-size: 30px;
+}
+#right_pane th{
+	width: 80px;
+	height: 90px;
+	color: black;
+	text-shadow: none;
+}
+#dialog_window{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	height: 30%;
+	width: 30%;
+	transform: translate(-50%, -50%);
+	background-color: #FF8C00;
+	border-radius: 30px;
+	border: 2px solid #000;
+	padding: 20px 50px;
+	text-align: center;
+	display:none;
+	font-family: 'PanelFont';
+}
+#dialog_button
+{
+	position: absolute;
+	left: 50%;
+	top: 70%;
+	height: 40%;
+	width: 30%;
+	transform: translate(-50%, -50%);
+	background-color: #D2691E;
+	cursor: pointer;
+	border-radius: 15px;
+	border: 2px solid;
+	font-size: 28px;
+	line-height: 60px;
+	font-weight: bold;
+	text-shadow: 0px 1px 1px #f99;
+}
+#dialog_button:hover
+{
+	background-color: #b2591a;
+}
+#screen_alert_text
+{
+	position: absolute;
+	top: 40%;
+	left: 35%;
+	display:none;
+}

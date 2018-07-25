@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html class=" js canvas csstransitions audio" lang="en-US"><head>
+	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+	<meta content="utf-8" http-equiv="encoding">
+	<title>Bubble Shoot</title>
+	<link href="Bubble%20Shoot_files/main.css" rel="stylesheet">
+	<link href="Bubble%20Shoot_files/game.css" rel="stylesheet">
+	<script src="Bubble%20Shoot_files/jquery.js"></script><script src="Bubble%20Shoot_files/TweenLite.js"></script><script src="Bubble%20Shoot_files/TimelineLite.js"></script><script src="Bubble%20Shoot_files/CSSPlugin.js"></script><script src="Bubble%20Shoot_files/EasePack.js"></script><script src="Bubble%20Shoot_files/ui.js"></script><script src="Bubble%20Shoot_files/target.js"></script><script src="Bubble%20Shoot_files/audio.js"></script><script src="Bubble%20Shoot_files/anim.js"></script><script src="Bubble%20Shoot_files/game.js"></script><script src="Bubble%20Shoot_files/modernizr.js"></script>
+	<script>
+		Modernizr.load([
+			{
+				load: "//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.js",
+				complete: function () {
+					if(!window.jQuery){
+						Modernizr.load("_js/jQuery.js");
+					}
+				}
+			},
+			"http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js",
+			"https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TimelineLite.min.js",
+			"http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js",
+			"http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/easing/EasePack.min.js",
+			"_js/ui.js",
+			"_js/target.js",
+			"_js/audio.js",
+			"_js/anim.js",
+			{
+			load : "_js/game.js",
+			complete: function(){
+				$(function(){
+					var game = new Shooter.Game();
+					game.openingAnim();
+					game.init();
+					game.run();
+				})
+			}
+		}]);
+	</script>
+</head>
+<body>
+	<div style="visibility: visible;" id="game_area">
+		<div id="board"><div style="background-position: 0px 0px; top: 310px; left: 741px;" class="target"></div></div>
+		<div style="transform: matrix(1, 0, 0, 1, -1072, 0); top: 10%; left: 20%;" id="title">
+		</div>
+		<div style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);" id="timer_label">
+			<h2>Time remaining: </h2>
+			<h2 id="timer">53</h2>
+		</div>
+		<div style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);" id="points_label">
+			<h2>Points: </h2>
+			<h2 id="points"></h2>
+		</div>
+		<div style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);" id="right_pane" class="mid_section">
+			<h3 id="level_number">Level 1</h3>
+			<table id="points_explanation"><tbody><tr><th>1 points - </th><td style="background-position: 0px 0px;" class="target"></td></tr><tr><th>5 points - </th><td style="background-position: -135px 0px;" class="target"></td></tr><tr><th>20 points - </th><td style="background-position: -270px 0px;" class="target"></td></tr><tr><th>-2 points - </th><td style="background-position: -405px 0px;" class="target"></td></tr></tbody></table>
+		</div>
+		<div id="dialog_window">
+		  <h2 id="dialog_text"></h2>
+		  <button id="dialog_button">
+		  </button>
+	  	</div>
+	  	<h1 style="display: block; left: 30%; opacity: 0;" id="screen_alert_text">Get 50 points to reach the next level!!</h1>
+	  </div>
+
+</body></html>

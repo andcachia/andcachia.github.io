@@ -1,0 +1,183 @@
+body
+{
+	margin: 0;
+}
+@font-face {
+    font-family: 'PanelFont'; /*a name to be used later*/
+    src: url('../_fonts/SF Pale/SFPaleBottom.ttf'); /*URL to font*/
+}
+#game_screen{
+}
+#total_points_label,#level_points_label,#timer_label,#right_pane{
+	opacity:0;
+}
+
+
+#screen{
+	cursor: url("../_img/cursor.png") 50 50,default;
+	color: yellow;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	width: 100%;
+	height: 100%;
+}
+#game_background
+{
+	position: absolute;
+	left: 0;	
+	top: 100%;
+	width: 100%;
+	height: 100%;
+	background-image: url("../_img/underwater.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+}
+#main_background
+{
+	position: absolute;
+	left: 0;	
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url("../_img/background_small.png");
+	background-repeat: no-repeat;
+	background-position: center;
+}
+#game_board{
+	position: absolute;
+	left: 0;	
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+#total_points_label p,
+#level_points_label p,
+#timer_label p
+{
+	display: inline;
+	font-family: 'PanelFont';
+}
+#dialog_window{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #FF8C00;
+	border-radius: 30px;
+	border: 2px solid #000;
+	padding: 20px 50px;
+	text-align: center;
+	display:none;
+	font-family: 'PanelFont';
+}
+#dialog_button
+{
+	position: absolute;
+	left: 50%;
+	top: 70%;
+	transform: translate(-50%, -50%);
+	background-color: #D2691E;
+	cursor: pointer;
+	border-radius: 15px;
+	border: 2px solid;
+	font-size: 28px;
+	line-height: 60px;
+	font-weight: bold;
+	text-shadow: 0px 1px 1px #f99;
+}
+#dialog_button:hover
+{
+	background-color: #b2591a;
+}
+#screen_alert_text
+{
+	position: absolute;
+	top: 40%;
+	left: 35%;
+	opacity:0;
+}
+
+
+/*Screen size responsiveness ************/
+#total_points_label,#level_points_label
+{
+	position:absolute;
+	left: 70%;
+	top: 10%;
+	font-size: 20px;
+}
+#timer_label
+{
+	position:absolute;
+	left: 70%;
+	top: 20%;
+	font-size: 20px;
+}
+#game_background,#main_background
+{
+	background-size: cover;
+}
+#dialog_window{
+	height: 175px;
+	width: 300px;
+	font-size: 20px;
+}
+#dialog_button
+{
+	height: 75px;
+	width: 150px;
+	font-size: 20px;
+}
+@media only screen and (min-width: 900px) {
+   #total_points_label,#level_points_label
+	{
+		position:absolute;
+		left: 50%;
+		top: 12%;
+		font-size: 25px;
+	}
+	#timer_label
+	{
+		position:absolute;
+		left: 75%;
+		top: 12%;
+		font-size: 25px;
+	}
+	#game_background,#main_background
+	{
+		background-size: 100% 100%;
+	}
+	#dialog_window{
+		height: 250px;
+		width: 600px;
+		font-size: 30px;
+	}
+	#dialog_button
+	{
+		height: 120px;
+		width: 270px;
+		font-size: 30px;
+	}
+}
+@media only screen and (min-width: 1300px) {
+   #total_points_label,#level_points_label
+	{
+		position:absolute;
+		left: 55%;
+		top: 12%;
+		font-size: 30px;
+	}
+	#timer_label
+	{
+		position:absolute;
+		left: 75%;
+		top: 12%;
+		font-size: 30px;
+	}
+	#main_background
+	{
+		background-image: url("../_img/background.png");
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+}
+/*******************************************/

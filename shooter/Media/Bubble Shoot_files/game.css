@@ -1,0 +1,15 @@
+.target
+{
+	position: absolute;
+	width: 135px;
+	height: 150px;
+	background-image: url("../_img/sprite_sheet.png");
+}
+.explosion
+{
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	background-position: 0 0;
+	background-image: url("../_img/explosion.png");
+}
