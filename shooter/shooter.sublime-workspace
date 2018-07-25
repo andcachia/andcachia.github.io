@@ -1,0 +1,619 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"sprite",
+				"spriteNumber"
+			],
+			[
+				"sp",
+				"spriteNumber"
+			],
+			[
+				"getD",
+				"getDestCoords"
+			],
+			[
+				"anim",
+				"animateTarget"
+			],
+			[
+				"ani",
+				"animateRightPane"
+			],
+			[
+				"ea",
+				"easeOut"
+			],
+			[
+				"vi",
+				"visible"
+			],
+			[
+				"background",
+				"background-size"
+			],
+			[
+				"vis",
+				"visibility"
+			],
+			[
+				"mar",
+				"margin-left"
+			],
+			[
+				"points",
+				"pointsText"
+			],
+			[
+				"From",
+				"fromTo"
+			],
+			[
+				"proceed",
+				"proceedButton"
+			],
+			[
+				"win",
+				"winScreen"
+			],
+			[
+				"marg",
+				"margin-bottom"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"Gam",
+				"GAME_SCREEN_HEIGHT"
+			],
+			[
+				"Tween",
+				"TweenLite"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"time",
+				"timeUntilNext"
+			],
+			[
+				"scr",
+				"screenHeight"
+			],
+			[
+				"screen",
+				"screenWidth"
+			],
+			[
+				"create",
+				"createNewTarget"
+			],
+			[
+				"SCREEN",
+				"SCREEN_WIDTH"
+			],
+			[
+				"get",
+				"getSprite"
+			],
+			[
+				"game",
+				"gameArea"
+			],
+			[
+				"draw",
+				"drawBoard"
+			],
+			[
+				"Bu",
+				"BUBBLE_DIMS"
+			],
+			[
+				"Bubble",
+				"BubbleShoot"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "_js/audio.js",
+			"settings":
+			{
+				"buffer_size": 681,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "_js/ui.js",
+			"settings":
+			{
+				"buffer_size": 2472,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "_js/anim.js",
+			"settings":
+			{
+				"buffer_size": 2055,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "_js/game.js",
+			"settings":
+			{
+				"buffer_size": 5009,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "_js/main.js",
+			"settings":
+			{
+				"buffer_size": 1194,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 1898,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "_css/main.css",
+			"settings":
+			{
+				"buffer_size": 3022,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "_css/game.css",
+			"settings":
+			{
+				"buffer_size": 305,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "_css/titleScreen.css",
+			"settings":
+			{
+				"buffer_size": 885,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 81.0,
+		"selected_items":
+		[
+		],
+		"width": 392.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/A/Program Files/XAMPP/htdocs/workspace/shooter/_js/target.js",
+		"/A/Program Files/XAMPP/htdocs/workspace/shooter - Backup (16-02-10)/_js/target.js",
+		"/A/Program Files/XAMPP/htdocs/workspace/shooter/_css/game.css",
+		"/A/Program Files/XAMPP/htdocs/workspace/shooter - Backup (16-01-26)/_js/ui.js",
+		"/A/Program Files/XAMPP/htdocs/workspace/shooter/_css/title.css",
+		"/A/Program Files/XAMPP/htdocs/workspace/shooter/_js/anim",
+		"/A/Program Files/XAMPP/htdocs/workspace/shooter/_js/jQuery.js",
+		"/A/Program Files/XAMPP/htdocs/workspace/shooter/_css/main.css",
+		"/A/Program Files/XAMPP/htdocs/workspace/shooter/_js/collision-detector.js",
+		"/A/Program Files/XAMPP/htdocs/workspace/shooter/_js/board.js",
+		"/A/Downloads (HDD)/Chapter_2/index.html",
+		"/A/Downloads (HDD)/Chapter_2/_js/bubble.js",
+		"/A/Downloads (HDD)/Chapter_2/_js/ui.js",
+		"/A/Downloads (HDD)/Chapter_2/_js/game.js",
+		"/A/Downloads (HDD)/Chapter_2/_css/main.css",
+		"/A/Downloads (HDD)/Chapter_2/_css/game.css",
+		"/A/Program Files/XAMPP/htdocs/workspace/bubbleshooter/_js/jQuery.js",
+		"/A/Program Files/XAMPP/htdocs/workspace/bubbleshoot/index.html",
+		"/A/Program Files/XAMPP/htdocs/workspace/bubbleshoot/main.css",
+		"/A/Program Files/XAMPP/htdocs/xampp/Test/Hello World.html",
+		"/C/Users/Andrew/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"id=",
+			"levelomplete",
+			"levelPoints",
+			"levelCompletePoints",
+			"levelPoints",
+			"board",
+			"screen",
+			"board",
+			"();\n",
+			"40px",
+			"board",
+			"bubble",
+			"relative",
+			"absolute",
+			"BubbleShoot",
+			"getCoords",
+			"BubbleShoot"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"target",
+			"static",
+			"relative",
+			"Shooter"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"selected": 4,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "_js/audio.js",
+					"settings":
+					{
+						"buffer_size": 681,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								125,
+								117
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "_js/ui.js",
+					"settings":
+					{
+						"buffer_size": 2472,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								275,
+								275
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "_js/anim.js",
+					"settings":
+					{
+						"buffer_size": 2055,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								826,
+								826
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "_js/game.js",
+					"settings":
+					{
+						"buffer_size": 5009,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2347,
+								2347
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1080.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "_js/main.js",
+					"settings":
+					{
+						"buffer_size": 1194,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1140,
+								1140
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 5,
+					"file": "index.html",
+					"settings":
+					{
+						"buffer_size": 1898,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1178,
+								1184
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 108.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "_css/main.css",
+					"settings":
+					{
+						"buffer_size": 3022,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								776,
+								776
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 900.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "_css/game.css",
+					"settings":
+					{
+						"buffer_size": 305,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								61,
+								61
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "_css/titleScreen.css",
+					"settings":
+					{
+						"buffer_size": 885,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								77,
+								77
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 108.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.492402104032,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 209.0,
+	"status_bar_visible": true
+}

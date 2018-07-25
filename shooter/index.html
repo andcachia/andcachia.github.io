@@ -4,17 +4,17 @@
 	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 	<meta content="utf-8" http-equiv="encoding">
 	<title>Bubble Shoot</title>
-	<link href="./_css/main.css" rel="stylesheet">
-	<link href="./_css/game.css" rel="stylesheet" />
-	<link href="./_css/titleScreen.css" rel="stylesheet" />
-	<script src="./_js/modernizr.js"></script>
+	<link href="./css/main.css" rel="stylesheet">
+	<link href="./css/game.css" rel="stylesheet" />
+	<link href="./css/titleScreen.css" rel="stylesheet" />
+	<script src="./js/modernizr.js"></script>
 	<script>
 		Modernizr.load([
 			{
 				load: "//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.js",
 				complete: function () {
 					if(!window.jQuery){
-						Modernizr.load("_js/jQuery.js");
+						Modernizr.load("./js/jQuery.js");
 					}
 				}
 			},
@@ -22,13 +22,13 @@
 			"https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TimelineLite.min.js",
 			"http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js",
 			"http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/easing/EasePack.min.js",
-			"./_js/game.js",
-			"./_js/ui.js",
-			"./_js/target.js",
-			"./_js/audio.js",
-			"./_js/anim.js",
+			"./js/game.js",
+			"./js/ui.js",
+			"./js/target.js",
+			"./js/audio.js",
+			"./js/anim.js",
 			{
-			load : "./_js/main.js",
+			load : "./js/main.js",
 			complete: function(){
 				$(function(){
 					var main = new Shooter.Main();
