@@ -1,10 +1,10 @@
 var Shooter = window.Shooter || {};
 Shooter.Sound = (function($){
 	var Sound = function(){
-		var beep = new Audio("../shooter/_audio/beep.mp3");
-		var shot = new Audio("../shooter/_audio/shot.mp3");
-		var splat = new Audio("../shooter/_audio/splat.mp3");
-		var underwater = new Audio("../shooter/_audio/underwater.mp3");
+		var beep = new Audio("../shooter/audio/beep.mp3");
+		var shot = new Audio("../shooter/audio/shot.mp3");
+		var splat = new Audio("../shooter/audio/splat.mp3");
+		var underwater = new Audio("../shooter/audio/underwater.mp3");
 
 		this.playBeep = function(){ beep.currentTime = 0; beep.play(); }
 		this.playShot = function(){ shot.currentTime = 0; shot.play(); }
