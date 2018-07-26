@@ -4,16 +4,40 @@
 		"selected_items":
 		[
 			[
+				"margin",
+				"margin-left"
+			],
+			[
+				"marg",
+				"margin-top"
+			],
+			[
+				"t",
+				"text-align"
+			],
+			[
+				"ma",
+				"margin"
+			],
+			[
+				"background",
+				"background-position"
+			],
+			[
+				"produ",
+				"productInfoTl"
+			],
+			[
+				"b",
+				"backgroundOverlay"
+			],
+			[
 				"get",
 				"getElementById"
 			],
 			[
 				"paddi",
 				"padding-bottom"
-			],
-			[
-				"ma",
-				"margin-left"
 			],
 			[
 				"mar",
@@ -26,14 +50,6 @@
 			[
 				"backg",
 				"background"
-			],
-			[
-				"margin",
-				"margin-left"
-			],
-			[
-				"marg",
-				"margin-top"
 			],
 			[
 				"prod",
@@ -98,10 +114,6 @@
 			[
 				"vi",
 				"visible"
-			],
-			[
-				"background",
-				"background-size"
 			],
 			[
 				"vis",
@@ -176,35 +188,50 @@
 	"buffers":
 	[
 		{
-			"file": "_js/main.js",
+			"file": "js/main.js",
 			"settings":
 			{
-				"buffer_size": 4056,
+				"buffer_size": 1633,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "_js/products-info.json",
+			"file": "js/products.js",
 			"settings":
 			{
-				"buffer_size": 474,
-				"line_ending": "Windows",
-				"name": "'{"
-			}
-		},
-		{
-			"file": "_js/products.js",
-			"settings":
-			{
-				"buffer_size": 526,
+				"buffer_size": 4506,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "_js/animations.js",
+			"file": "js/projects.js",
 			"settings":
 			{
-				"buffer_size": 1093,
+				"buffer_size": 3766,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/animations.js",
+			"settings":
+			{
+				"buffer_size": 1420,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/partners.js",
+			"settings":
+			{
+				"buffer_size": 958,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/contact-us.js",
+			"settings":
+			{
+				"buffer_size": 647,
 				"line_ending": "Windows"
 			}
 		},
@@ -212,15 +239,40 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 8727,
+				"buffer_size": 10232,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "_css/main.css",
+			"file": "css/main.css",
 			"settings":
 			{
-				"buffer_size": 5084,
+				"buffer_size": 8613,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/partners-info.json",
+			"settings":
+			{
+				"buffer_size": 381,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/products-info.json",
+			"settings":
+			{
+				"buffer_size": 456,
+				"line_ending": "Windows",
+				"name": "'{"
+			}
+		},
+		{
+			"file": "js/projects-info.json",
+			"settings":
+			{
+				"buffer_size": 480,
 				"line_ending": "Windows"
 			}
 		}
@@ -249,25 +301,29 @@
 	},
 	"file_history":
 	[
-		"/A/Program Files/XAMPP/htdocs/workspace/shooter/_js/main.js",
-		"/A/Program Files/XAMPP/htdocs/workspace/shooter/_css/main.css",
+		"/A/Program Files/XAMPP/htdocs/workspace/altTech2/css/partners-info.json",
+		"/A/Downloads (HDD)/PageTransitions/js/pagetransitions.js",
+		"/A/Downloads (HDD)/PageTransitions/css/animations.css",
+		"/A/Downloads (HDD)/PageTransitions/css/component.css",
+		"/A/Program Files/XAMPP/htdocs/workspace/shooter/js/main.js",
+		"/A/Program Files/XAMPP/htdocs/workspace/shooter/css/main.css",
 		"/A/Program Files/XAMPP/htdocs/workspace/shooter/index.html",
-		"/A/Program Files/XAMPP/htdocs/workspace/shooter/_js/target.js",
-		"/A/Program Files/XAMPP/htdocs/workspace/shooter - Backup (16-02-10)/_js/target.js",
-		"/A/Program Files/XAMPP/htdocs/workspace/shooter/_css/game.css",
-		"/A/Program Files/XAMPP/htdocs/workspace/shooter - Backup (16-01-26)/_js/ui.js",
-		"/A/Program Files/XAMPP/htdocs/workspace/shooter/_css/title.css",
-		"/A/Program Files/XAMPP/htdocs/workspace/shooter/_js/anim",
-		"/A/Program Files/XAMPP/htdocs/workspace/shooter/_js/jQuery.js",
-		"/A/Program Files/XAMPP/htdocs/workspace/shooter/_js/collision-detector.js",
-		"/A/Program Files/XAMPP/htdocs/workspace/shooter/_js/board.js",
+		"/A/Program Files/XAMPP/htdocs/workspace/shooter/js/target.js",
+		"/A/Program Files/XAMPP/htdocs/workspace/shooter - Backup (16-02-10)/js/target.js",
+		"/A/Program Files/XAMPP/htdocs/workspace/shooter/css/game.css",
+		"/A/Program Files/XAMPP/htdocs/workspace/shooter - Backup (16-01-26)/js/ui.js",
+		"/A/Program Files/XAMPP/htdocs/workspace/shooter/css/title.css",
+		"/A/Program Files/XAMPP/htdocs/workspace/shooter/js/anim",
+		"/A/Program Files/XAMPP/htdocs/workspace/shooter/js/jQuery.js",
+		"/A/Program Files/XAMPP/htdocs/workspace/shooter/js/collision-detector.js",
+		"/A/Program Files/XAMPP/htdocs/workspace/shooter/js/board.js",
 		"/A/Downloads (HDD)/Chapter_2/index.html",
-		"/A/Downloads (HDD)/Chapter_2/_js/bubble.js",
-		"/A/Downloads (HDD)/Chapter_2/_js/ui.js",
-		"/A/Downloads (HDD)/Chapter_2/_js/game.js",
-		"/A/Downloads (HDD)/Chapter_2/_css/main.css",
-		"/A/Downloads (HDD)/Chapter_2/_css/game.css",
-		"/A/Program Files/XAMPP/htdocs/workspace/bubbleshooter/_js/jQuery.js",
+		"/A/Downloads (HDD)/Chapter_2/js/bubble.js",
+		"/A/Downloads (HDD)/Chapter_2/js/ui.js",
+		"/A/Downloads (HDD)/Chapter_2/js/game.js",
+		"/A/Downloads (HDD)/Chapter_2/css/main.css",
+		"/A/Downloads (HDD)/Chapter_2/css/game.css",
+		"/A/Program Files/XAMPP/htdocs/workspace/bubbleshooter/js/jQuery.js",
 		"/A/Program Files/XAMPP/htdocs/workspace/bubbleshoot/index.html",
 		"/A/Program Files/XAMPP/htdocs/workspace/bubbleshoot/main.css",
 		"/A/Program Files/XAMPP/htdocs/xampp/Test/Hello World.html",
@@ -289,6 +345,11 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"\"container\"",
+			"=container",
+			"container",
+			";\n",
+			"fall",
 			"<p\n",
 			";\n",
 			"id=",
@@ -310,7 +371,7 @@
 			"BubbleShoot"
 		],
 		"highlight": true,
-		"in_selection": true,
+		"in_selection": false,
 		"preserve_case": false,
 		"regex": false,
 		"replace_history":
@@ -330,23 +391,23 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "_js/main.js",
+					"file": "js/main.js",
 					"settings":
 					{
-						"buffer_size": 4056,
+						"buffer_size": 1633,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3787,
-								3787
+								623,
+								623
 							]
 						],
 						"settings":
@@ -362,45 +423,18 @@
 				},
 				{
 					"buffer": 1,
-					"file": "_js/products-info.json",
+					"file": "js/products.js",
 					"settings":
 					{
-						"buffer_size": 474,
+						"buffer_size": 4506,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								239,
-								239
-							]
-						],
-						"settings":
-						{
-							"auto_name": "'{",
-							"syntax": "Packages/JavaScript/JSON.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "_js/products.js",
-					"settings":
-					{
-						"buffer_size": 526,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								526,
-								526
+								1903,
+								1903
 							]
 						],
 						"settings":
@@ -409,25 +443,52 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1020.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "_js/animations.js",
+					"buffer": 2,
+					"file": "js/projects.js",
 					"settings":
 					{
-						"buffer_size": 1093,
+						"buffer_size": 3766,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								225,
-								225
+								2426,
+								2426
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 622.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "js/animations.js",
+					"settings":
+					{
+						"buffer_size": 1420,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1345,
+								1360
 							]
 						],
 						"settings":
@@ -444,18 +505,71 @@
 				},
 				{
 					"buffer": 4,
-					"file": "index.html",
+					"file": "js/partners.js",
 					"settings":
 					{
-						"buffer_size": 8727,
+						"buffer_size": 958,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3690,
-								3690
+								51,
+								51
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "js/contact-us.js",
+					"settings":
+					{
+						"buffer_size": 647,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								71,
+								71
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "index.html",
+					"settings":
+					{
+						"buffer_size": 10232,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1190,
+								1190
 							]
 						],
 						"settings":
@@ -464,7 +578,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1745.0,
+						"translation.y": 420.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -476,24 +590,106 @@
 			"sheets":
 			[
 				{
-					"buffer": 5,
-					"file": "_css/main.css",
+					"buffer": 7,
+					"file": "css/main.css",
 					"settings":
 					{
-						"buffer_size": 5084,
+						"buffer_size": 8613,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								201,
-								201
+								427,
+								427
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "js/partners-info.json",
+					"settings":
+					{
+						"buffer_size": 381,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								316,
+								316
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "js/products-info.json",
+					"settings":
+					{
+						"buffer_size": 456,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								169,
+								169
+							]
+						],
+						"settings":
+						{
+							"auto_name": "'{",
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "js/projects-info.json",
+					"settings":
+					{
+						"buffer_size": 480,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								20,
+								20
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
@@ -533,7 +729,7 @@
 		"cols":
 		[
 			0.0,
-			0.5,
+			0.5265625,
 			1.0
 		],
 		"rows":

@@ -1,0 +1,32 @@
+var projectsInfo = [
+	{
+		"id":"pv1",
+		"title":"Parliament",
+		"img_src": "img/parliament.jpg",
+	},
+	{
+		"id":"swh1",
+		"title":"Membrane",
+		"img_src": "img/membrane.jpg",
+	},
+	{
+		"id":"swh1",
+		"title":"Boat",
+		"img_src": "img/boat.jpg",
+	},
+	{
+		"id":"swh1",
+		"title":"PV Park",
+		"img_src": "img/large.jpg",
+	},
+	{
+		"id":"swh1",
+		"title":"Car Park",
+		"img_src": "img/carpark.jpg",
+	},
+	{
+		"id":"swh1",
+		"title":"Rooftop",
+		"img_src": "img/rooftop.jpg",
+	},
+];

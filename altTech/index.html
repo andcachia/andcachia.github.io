@@ -4,19 +4,27 @@
 	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 	<meta content="utf-8" http-equiv="encoding">
 	<title>Alternative Technologies</title>
-	<link href="_css/main.css" rel="stylesheet">
-	<script src="_js/modernizr.js"></script>
+	<link href="css/main.css" rel="stylesheet">
+	<script src="js/modernizr.js"></script>
 	<script>
 		Modernizr.load([
 			"https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenLite.min.js",
 			"https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TimelineLite.min.js",
 			"https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/easing/EasePack.min.js",
 			"https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/plugins/CSSPlugin.min.js",
-			"_js/products-info.json",
-			"_js/animations.js",
-			"_js/products.js",
+			"https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.3/plugins/ScrollToPlugin.min.js",
+
+			"js/products-info.json",
+			"js/projects-info.json",
+			"js/partners-info.json",
+
+			"js/animations.js",
+			"js/projects.js",
+			"js/products.js",
+			"js/partners.js",
+			"js/contact-us.js",
 			{
-			load : "_js/main.js",
+			load : "js/main.js",
 			complete: function(){
 				init();
 				startMainAnim();
@@ -27,6 +35,8 @@
 <body>
 
 	<!-- Home screen icons -->
+	<div id="topNavBar"></div>
+	<div class="center-align" id="logo"></div>
 	<div class="icon-container" id="icon-con-1">
 		<div class="myIcon" id="icon1"></div>
 		<p class="icon-caption" id="products">Products</p>
@@ -43,81 +53,71 @@
 		<div class="myIcon" id="icon4"></div>
 		<p class="icon-caption" id="partners">Partners</p>
 	</div>
+	<div class="icon-container" id="icon-con-5">
+		<div class="myIcon" id="icon5"></div>
+		<p class="icon-caption" id="contactus">Contact Us</p>
+	</div>
 
 
 	<div class="page" id="main-page">
 		<div id="background"></div>
 		<div id="titleContainer">
-			<div class="center-align" id="logo"></div>
 			<h1 class="center-align" id="title">Alternative Technologies</h1>
 			<h3 class="center-align" id="motto">we power your future</h3>
-		</div>
-		<div id="aboutus-page">
-			<div class="container">
-				<h1>Who We Are</h1>
-				<div class="row">
-					<div class="col s12 m6 l8">
-						<h4>Experience</h4>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-					</div>
-					<img class="col s12 m6 l4" src="_img/mario1.jpg">
-				</div>
-				<div class="row">
-					<img class="col s12 m6 l4" src="_img/mario2.jpg">
-					<div class="col s12 m6 l8">
-						<h4>Reliability</h4>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-					</div>			
-				</div>
-				<div class="row">
-					<div class="col s12 m6 l8">
-						<h4>Commitment</h4>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-					</div>
-					<img class="col s12 m6 l4" src="_img/mario3.jpg">
-				</div>
-			</div>
 		</div>
 	</div>
 
 
 	<div class="page" id="projects-page">
-		<div class="background" id="projects-background">
-			<video id="projects-video">
-		        <source src="_img/Demand_Better_Solar.mp4" type="video/mp4">
-		    </video>
-		</div>
+		<video id="projects-video">
+	        <source src="img/Demand_Better_Solar.mp4" type="video/mp4">
+	    </video>
+		<h1 class="page-title">PROJECTS</h1>
 		<div class="container">
-			<div class="tile">
-		    	<img src="_img/parliament.jpg">
+			<div class="tile" id="0">
+		    	<img src="img/parliament.jpg">
 		    	<h2 class="caption">Photovoltaic system on parliament building</h2>
 		    	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 		    </div>
-		    <div class="tile">
-		    	<img src="_img/membrane.jpg">
+		    <div class="tile" id="1">
+		    	<img src="img/membrane.jpg">
 		    	<h2 class="caption">Membrane on rooftop</h2>
 		    	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 		    </div>
-		    <div class="tile">
-		    	<img src="_img/boat.jpg">
+		    <div class="tile" id="2">
+		    	<img src="img/boat.jpg">
 		    	<h2 class="caption">Solar powered boat</h2>
 		    	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 		    </div>
-			<div class="tile">
-		    	<img src="_img/large.jpg">
+			<div class="tile" id="3">
+		    	<img src="img/large.jpg">
 		    	<h2 class="caption">Large installation</h2>
 		    	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 		    </div>
-		    <div class="tile">
-		    	<img src="_img/carpark.jpg">
+		    <div class="tile" id="4">
+		    	<img src="img/carpark.jpg">
 		    	<h2 class="caption">Carpark</h2>
 		    	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 		    </div>
-		    <div class="tile">
-		    	<img src="_img/rooftop.jpg">
+		    <div class="tile" id="5">
+		    	<img src="img/rooftop.jpg">
 		    	<h2 class="caption">Rooftop</h2>
 		    	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 		    </div>
+		</div>
+	</div>
+
+	<div class="popup" id="projects-popup">
+		<div class="background-overlay" id="proj-popup-overlay"></div>
+		<div class="container" id="projects-popup-container">
+			<div class="popup-arrow left" id="projects-left-arrow"></div>
+			<div class="popup-arrow right" id="projects-right-arrow"></div>
+			<button class="close-button" id="close-projects-popup">Close</button>
+			<div id="projects-popup-image-container"></div>
+			<div id="projects-popup-info-panel">
+				<h1 id="projects-popup-title"></h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+			</div>
 		</div>
 	</div>
 
@@ -131,48 +131,52 @@
 			<h2>Chromagen Solar Water Heaters</h2>
 			<h3>World's Best</h3>
 		</div>
+		<h1 class="page-title">PRODUCTS</h1>
 		<div class="container">
 			<div class="product-icon" id="pv1">
-				<img src="_img/pv5.jpg" />
+				<img src="img/pv5.jpg" />
 				<h2>Photovoltaic</h2>
 			</div>
 			<div class="product-icon" id="swh1">
-				<img src="_img/swh2.jpg" />
+				<img src="img/swh2.jpg" />
 				<h2>Solar Water Heaters</h2>
 			</div>
 			<div class="product-icon" id="ifr">
-				<img src="_img/ifr2.jpg" />
+				<img src="img/ifr2.jpg" />
 				<h2>Infrared Heaters</h2>
 			</div>
 			<div class="product-icon" id="ufh">
-				<img src="_img/ufh2.jpg" />
+				<img src="img/ufh2.jpg" />
 				<h2>Underfloor Heating</h2>
 			</div>
 			<div class="product-icon" id="pv">
-				<img src="_img/wf.jpg" />
+				<img src="img/wf.jpg" />
 				<h2>Water Treatment</h2>
 			</div>
 			<div class="product-icon" id="pv">
-				<img src="_img/offg.gif" />
+				<img src="img/offg.gif" />
 				<h2>Off Grid Systems</h2>
 			</div>
 			<div class="product-icon" id="pv">
-				<img src="_img/sb.jpg" />
+				<img src="img/sb.jpg" />
 				<h2>Scoreboards</h2>
 			</div>
 			<div class="product-icon" id="pv">
-				<img src="_img/ste.jpg" />
+				<img src="img/ste.jpg" />
 				<h2>Sports Timing Equpment</h2>
 			</div>
 		</div>
 	</div>
 
 	<div class="popup" id="products-popup">
-		<div class="popup-background">
+		<div class="background-overlay" id="prod-popup-overlay"></div>
+		<div id="popup-container">
+			<div class="popup-arrow left" id="products-left-arrow"></div>
+			<div class="popup-arrow right" id="products-right-arrow"></div>
 			<h1 id="popup-title"></h1>
-			<button class="close-popup-button" id="pv">Close</button>
+			<button id="close-popup-button">Close</button>
 			<div class="info-panel">
-				<div class="popup-table">
+				<div class="popup-table" id="popup-table-left">
 					<table>
 						<tr><th>Title</th></tr>
 						<tr><td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td></tr>
@@ -183,7 +187,7 @@
 					</table>
 				</div>
 				<img id="popup-main-image" />
-				<div class="popup-table">
+				<div class="popup-table" id="popup-table-right">
 					<table>
 						<tr><th>Title</th></tr>
 						<tr><td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td></tr>
@@ -194,8 +198,8 @@
 					</table>
 				</div>
 			</div>
-			<div class="gallery">
-				<img class="popup-gallery" />
+			<div class="popup-gallery">
+				<img id="gallery1" />
 				<img id="gallery2" />
 				<img id="gallery3" />
 				<img id="gallery4" />
@@ -203,15 +207,53 @@
 		</div>
 	</div>
 	
-
-	<div class="page" id="partners-page">
-		<div id="imageContainer"></div>
-		<div id="partner-logo-container">
-			<img class="partner-logo" src="_img/logo_sp.jpg" />
-			<img class="partner-logo" src="_img/logo_gel.png" />
-			<img class="partner-logo" src="_img/logo.png" />
-			<img class="partner-logo" src="_img/logo.png" />
+	<div class="page" id="aboutus-page">
+		<div class="aboutusBackground" id="experience">
+			<h4>EXPERIENCE</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+		</div>
+		<div class="aboutusBackground" id="reliability">
+			<h4>RELIABILTY</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+		</div>
+		<div class="aboutusBackground" id="commitment">
+			<h4>COMMITMENT</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 		</div>
 	</div>
+
+	<div class="page" id="partners-page">
+		<div id="partner-info">
+			<h1 id="partner-title"></h1>
+			<h3 id="partner-subtext"></h1>
+			<img class="partner-img" id="partner-img-1" />
+			<img class="partner-img" id="partner-img-2" />
+			<img class="partner-img" id="partner-img-3" />
+		</div>
+		<div id="partner-logo-container">
+			<img class="partner-logo" id="sunpower" src="img/logo_sp.jpg" />
+			<img class="partner-logo" src="img/logo_gel.png" />
+			<img class="partner-logo" id="chromagen" src="img/logo_chr.jpg" />
+			<img class="partner-logo" src="img/logo.png" />
+		</div>
+	</div>
+
+	<div class="page" id="contactus-page">
+		<div id="contact-us-background"></div>
+		<div id="contact-us-info">
+			<h1 class="page-title">CONTACT US</h1>
+			<h3>Office Address</h3>
+			<p>Triq dun Guzepp Xerri, St Julian's, Malta (Just off regional road.)</p>
+			<br>
+			<p>If you have any queries about our products and services, would like a quotation or a site visit, or have a suggestion or comment to make, please do not hesitate drop us an email on <strong>info@alternativetechnologies.com.mt</strong>.
+			<br><br>
+			Alternatively, you can also contact us by phone on <strong>(356) 27380309</strong> or <strong>(356) 21380309</strong>
+			<br><br>
+			A member of our team at Alternative Technologies Ltd will be ready to help you.</p>
+		</div>
+		<div id="map"></div>
+	</div>
+
+	<script src="https://maps.googleapis.com/maps/api/js" async defer></script>
 </body>
 </html>

@@ -1,2 +1,5 @@
 *.xcf
 *.zip
+
+*.sublime-project
+*.sublime-workspace

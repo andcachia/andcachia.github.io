@@ -1,0 +1,18 @@
+var partnersInfo = [
+	{
+		"id":"sunpower",
+		"title":"SunPower",
+		"subtext":"World's No.1 in Solar",
+		"img_0": "img/sunpower1.png",
+		"img_1": "img/sunpower2.jpg",
+		"img_2": "img/boat.jpg"
+	},
+	{
+		"id":"chromagen",
+		"title":"Chromagen",
+		"subtext":"World's No.1 in Water Heaters",
+		"img_0": "img/swh.jpg",
+		"img_1": "img/logo_chr.jpg",
+		"img_2": "img/swh2.jpg"
+	}
+];

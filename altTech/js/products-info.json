@@ -1,0 +1,20 @@
+var productsInfo = [
+	{
+		"id":"pv1",
+		"title":"SunPower Photovoltaic Panels",
+		"img_src": "img/pv5.jpg",
+		"gallery_0": "img/pv.jpg",
+		"gallery_1": "img/pv2.jpg",
+		"gallery_2": "img/pv2.jpg",
+		"gallery_3": "img/pv3.jpg"
+	},
+	{
+		"id":"swh1",
+		"title":"Chromagen Solar Water Heaters",
+		"img_src": "img/swh2.jpg",
+		"gallery_0": "img/swh.jpg",
+		"gallery_1": "img/swh.jpg",
+		"gallery_2": "img/swh.jpg",
+		"gallery_3": "img/swh.jpg"
+	},
+];
