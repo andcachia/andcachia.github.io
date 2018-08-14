@@ -1,0 +1,101 @@
+<!doctype html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8" />
+    <title>Making your first Phaser 3 Game - Part 1</title>
+    <script src="//cdn.jsdelivr.net/npm/phaser@3.11.0/dist/phaser.js"></script>
+    <style type="text/css">
+        body {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <script type="text/javascript">
+
+        var config = {
+            type: Phaser.AUTO,
+            width: 800,
+            height: 600,
+            physics: {
+                default: 'arcade',
+                arcade: {
+                    gravity: { y: 0 },
+                    debug: false
+                }
+            },
+            scene: {
+                preload: preload,
+                create: create,
+                update: update
+            }
+        };
+
+        var game = new Phaser.Game(config);
+        
+
+        var balls;
+        var score = 0;
+        var scoreText;
+
+        function preload()  {
+            
+            this.load.image('sky', 'assets/sky.png');
+            this.load.image('ball', 'assets/mark2.png');
+        }
+
+        function create(){
+
+            this.input.setDefaultCursor('url(assets/cursor.png) 50 50, pointer');
+
+            this.add.image(400, 300, 'sky');
+            scoreText = this.add.text(16, 16, 'Score: 0', { fontSize: '32px', fill: '#000' });
+
+            balls = this.physics.add.group();
+            timedEvent = this.time.addEvent({ delay: 500, callback: createBall, callbackScope: this, loop: true });
+
+            this.input.on('pointerup', function () {
+                
+            }, this);
+        }
+
+        function createBall() {
+
+            var direction = Phaser.Math.Between(0,1);
+
+            var x = direction * 800;
+            var y = Phaser.Math.Between(0,600);
+
+            var velocity = (direction == 0) ? Phaser.Math.Between(100, 400) : Phaser.Math.Between(-400, -100);
+            var angle = (y < 400) ? Phaser.Math.Between(10, 100) : Phaser.Math.Between(-100, -10);
+
+            var ball = balls.create(x, y, 'ball');
+            ball.setInteractive();
+            ball.setVelocity(velocity, angle);
+            ball.allowGravity = false;
+
+            ball.on('pointerdown', hit);
+        }
+
+        function hit(pointer){
+
+            this.disableBody(true,true);
+
+            score += 10;
+            scoreText.setText('Score: ' + score);
+        }
+
+        function update(){
+            
+            balls.children.iterate(function (child) {
+
+                if (child.x < -50 || child.x > 850) 
+                    child.disableBody(true,true);
+
+            });
+        }
+
+    </script>
+
+</body>
+</html>
