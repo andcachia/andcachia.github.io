@@ -22,14 +22,15 @@ var timedEvent;
 var enemies;
 var enemyKilled = false;
 var currentUp = -1;
+var moveDistance = 180;
 
 function preload()  {
     this.load.image('target1', '../assets/jowsef.png');
     this.load.image('target2', '../assets/simon.png');
     this.load.image('target3', '../assets/delia.png');
-    this.load.image('pie', '../assets/ball.png')
-    this.load.image('explosion', '../assets/explosion.png');
-    this.load.image('crate','../assets/crate.png');
+    this.load.image('pie', 'assets/ball.png')
+    this.load.image('explosion', 'assets/explosion.png');
+    this.load.image('crate','assets/crate.png');
 }
 
 
@@ -38,10 +39,12 @@ function create()  {
 
     timedEvent = this.time.addEvent({ delay: 2000, callback: onEvent, callbackScope: this, loop: true });
 
+    var width = 160, height = 180;
+
     enemies = this.physics.add.group();
-    enemies.create(200, 500, 'target1').setScale(0.75, 0.75);
-    enemies.create(500, 500, 'target2').setScale(0.75, 0.75);
-    enemies.create(800, 500, 'target3').setScale(0.75, 0.75);
+    enemies.create(200, 500, 'target1').setDisplaySize(width, height);
+    enemies.create(500, 500, 'target2').setDisplaySize(width, height);
+    enemies.create(800, 500, 'target3').setDisplaySize(width, height);
 
     enemies.children.iterate(function (enemy) {
         var left = enemy.x - enemy.width/2;
@@ -114,7 +117,7 @@ function onEvent ()
         currentUp = choice;
         globalScene.tweens.add({
             targets: enemies.children.entries[choice],
-            y: enemies.children.entries[choice].y - 175,
+            y: enemies.children.entries[choice].y - moveDistance,
             //ease: 'Sine.easeIn',
             duration: 250,
             paused: false
@@ -125,7 +128,7 @@ function onEvent ()
 function lowerDown(target){
     globalScene.tweens.add({
         targets: target,
-        y: target.y + 175,
+        y: target.y + moveDistance,
         //ease: 'Sine.easeIn',
         duration: 250,
         paused: false
