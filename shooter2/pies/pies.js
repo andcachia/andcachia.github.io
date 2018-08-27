@@ -28,9 +28,9 @@ function preload()  {
     this.load.image('target1', '../assets/jowsef.png');
     this.load.image('target2', '../assets/simon.png');
     this.load.image('target3', '../assets/delia.png');
-    this.load.image('pie', 'assets/ball.png')
-    this.load.image('explosion', 'assets/explosion.png');
-    this.load.image('crate','assets/crate.png');
+    this.load.image('pie', '../assets/ball.png')
+    this.load.image('explosion', '../assets/explosion.png');
+    this.load.image('crate','../assets/crate.png');
 }
 
 
