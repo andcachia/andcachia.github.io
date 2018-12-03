@@ -1,6 +1,6 @@
 var width, height;
 
-if(window.innerHeight > window.innerWidth){ width = 1080; height = 1920; }
+if(window.innerHeight > window.innerWidth){ width = 1080; height = 1750; }
 else { width = 520; height = 900; }
 
 
