@@ -1,0 +1,73 @@
+<!doctype html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8" />
+    <title>Making your first Phaser 3 Game - Part 1</title>
+    <script src="//cdn.jsdelivr.net/npm/phaser@3.11.0/dist/phaser.js"></script>
+    <style type="text/css">
+        body {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <script type="text/javascript">
+
+        var config = {
+            type: Phaser.AUTO,
+            width: 1920,
+            height: 950,
+            physics: {
+                default: 'arcade',
+                arcade: {
+                    gravity: { y: 0 },
+                    debug: false
+                }
+            },
+            scene: {
+                preload: preload,
+                create: create,
+                update: update
+            }
+        };
+
+        var game = new Phaser.Game(config);
+        
+
+        var balls;
+        var score = 0;
+        var scoreText;
+
+        function preload()  {
+            
+            this.load.multiatlas('spritesheet', 'zapper_assets/assets.json', "zapper_assets");
+        }
+
+        function create(){
+
+            for (var i=0; i<10; i++){
+                for (var j=0; j<10; j++){
+                    var val = (i*10) + (j);
+                    var img = this.add.sprite(100*(j+1), 100*i, 'spritesheet','Slicing-'+val+'.png');
+                    img.setDisplaySize(100, 100);
+                    this.add.text(100*(j+1), 100*i, val, { fontSize: '32px', fill: '#FFF' });
+                }
+            }
+        }
+
+        function createBall() {
+
+           
+        }
+
+       
+
+        function update(){
+            
+            
+        }
+
+    </script>
+
+</body>
+</html>
