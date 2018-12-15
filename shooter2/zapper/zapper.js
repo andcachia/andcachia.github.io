@@ -1,7 +1,10 @@
 var screenWidth, screenHeight;
 
-if(window.innerHeight > window.innerWidth){ screenWidth = window.innerWidth; screenHeight = window.innerHeight; }
-else { screenWidth = window.innerWidth / 3; screenHeight = window.innerHeight; }
+screenHeight = window.innerHeight;
+screenWidth = screenHeight / 1.461538462;
+
+//if(window.innerHeight > window.innerWidth){ screenWidth = window.innerWidth; screenHeight = window.innerHeight; }
+//else { screenWidth = window.innerWidth / 3; screenHeight = window.innerHeight; }
 
 
 var config = {
@@ -55,13 +58,17 @@ function create(){
     livesText = this.add.text(300, 20, "Lives: " + lives, { fontSize: '32px', fill: '#FFF' });
 
     targets = this.physics.add.group();
-    timedEventTarget = this.time.addEvent({ delay: 3000, callback: createTarget, callbackScope: this, loop: true });
+    timedEventTarget = this.time.addEvent({ delay: 1500, callback: createTarget, callbackScope: this, loop: true });
     timedEventBomb = this.time.addEvent({ delay: 5000, callback: createBomb, callbackScope: this, loop: true });
 
     var cannon = this.add.sprite(config.width/2, config.height-config.height/8, 'spritesheet','Gun.png');
-    cannon.setDisplaySize(75, 150);
+    //cannon.setDisplaySize(75, 150);
+    cannon.height = screenHeight/3.8;
+    cannon.width = cannon.height/2.1739130;
+
     boop = this.add.sprite(cannon.x + 50, cannon.y + 50, 'spritesheet','Slicing-80.png');
-    boop.setDisplaySize(90, 140);
+    boop.height = screenHeight/5;
+    boop.width = boop.height/1.407407;
 
     function createTarget() {
 
@@ -78,7 +85,7 @@ function create(){
             //var x = direction * 800;
             var x = Phaser.Math.Between(screenWidth*0.2,screenWidth*0.8);
             var y = Phaser.Math.Between(screenWidth*0.1,screenWidth*0.7);
-            var width = 100, height = 100;
+            var height = screenHeight/4.75; width = height/1.142857;
             var velocity = (direction == 0) ? Phaser.Math.Between(100, 400) : Phaser.Math.Between(-400, -100);
 
             var spriteName = 'Slicing-' + image_number + '.png';
@@ -92,7 +99,7 @@ function create(){
                 scaleY: 0.75,
                 duration: 500,
                 ease: 'Sine.easeIn',
-                completeDelay: 3000,
+                completeDelay: 1500,
                 yoyo:true,
                 onComplete: onExplosionComplete,
                 onCompleteParams: [ target ]
@@ -103,7 +110,7 @@ function create(){
     function createBomb(){
         var x = screenWidth/2;
         var y = 0;
-        var width = 100, height = 100;
+        var height = screenHeight/4.75; width = height/1.142857;
 
         var spriteName = 'Slicing-23.png';
         bomb = targets.create(x, y, 'spritesheet', spriteName).setDisplaySize(width, height);
