@@ -1,7 +1,7 @@
 var width, height;
 
 if(window.innerHeight > window.innerWidth){ width = 1080; height = 1750; }
-else { width = 520; height = 900; }
+else { width = 520; height = 600; }
 
 
 var config = {
@@ -73,15 +73,25 @@ function create(){
                 : Phaser.Math.Between(48, 64);
 
             var direction = Phaser.Math.Between(0,1);
-            var x = direction * 800;
+            //var x = direction * 800;
+            var x = Phaser.Math.Between(100,600);
             var y = Phaser.Math.Between(100,600);
             var width = 100, height = 100;
             var velocity = (direction == 0) ? Phaser.Math.Between(100, 400) : Phaser.Math.Between(-400, -100);
 
             var spriteName = 'Slicing-' + image_number + '.png';
             var target = targets.create(x, y, 'spritesheet', spriteName).setDisplaySize(width, height);
-            target.setVelocity(velocity,0);
+            //target.setVelocity(velocity,0);
             target.colour = colour;
+
+            globalScene.tweens.add({
+                targets: target,
+                scaleX: 1,
+                scaleY: 1,
+                duration: 500,
+                ease: 'Power2',
+                completeDelay: 3000
+            });
         }
     }
 
