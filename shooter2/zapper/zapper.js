@@ -1,13 +1,13 @@
-var width, height;
+var screenWidth, screenHeight;
 
-if(window.innerHeight > window.innerWidth){ width = 1080; height = 1750; }
-else { width = 520; height = 600; }
+if(window.innerHeight > window.innerWidth){ screenWidth = window.innerWidth; screenHeight = window.innerHeight; }
+else { screenWidth = window.innerWidth / 3; screenHeight = window.innerHeight; }
 
 
 var config = {
     type: Phaser.AUTO,
-    width: width,
-    height: height,
+    width: screenWidth,
+    height: screenHeight,
     physics: {
         default: 'arcade',
         arcade: {
@@ -24,8 +24,9 @@ var config = {
 
 var game = new Phaser.Game(config);
 var globalScene;
-var timedEvent;
+var timedEventTarget;
 var targets;
+var bomb;
 
 var score = 0;
 var scoreText;
@@ -54,7 +55,8 @@ function create(){
     livesText = this.add.text(300, 20, "Lives: " + lives, { fontSize: '32px', fill: '#FFF' });
 
     targets = this.physics.add.group();
-    timedEvent = this.time.addEvent({ delay: 3000, callback: createTarget, callbackScope: this, loop: true });
+    timedEventTarget = this.time.addEvent({ delay: 3000, callback: createTarget, callbackScope: this, loop: true });
+    timedEventBomb = this.time.addEvent({ delay: 5000, callback: createBomb, callbackScope: this, loop: true });
 
     var cannon = this.add.sprite(config.width/2, config.height-config.height/8, 'spritesheet','Gun.png');
     cannon.setDisplaySize(75, 150);
@@ -74,8 +76,8 @@ function create(){
 
             var direction = Phaser.Math.Between(0,1);
             //var x = direction * 800;
-            var x = Phaser.Math.Between(100,600);
-            var y = Phaser.Math.Between(100,600);
+            var x = Phaser.Math.Between(screenWidth*0.2,screenWidth*0.8);
+            var y = Phaser.Math.Between(screenWidth*0.1,screenWidth*0.7);
             var width = 100, height = 100;
             var velocity = (direction == 0) ? Phaser.Math.Between(100, 400) : Phaser.Math.Between(-400, -100);
 
@@ -86,13 +88,28 @@ function create(){
 
             globalScene.tweens.add({
                 targets: target,
-                scaleX: 1,
-                scaleY: 1,
+                scaleX: 0.75,
+                scaleY: 0.75,
                 duration: 500,
-                ease: 'Power2',
-                completeDelay: 3000
+                ease: 'Sine.easeIn',
+                completeDelay: 3000,
+                yoyo:true,
+                onComplete: onExplosionComplete,
+                onCompleteParams: [ target ]
             });
         }
+    }
+
+    function createBomb(){
+        var x = screenWidth/2;
+        var y = 0;
+        var width = 100, height = 100;
+
+        var spriteName = 'Slicing-23.png';
+        bomb = targets.create(x, y, 'spritesheet', spriteName).setDisplaySize(width, height);
+        bomb.colour = "bomb";
+
+        this.physics.moveToObject(bomb, cannon, 350);
     }
 
     this.input.on('pointermove', function (pointer) {
@@ -126,11 +143,11 @@ function create(){
 
     }, this);
 
-    function onShotTargetReached(tween, targets, image, enemies){
+    function onShotTargetReached(tween, targets, image, targets){
 
         var hit = null;
 
-        enemies.children.iterate(function (child) {
+        targets.children.iterate(function (child) {
             if (checkOverlap(image, child))
             {
                 if (child.colour == "green") scoreText.setText('Score: ' + ++score);
@@ -164,17 +181,35 @@ function create(){
         var boundsB = spriteB.getBounds();
     
         return Phaser.Geom.Intersects.RectangleToRectangle(boundsA, boundsB);
-    
     }
 }
 
 function update()  {
 
-    targets.children.iterate(function (child) {
+    // targets.children.iterate(function (child) {
 
-        if (child.x < -50 || child.x > 850) 
-            child.disableBody(true,true);
+    //     if (child.x < -50 || child.x > 850) 
+    //         child.disableBody(true,true);
 
-    });
+    // });
+
+    if (bomb != null && bomb.y > screenHeight - (screenHeight / 8)){
+        var explosion = globalScene.physics.add.image(bomb.x, bomb.y, 'explosion');
+        bomb.destroy();
+        bomb = null;
+        globalScene.tweens.add({
+            targets: explosion,
+            duration: 1000,
+            alpha: 0,
+            paused: false,
+            onComplete: onExplosionComplete,
+            onCompleteParams: [ explosion ]
+        });
+        livesText.setText('Lives: ' + --lives);
+    }
+
+    function onExplosionComplete(tween, targets, image){
+        image.destroy();
+    }
     
 }
