@@ -1,31 +1,13 @@
-var screenWidth, screenHeight;
+//var game.config.width, game.config.height;
 
-screenHeight = window.innerHeight;
-screenWidth = screenHeight / 1.461538462;
+//game.config.height = window.innerHeight;
+//game.config.width = game.config.height / 1.461538462;
 
-//if(window.innerHeight > window.innerWidth){ screenWidth = window.innerWidth; screenHeight = window.innerHeight; }
-//else { screenWidth = window.innerWidth / 3; screenHeight = window.innerHeight; }
+//if(window.innerHeight > window.innerWidth){ game.config.width = window.innerWidth; game.config.height = window.innerHeight; }
+//else { game.config.width = window.innerWidth / 3; game.config.height = window.innerHeight; }
 
 
-var config = {
-    type: Phaser.AUTO,
-    width: screenWidth,
-    height: screenHeight,
-    physics: {
-        default: 'arcade',
-        arcade: {
-            gravity: { y: 0 },
-            debug: false
-        }
-    },
-    scene: {
-        preload: preload,
-        create: create,
-        update: update
-    }
-};
-
-var game = new Phaser.Game(config);
+var game;
 var globalScene;
 var timedEventTarget;
 var targets;
@@ -52,7 +34,7 @@ function create(){
     this.input.setDefaultCursor('url(../assets/cursor.png) 50 50, pointer');
 
     var background = this.add.sprite(0, 0,'spritesheet','Slicing-86.png');
-    background.setDisplaySize(config.width, config.height);
+    background.setDisplaySize(game.config.width, game.config.height);
 
     scoreText = this.add.text(75, 20, "Score: " + score, { fontSize: '32px', fill: '#FFF' });
     livesText = this.add.text(300, 20, "Lives: " + lives, { fontSize: '32px', fill: '#FFF' });
@@ -61,13 +43,13 @@ function create(){
     timedEventTarget = this.time.addEvent({ delay: 1500, callback: createTarget, callbackScope: this, loop: true });
     timedEventBomb = this.time.addEvent({ delay: 5000, callback: createBomb, callbackScope: this, loop: true });
 
-    var cannon = this.add.sprite(config.width/2, config.height-config.height/8, 'spritesheet','Gun.png');
+    var cannon = this.add.sprite(game.config.width/2, game.config.height-game.config.height/8, 'spritesheet','Gun.png');
     //cannon.setDisplaySize(75, 150);
-    cannon.height = screenHeight/3.8;
+    cannon.height = game.config.height/3.8;
     cannon.width = cannon.height/2.1739130;
 
     boop = this.add.sprite(cannon.x + 50, cannon.y + 50, 'spritesheet','Slicing-80.png');
-    boop.height = screenHeight/5;
+    boop.height = game.config.height/5;
     boop.width = boop.height/1.407407;
 
     function createTarget() {
@@ -83,24 +65,25 @@ function create(){
 
             var direction = Phaser.Math.Between(0,1);
             //var x = direction * 800;
-            var x = Phaser.Math.Between(screenWidth*0.2,screenWidth*0.8);
-            var y = Phaser.Math.Between(screenWidth*0.1,screenWidth*0.7);
-            var height = screenHeight/4.75; width = height/1.142857;
+            var x = Phaser.Math.Between(game.config.width*0.2,game.config.width*0.8);
+            var y = Phaser.Math.Between(game.config.width*0.1,game.config.width*0.7);
+            var height = game.config.height/4.75; width = height/1.142857;
             var velocity = (direction == 0) ? Phaser.Math.Between(100, 400) : Phaser.Math.Between(-400, -100);
 
             var spriteName = 'Slicing-' + image_number + '.png';
-            var target = targets.create(x, y, 'spritesheet', spriteName).setDisplaySize(width, height);
+            var target = targets.create(x, y, 'spritesheet', spriteName)
+                .setDisplaySize(width, height)
+                .setScale(0,0);
             //target.setVelocity(velocity,0);
             target.colour = colour;
 
             globalScene.tweens.add({
                 targets: target,
-                scaleX: 0.75,
-                scaleY: 0.75,
-                duration: 500,
-                ease: 'Sine.easeIn',
+                scaleX: 1,
+                scaleY: 1,
+                duration: 1500,
+                ease: 'Bounce',
                 completeDelay: 1500,
-                yoyo:true,
                 onComplete: onExplosionComplete,
                 onCompleteParams: [ target ]
             });
@@ -108,9 +91,9 @@ function create(){
     }
 
     function createBomb(){
-        var x = screenWidth/2;
+        var x = game.config.width/2;
         var y = 0;
-        var height = screenHeight/4.75; width = height/1.142857;
+        var height = game.config.height/4.75; width = height/1.142857;
 
         var spriteName = 'Slicing-23.png';
         bomb = targets.create(x, y, 'spritesheet', spriteName).setDisplaySize(width, height);
@@ -200,7 +183,7 @@ function update()  {
 
     // });
 
-    if (bomb != null && bomb.y > screenHeight - (screenHeight / 8)){
+    if (bomb != null && bomb.y > game.config.height - (game.config.height / 8)){
         var explosion = globalScene.physics.add.image(bomb.x, bomb.y, 'explosion');
         bomb.destroy();
         bomb = null;
@@ -219,4 +202,44 @@ function update()  {
         image.destroy();
     }
     
+}
+
+function resize() {
+    var canvas = document.querySelector("canvas");
+    var windowWidth = window.innerWidth;
+    var windowHeight = window.innerHeight;
+    var windowRatio = windowWidth / windowHeight;
+    var gameRatio = game.config.width / game.config.height;
+
+    if(windowRatio < gameRatio){
+        canvas.style.width = windowWidth + "px";
+        canvas.style.height = (windowWidth / gameRatio) + "px";
+    }
+    else {
+        canvas.style.width = (windowHeight * gameRatio) + "px";
+        canvas.style.height = windowHeight + "px";
+    }
+}
+
+window.onload = function() {
+    var config = {
+        type: Phaser.AUTO,
+        width: 650,
+        height: 950,
+        physics: {
+            default: 'arcade',
+            arcade: {
+                gravity: { y: 0 },
+                debug: false
+            }
+        },
+        scene: {
+            preload: preload,
+            create: create,
+            update: update
+        }
+    };
+    game = new Phaser.Game(config);
+    resize();
+    window.addEventListener("resize", resize, false);
 }
