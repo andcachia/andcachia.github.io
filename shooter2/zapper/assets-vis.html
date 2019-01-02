@@ -48,19 +48,13 @@
             for (var i=0; i<10; i++){
                 for (var j=0; j<10; j++){
                     var val = (i*10) + (j);
-                    var img = this.add.sprite(100*(j+1), 100*i, 'spritesheet','Slicing-'+val+'.png');
+                    var valStr = (val < 10) ? "0" + val : val;
+                    var img = this.add.sprite(100*(j+1), 100*i, 'spritesheet','Slicing-'+valStr+'.png');
                     img.setDisplaySize(100, 100);
                     this.add.text(100*(j+1), 100*i, val, { fontSize: '32px', fill: '#FFF' });
                 }
             }
-        }
-
-        function createBall() {
-
-           
-        }
-
-       
+        }       
 
         function update(){
             
