@@ -37,20 +37,23 @@ var GameOver = new Phaser.Class({
         boop.displayWidth = boop.height/1.1;    
         boop.setAlpha(0);    
 
-        const playButton = this.add.sprite(game.config.width/2, game.config.height/1.3, 'spritesheet','Slicing-100.png')
-                            .setInteractive()
-                            .on('pointerdown', () => this.startGame() )
-                            .on('pointerover', () => this.enterButtonHoverState(playButton) )
-                            .on('pointerout', () => this.enterButtonRestState(playButton) );
+        var startButton = this.children.add(new Button(this, 'Slicing-95.png', 'Slicing-93.png', game.config.width/2, game.config.height + 100));
+        startButton.on('pointerdown', () => this.startGame() );
 
         board.setScale(0,0);
         titleSign.y -= titleSign.height;
 
-        this.animation_growIn(board);
-        this.animation_fallDown(titleSign);
-        this.animation_fadeIn(boop);
-        this.animation_fadeIn(scoreText);
-        this.animation_moveUp(playButton);
+        var animations = new UIAnimations(this);
+        animations.growIn(board);
+        animations.fallDown(titleSign);
+        animations.fadeIn2(boop);
+        animations.fadeIn2(scoreText);
+        animations.moveUp(startButton, game.config.height/1.3, 750, 750);
+
+        var highScore = localStorage.getItem("highscore");
+        if (highScore === null || this.score > highScore){
+            localStorage.setItem("highscore", this.score);
+        }        
     },
 
     startGame: function() {
@@ -63,47 +66,6 @@ var GameOver = new Phaser.Class({
 
     enterButtonRestState: function(button) {
         button.setScale(1,1);
-    },
-
-    animation_growIn: function(target){
-        this.tweens.add({
-            targets: target,
-            scaleX: 1,
-            scaleY: 1,
-            duration: 750,
-            ease: 'Sine.easeOut'
-        });
-    },
-
-    animation_fallDown: function(target){
-        this.tweens.add({
-            targets: target,
-            y: target.y+target.height,
-            duration: 750,
-            ease: 'Sine.easeOut'
-        });
-    },
-
-    animation_fadeIn: function(target){
-        this.tweens.add({
-            targets: target,
-            alpha: 1,
-            duration: 750,
-            delay: 750,
-            ease: 'Sine.easeOut'
-        });
-    },
-
-    animation_moveUp: function(target){
-        this.tweens.add({
-            targets: target,
-            y: {
-                getStart: () => game.config.height,
-                getEnd: () => target.y,
-              },
-            duration: 750,
-            ease: 'Sine.easeOut'
-        });
     },
 
 });

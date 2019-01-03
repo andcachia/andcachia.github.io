@@ -31,11 +31,11 @@ var Game = new Phaser.Class({
 
         this.input.setDefaultCursor('url(../assets/cursor.png) 50 50, pointer');
 
-        var background = this.add.sprite(0, 0,'spritesheet','Slicing-86.png');
+        var background = this.add.image(game.config.width/2, game.config.height/2,'spritesheet','Slicing-102.png');
         background.setDisplaySize(game.config.width, game.config.height);
 
-        this.scoreText = this.add.text(75, 20, "Score: " + this.score, { fontSize: '32px', fill: '#FFF' });
-        this.livesText = this.add.text(300, 20, "Lives: " + this.lives, { fontSize: '32px', fill: '#FFF' });
+        this.scoreText = this.add.text(game.config.width/2, game.config.height/14, this.score, { fontSize: '32px', fill: '#FFF' });
+        this.scoreText.setOrigin(0);
 
         targets = this.physics.add.group();
         timedEventTarget = this.time.addEvent({ delay: 1500, callback: createTarget, callbackScope: this, loop: true });
@@ -46,9 +46,19 @@ var Game = new Phaser.Class({
         cannon.displayHeight = game.config.height/3.8;
         cannon.displayWidth = cannon.height/2.1739130;
 
-        boop = this.add.sprite(cannon.x + 50, cannon.y + 50, 'spritesheet','Slicing-80.png');
-        boop.displayHeight = game.config.height/5;
-        boop.displayWidth = boop.height/1.407407;
+        boop = this.add.sprite(cannon.x + 50, cannon.y, 'spritesheet','Slicing-80.png');
+        //boop.displayHeight = game.config.height/5;
+        //boop.displayWidth = boop.height/1.407407;
+
+        var bottomBar = this.add.image(game.config.width/2, game.config.height, 'spritesheet','Black-Rectangle.png');
+        bottomBar.y -= bottomBar.displayHeight / 2.2;
+        bottomBar.displayWidth = game.config.width;
+
+        var boopIcon = this.add.image(game.config.width, game.config.height, 'spritesheet','Slicing-87.png');
+        boopIcon.y -= boopIcon.displayHeight / 2.2;
+        boopIcon.x -= boopIcon.displayWidth / 1.8;
+
+        this.livesText = this.add.text(boopIcon.x/1.2, boopIcon.y, "x" + this.lives, { fontSize: '32px', fill: '#FFF' });
 
         function createTarget() {
 
@@ -62,17 +72,15 @@ var Game = new Phaser.Class({
                     : Phaser.Math.Between(46, 65);
 
                 var direction = Phaser.Math.Between(0,1);
-                //var x = direction * 800;
                 var x = Phaser.Math.Between(game.config.width*0.2,game.config.width*0.8);
-                var y = Phaser.Math.Between(game.config.width*0.1,game.config.width*0.7);
-                var height = game.config.height/4.75; width = height/1.142857;
+                var y = Phaser.Math.Between(game.config.width*0.3,game.config.width*0.7);
+                //var height = game.config.height/4.75; width = height/1.142857;
                 var velocity = (direction == 0) ? Phaser.Math.Between(100, 400) : Phaser.Math.Between(-400, -100);
 
                 var spriteName = 'Slicing-' + image_number + '.png';
                 var target = targets.create(x, y, 'spritesheet', spriteName)
-                    .setDisplaySize(width, height)
+                    //.setDisplaySize(width, height)
                     .setScale(0,0);
-                //target.setVelocity(velocity,0);
                 target.colour = colour;
 
                 globalScene.tweens.add({
@@ -107,11 +115,11 @@ var Game = new Phaser.Class({
             cannon.rotation = Phaser.Math.Angle.RotateTo(angle);
         
             if (angle > 0) {
-                boop.x = cannon.x - 50;
+                boop.x = cannon.x - 75;
                 boop.setFrame('Slicing-81.png');
             }
             else {
-                boop.x = cannon.x + 50;
+                boop.x = cannon.x + 75;
                 boop.setFrame('Slicing-80.png');
             }
         }, this);
@@ -137,15 +145,21 @@ var Game = new Phaser.Class({
 
             var hit = null;
 
-            targets.children.iterate(function (child) {
+            children = targets.getChildren();
+            //targets.children.iterate(function (child) {
+            for(var i=children.length - 1; i >= 0; i--){
+                var child = children[i];
+                //debugger;
                 if (checkOverlap(image, child))
                 {
-                    if (child.colour == "green") increaseScore(1);
+                    if (child.colour == "green") increaseScore(10);
                     if (child.colour == "red") decreaseLives(1);
                     
                     hit = child;
+
+                    break;
                 }
-            });
+            };
 
             if (hit != null) hit.destroy();
         
@@ -175,12 +189,12 @@ var Game = new Phaser.Class({
 
         function increaseScore(points){
             globalScene.score += points;
-            globalScene.scoreText.setText('Score: ' + globalScene.score);
+            globalScene.scoreText.setText(globalScene.score);
         }
         
         function decreaseLives(amount){
             globalScene.lives -= amount;
-            globalScene.livesText.setText('Lives: ' + globalScene.lives);
+            globalScene.livesText.setText('x' + globalScene.lives);
         
             if (globalScene.lives <= 0) gameOver();
         }

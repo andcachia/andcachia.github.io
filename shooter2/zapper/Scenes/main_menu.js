@@ -15,50 +15,50 @@ var MainMenu = new Phaser.Class({
         var background = this.add.image(game.config.width/2, game.config.height/2,'spritesheet','Slicing-01.png');
         background.setDisplaySize(game.config.width, game.config.height);
 
-        var logo = this.add.image(game.config.width/2, game.config.height/4,'spritesheet','Slicing-02.png');
+        var logo = this.add.image(game.config.width/2, game.config.height/5,'spritesheet','Slicing-02.png');
         logo.setDisplaySize(game.config.width/2, game.config.height/3);
         logo.setAlpha(0);
 
-        const startButton = this.add.sprite(game.config.width/2, game.config.height/1.8, 'spritesheet','Slicing-15.png')
-                            .setInteractive()
-                            .on('pointerdown', () => this.startGame() )
-                            .on('pointerover', () => this.enterButtonHoverState(startButton) )
-                            .on('pointerout', () => this.enterButtonRestState(startButton) );
+        var startButton = this.children.add(new Button(this, 'Slicing-15.png', 'Slicing-03.png', game.config.width/2, game.config.height + 100));
+        startButton.on('pointerdown', () => this.startGame() );
 
-        this.animation_fadeIn(logo);      
-        this.animation_moveUp(startButton);
+        var highScoresButton = this.children.add(new Button(this, 'Slicing-16.png', 'Slicing-04.png', game.config.width/2, game.config.height + 100));
+        highScoresButton.on('pointerdown', () => this.highScores() );
+
+        var moreGamesButton = this.children.add(new Button(this, 'Slicing-17.png', 'Slicing-05.png', game.config.width/2, game.config.height + 100));
+        moreGamesButton.on('pointerdown', () => this.moreGames() );
+
+        var animations = new UIAnimations(this);
+        animations.fadeIn(logo);      
+        animations.moveUp(startButton, game.config.height/2.1, 250, 0);
+        animations.moveUp(highScoresButton, game.config.height/1.65, 250, 250);
+        animations.moveUp(moreGamesButton,game.config.height/1.35, 250, 500);
+
+        var highScore = localStorage.getItem("highscore");
+        if (!(highScore === null)){
+            var highScoreLabel = this.add.text(game.config.width/2, game.config.height/1.15, 'High Score', { font: '32px Courier', fill: '#0033ff' });
+            highScoreLabel.setOrigin(0.5);
+            highScoreLabel.setAlpha(0);   
+            animations.fadeIn2(highScoreLabel);
+
+            var highScoreText = this.add.text(game.config.width/2, game.config.height/1.1, highScore, { font: '32px Courier', fill: '#00ff00' });
+            highScoreText.setOrigin(0.5);
+            highScoreText.setAlpha(0);   
+            animations.fadeIn2(highScoreText);
+        }  
     },
 
     startGame: function() {
         this.scene.start('game');
     },
 
-    enterButtonHoverState: function(button) {
-        button.setScale(1.2,1.2);
+    highScores: function() {
+        this.scene.start('highscores');
     },
 
-    enterButtonRestState: function(button) {
-        button.setScale(1,1);
+    moreGames: function() {
+        window.open("http://planet-boop.com",  "_blank")
     },
 
-    animation_moveUp: function(target){
-        this.tweens.add({
-            targets: target,
-            y: {
-                getStart: () => game.config.height,
-                getEnd: () => target.y,
-              },
-            duration: 750,
-            ease: 'Sine.easeOut'
-        });
-    },
-
-    animation_fadeIn: function(target){
-        this.tweens.add({
-            targets: target,
-            alpha: 1,
-            duration: 750,
-            ease: 'Sine.easeOut'
-        });
-    }
+    
 });
