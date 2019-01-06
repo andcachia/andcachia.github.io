@@ -27,12 +27,19 @@ var Game = new Phaser.Class({
     {
         globalScene = this;
         this.score = 0;
-        this.lives = 5;
+        this.lives = 3;
 
         this.input.setDefaultCursor('url(../assets/cursor.png) 50 50, pointer');
 
         var background = this.add.image(game.config.width/2, game.config.height/2,'spritesheet','Slicing-102.png');
         background.setDisplaySize(game.config.width, game.config.height);
+
+        var menuButton = this.children.add(new Button(this, 'Slicing-68.png', 'Slicing-69.png', game.config.width/1.15, game.config.height/12));
+        menuButton.on('pointerdown', () => this.openMenu() );
+
+        var soundButton = this.children.add(new Button(this, 'Slicing-72.png', 'Slicing-70.png', game.config.width/8, game.config.height/12));
+        soundButton.status = true;
+        soundButton.on('pointerdown', () => this.toggleSound(soundButton) );
 
         this.scoreText = this.add.text(game.config.width/2, game.config.height/14, this.score, { fontSize: '32px', fill: '#FFF' });
         this.scoreText.setOrigin(0);
@@ -42,13 +49,10 @@ var Game = new Phaser.Class({
         timedEventBomb = this.time.addEvent({ delay: 5000, callback: createBomb, callbackScope: this, loop: true });
 
         var cannon = this.add.sprite(game.config.width/2, game.config.height-game.config.height/8, 'spritesheet','Gun.png');
-        //cannon.setDisplaySize(75, 150);
         cannon.displayHeight = game.config.height/3.8;
         cannon.displayWidth = cannon.height/2.1739130;
 
         boop = this.add.sprite(cannon.x + 50, cannon.y, 'spritesheet','Slicing-80.png');
-        //boop.displayHeight = game.config.height/5;
-        //boop.displayWidth = boop.height/1.407407;
 
         var bottomBar = this.add.image(game.config.width/2, game.config.height, 'spritesheet','Black-Rectangle.png');
         bottomBar.y -= bottomBar.displayHeight / 2.2;
@@ -74,12 +78,10 @@ var Game = new Phaser.Class({
                 var direction = Phaser.Math.Between(0,1);
                 var x = Phaser.Math.Between(game.config.width*0.2,game.config.width*0.8);
                 var y = Phaser.Math.Between(game.config.width*0.3,game.config.width*0.7);
-                //var height = game.config.height/4.75; width = height/1.142857;
                 var velocity = (direction == 0) ? Phaser.Math.Between(100, 400) : Phaser.Math.Between(-400, -100);
 
                 var spriteName = 'Slicing-' + image_number + '.png';
                 var target = targets.create(x, y, 'spritesheet', spriteName)
-                    //.setDisplaySize(width, height)
                     .setScale(0,0);
                 target.colour = colour;
 
@@ -146,14 +148,12 @@ var Game = new Phaser.Class({
             var hit = null;
 
             children = targets.getChildren();
-            //targets.children.iterate(function (child) {
             for(var i=children.length - 1; i >= 0; i--){
                 var child = children[i];
-                //debugger;
                 if (checkOverlap(image, child))
                 {
                     if (child.colour == "green") increaseScore(10);
-                    if (child.colour == "red") decreaseLives(1);
+                    if (child.colour == "red") globalScene.decreaseLives(1);
                     
                     hit = child;
 
@@ -191,17 +191,6 @@ var Game = new Phaser.Class({
             globalScene.score += points;
             globalScene.scoreText.setText(globalScene.score);
         }
-        
-        function decreaseLives(amount){
-            globalScene.lives -= amount;
-            globalScene.livesText.setText('x' + globalScene.lives);
-        
-            if (globalScene.lives <= 0) gameOver();
-        }
-        
-        function gameOver(){
-            globalScene.scene.start('gameover', { score: globalScene.score});
-        }
 
     },
 
@@ -219,12 +208,38 @@ var Game = new Phaser.Class({
                 onComplete: onExplosionComplete,
                 onCompleteParams: [ explosion ]
             });
-            decreaseLives(1);
+            globalScene.decreaseLives(1);
         }
     
         function onExplosionComplete(tween, targets, image){
             image.destroy();
         }
-    }
+    },
+
+    decreaseLives: function(amount){
+        this.lives -= amount;
+        this.livesText.setText('x' + globalScene.lives);
+    
+        if (this.lives <= 0) this.gameOver();
+    },
+
+    gameOver: function(){
+        globalScene.scene.start('gameover', { score: globalScene.score});
+    },
+
+    toggleSound: function(soundButton){
+        if (soundButton.status == true){
+            soundButton.changeButtonImage(soundButton,'Slicing-75.png', 'Slicing-74.png')
+            soundButton.status = false;
+        }
+        else{
+            soundButton.changeButtonImage(soundButton,'Slicing-72.png', 'Slicing-70.png')
+            soundButton.status = true;
+        }
+    },
+
+    openMenu: function() {
+        this.scene.start('mainmenu');
+    },
 
 });

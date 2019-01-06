@@ -8,17 +8,29 @@ var Button = new Phaser.Class({
     {
         Phaser.GameObjects.Image.call(this, scene);
 
+        this.image = image;
+        this.hoverImage = hoverImage;
+
         this
             .setTexture('spritesheet', image)
             .setInteractive()
             .setPosition(x, y)
-            //.on('pointerdown', () => this.startGame() )
-            .on('pointerover', () => this.changeButtonImage(this,hoverImage) )
-            .on('pointerout', () => this.changeButtonImage(this,image) );
+            .on('pointerover', () => this.buttonHoverState(this) )
+            .on('pointerout', () => this.buttonNormalState(this) );
     },
 
-    changeButtonImage: function(button, image) {
-        button.setTexture('spritesheet', image);
-    }
+    buttonHoverState: function(button) {
+        button.setTexture('spritesheet', this.hoverImage);
+    },
+
+    buttonNormalState: function(button) {
+        button.setTexture('spritesheet', this.image);
+    },
+
+    changeButtonImage: function(button, image, hoverImage) {
+        button.setTexture('spritesheet', hoverImage);
+        this.image = image;
+        this.hoverImage = hoverImage;
+    },
 
 });

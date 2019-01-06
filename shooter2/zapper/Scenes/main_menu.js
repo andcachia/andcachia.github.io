@@ -57,7 +57,7 @@ var MainMenu = new Phaser.Class({
     },
 
     moreGames: function() {
-        window.open("http://planet-boop.com",  "_blank")
+        //window.open("http://planet-boop.com",  "_blank")
     },
 
     

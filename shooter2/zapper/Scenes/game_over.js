@@ -32,13 +32,14 @@ var GameOver = new Phaser.Class({
         scoreText.setAlpha(0);    
 
         //TODO: Check exact ratio
-        var boop = this.add.sprite(game.config.width/2, board.y + board.displayHeight/4, 'spritesheet','Slicing-91.png');
-        boop.displayHeight = game.config.height/5;
-        boop.displayWidth = boop.height/1.1;    
+        var boop = this.add.sprite(game.config.width/2, game.config.height/1.89, 'spritesheet','Slicing-91.png');
         boop.setAlpha(0);    
 
-        var startButton = this.children.add(new Button(this, 'Slicing-95.png', 'Slicing-93.png', game.config.width/2, game.config.height + 100));
-        startButton.on('pointerdown', () => this.startGame() );
+        var restartButton = this.children.add(new Button(this, 'Slicing-95.png', 'Slicing-93.png', game.config.width/2.7, game.config.height + 100));
+        restartButton.on('pointerdown', () => this.startGame() );
+
+        var menuButton = this.children.add(new Button(this, 'Slicing-94.png', 'Slicing-92.png', game.config.width/1.55, game.config.height + 100));
+        menuButton.on('pointerdown', () => this.openMenu() );
 
         board.setScale(0,0);
         titleSign.y -= titleSign.height;
@@ -48,7 +49,8 @@ var GameOver = new Phaser.Class({
         animations.fallDown(titleSign);
         animations.fadeIn2(boop);
         animations.fadeIn2(scoreText);
-        animations.moveUp(startButton, game.config.height/1.3, 750, 750);
+        animations.moveUp(restartButton, game.config.height/1.55, 500, 750);
+        animations.moveUp(menuButton, game.config.height/1.55, 500, 900);
 
         var highScore = localStorage.getItem("highscore");
         if (highScore === null || this.score > highScore){
@@ -60,12 +62,16 @@ var GameOver = new Phaser.Class({
         this.scene.start('game');
     },
 
-    enterButtonHoverState: function(button) {
-        button.setScale(1.2,1.2);
+    openMenu: function() {
+        this.scene.start('mainmenu');
     },
 
-    enterButtonRestState: function(button) {
-        button.setScale(1,1);
-    },
+    // enterButtonHoverState: function(button) {
+    //     button.setScale(1.2,1.2);
+    // },
+
+    // enterButtonRestState: function(button) {
+    //     button.setScale(1,1);
+    // },
 
 });
