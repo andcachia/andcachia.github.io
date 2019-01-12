@@ -21,6 +21,8 @@ var Game = new Phaser.Class({
         this.livesText;
 
         this.boop;
+
+        this.Target = Object.freeze({ Human: 1, Animal: 2, Bomb: 3 })
     },
 
     create: function ()
@@ -45,8 +47,8 @@ var Game = new Phaser.Class({
         this.scoreText.setOrigin(0);
 
         targets = this.physics.add.group();
-        timedEventTarget = this.time.addEvent({ delay: 1500, callback: createTarget, callbackScope: this, loop: true });
-        timedEventBomb = this.time.addEvent({ delay: 5000, callback: createBomb, callbackScope: this, loop: true });
+        timedEventTarget = this.time.addEvent({ delay: 1000, callback: createTarget, args: [[this.Target.Human, this.Target.Animal]], callbackScope: this, loop: true });
+        timedEventBomb = this.time.addEvent({ delay: 5000, callback: createTarget, args: [[this.Target.Bomb]], callbackScope: this, loop: true });
 
         var cannon = this.add.sprite(game.config.width/2, game.config.height-game.config.height/8, 'spritesheet','Gun.png');
         cannon.displayHeight = game.config.height/3.8;
@@ -64,52 +66,57 @@ var Game = new Phaser.Class({
 
         this.livesText = this.add.text(boopIcon.x/1.2, boopIcon.y, "x" + this.lives, { fontSize: '32px', fill: '#FFF' });
 
-        function createTarget() {
+        function createTarget(args) {
 
-            createColouredTarget("red");
-            createColouredTarget("green");
+            paramLength = args.length;
+
+            for (var i=0; i<paramLength; i++){
+                createColouredTarget(args[i]);
+            }
             
             function createColouredTarget(colour){
 
-                var image_number = (colour == "red")
-                    ? Phaser.Math.Between(23, 45)
-                    : Phaser.Math.Between(46, 65);
+                var image_number = 0;
 
-                var direction = Phaser.Math.Between(0,1);
-                var x = Phaser.Math.Between(game.config.width*0.2,game.config.width*0.8);
-                var y = Phaser.Math.Between(game.config.width*0.3,game.config.width*0.7);
-                var velocity = (direction == 0) ? Phaser.Math.Between(100, 400) : Phaser.Math.Between(-400, -100);
+                switch(colour){
+                    case globalScene.Target.Animal: image_number = Phaser.Math.Between(23, 45);
+                        break;
+                    case globalScene.Target.Human: image_number = Phaser.Math.Between(46, 65);
+                        break;
+                    case globalScene.Target.Bomb: image_number = 19;
+                        break;
+                }
+
+                var x = Phaser.Math.Between(1,3) * game.config.width/4;
+                var y = Phaser.Math.Between(1,3) * game.config.height/5;
 
                 var spriteName = 'Slicing-' + image_number + '.png';
                 var target = targets.create(x, y, 'spritesheet', spriteName)
                     .setScale(0,0);
                 target.colour = colour;
 
-                globalScene.tweens.add({
-                    targets: target,
-                    scaleX: 1,
-                    scaleY: 1,
-                    duration: 1500,
-                    ease: 'Bounce',
-                    hold: 1000,
-                    yoyo:true,
-                    completeDelay: 1500,
-                    onComplete: onExplosionComplete,
-                    onCompleteParams: [ target ]
-                });
+
+                if (colour == globalScene.Target.Bomb){
+                    bombAnimation(target);
+                    target.setScale(1,1);
+                    target.setAlpha(0);
+                }
+                else{
+                    globalScene.tweens.add({
+                        targets: target,
+                        scaleX: 1,
+                        scaleY: 1,
+                        duration: 500,
+                        ease: 'Sine.easeOut',
+                        hold: 1000,
+                        yoyo:true,
+                        completeDelay: 1500,
+                        onComplete: onExplosionComplete,
+                        onCompleteParams: [ target ]
+                    });
+                }
+                
             }
-        }
-
-        function createBomb(){
-            var x = game.config.width/2;
-            var y = 0;
-            var height = game.config.height/4.75; width = height/1.142857;
-
-            var spriteName = 'Slicing-19.png';
-            globalScene.bomb = targets.create(x, y, 'spritesheet', spriteName).setDisplaySize(width, height);
-            globalScene.bomb.colour = "bomb";
-
-            this.physics.moveToObject(globalScene.bomb, cannon, 350);
         }
 
         this.input.on('pointermove', function (pointer) {
@@ -152,8 +159,8 @@ var Game = new Phaser.Class({
                 var child = children[i];
                 if (checkOverlap(image, child))
                 {
-                    if (child.colour == "green") increaseScore(10);
-                    if (child.colour == "red") globalScene.decreaseLives(1);
+                    if (child.colour == globalScene.Target.Human) increaseScore(10);
+                    else if (child.colour == globalScene.Target.Animal) globalScene.decreaseLives(1);
                     
                     hit = child;
 
@@ -190,6 +197,17 @@ var Game = new Phaser.Class({
         function increaseScore(points){
             globalScene.score += points;
             globalScene.scoreText.setText(globalScene.score);
+        }
+
+        function bombAnimation(target){
+            globalScene.tweens.add({
+                targets: target,
+                alpha: 1,
+                duration: 3000,
+                ease: 'Bounce',
+                onComplete: onExplosionComplete,
+                onCompleteParams: [ target ]
+            });
         }
 
     },
