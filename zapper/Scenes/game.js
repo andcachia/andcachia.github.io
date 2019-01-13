@@ -14,6 +14,7 @@ var Game = new Phaser.Class({
         this.timedEventTarget;
         this.targets;
         this.bomb;
+        this.gun;
 
         this.score;
         this.scoreText;
@@ -22,7 +23,8 @@ var Game = new Phaser.Class({
 
         this.boop;
 
-        this.Target = Object.freeze({ Human: 1, Animal: 2, Bomb: 3 })
+        this.Target = Object.freeze({ Human: 1, Animal: 2, Bomb: 3, Gun: 4 });
+        this.Guns = { "AK": false, "Duck": false, "Pie": false };
     },
 
     create: function ()
@@ -49,12 +51,13 @@ var Game = new Phaser.Class({
         targets = this.physics.add.group();
         timedEventTarget = this.time.addEvent({ delay: 1000, callback: createTarget, args: [[this.Target.Human, this.Target.Animal]], callbackScope: this, loop: true });
         timedEventBomb = this.time.addEvent({ delay: 5000, callback: createTarget, args: [[this.Target.Bomb]], callbackScope: this, loop: true });
+        timedEventGun = this.time.addEvent({ delay: 3000, callback: createTarget, args: [[this.Target.Gun]], callbackScope: this, loop: true });
 
-        var cannon = this.add.sprite(game.config.width/2, game.config.height-game.config.height/8, 'spritesheet','Gun.png');
-        cannon.displayHeight = game.config.height/3.8;
-        cannon.displayWidth = cannon.height/2.1739130;
+        this.gun = this.add.sprite(game.config.width/2, game.config.height-game.config.height/8, 'spritesheet','Gun.png');
+        //cannon.displayHeight = game.config.height/3.8;
+        //cannon.displayWidth = cannon.height/2.1739130;
 
-        boop = this.add.sprite(cannon.x + 50, cannon.y, 'spritesheet','Slicing-80.png');
+        boop = this.add.sprite(this.gun.x + 50, this.gun.y, 'spritesheet','Slicing-80.png');
 
         var bottomBar = this.add.image(game.config.width/2, game.config.height, 'spritesheet','Black-Rectangle.png');
         bottomBar.y -= bottomBar.displayHeight / 2.2;
@@ -74,68 +77,76 @@ var Game = new Phaser.Class({
                 createColouredTarget(args[i]);
             }
             
-            function createColouredTarget(colour){
+            function createColouredTarget(targetType){
 
                 var image_number = 0;
 
-                switch(colour){
-                    case globalScene.Target.Animal: image_number = Phaser.Math.Between(23, 45);
-                        break;
-                    case globalScene.Target.Human: image_number = Phaser.Math.Between(46, 65);
-                        break;
-                    case globalScene.Target.Bomb: image_number = 19;
-                        break;
-                }
-
                 var x = Phaser.Math.Between(1,3) * game.config.width/4;
                 var y = Phaser.Math.Between(1,3) * game.config.height/5;
-
-                var spriteName = 'Slicing-' + image_number + '.png';
-                var target = targets.create(x, y, 'spritesheet', spriteName)
+               
+                var target = targets.create()
+                    .setPosition(x, y)
                     .setScale(0,0);
-                target.colour = colour;
+                target.type = targetType;
 
-
-                if (colour == globalScene.Target.Bomb){
-                    bombAnimation(target);
-                    target.setScale(1,1);
-                    target.setAlpha(0);
+                switch(targetType){
+                    case globalScene.Target.Animal: image_number = Phaser.Math.Between(23, 45);
+                        spriteName = getSpriteName(image_number);
+                        break;
+                    case globalScene.Target.Human: image_number = Phaser.Math.Between(46, 65);
+                        spriteName = getSpriteName(image_number);
+                        break;
+                    case globalScene.Target.Bomb: image_number = 19;
+                        spriteName = getSpriteName(image_number);
+                        bombAnimation(target);
+                        target.setScale(1,1);
+                        target.setAlpha(0);
+                        break;
+                    case globalScene.Target.Gun: target.gun = getNextGun();
+                        spriteName = target.gun + '_Panel.png'
+                        break;
                 }
-                else{
-                    globalScene.tweens.add({
-                        targets: target,
-                        scaleX: 1,
-                        scaleY: 1,
-                        duration: 500,
-                        ease: 'Sine.easeOut',
-                        hold: 1000,
-                        yoyo:true,
-                        completeDelay: 1500,
-                        onComplete: onExplosionComplete,
-                        onCompleteParams: [ target ]
-                    });
+
+
+                function getSpriteName(image_number){
+                    var spriteName = 'Slicing-' + image_number + '.png';
+                    return spriteName;
                 }
                 
+                target.setTexture('spritesheet', spriteName);
+
+                globalScene.tweens.add({
+                    targets: target,
+                    scaleX: 1,
+                    scaleY: 1,
+                    duration: 500,
+                    ease: 'Sine.easeOut',
+                    hold: 1000,
+                    yoyo:true,
+                    completeDelay: 1500,
+                    onComplete: onExplosionComplete,
+                    onCompleteParams: [ target ]
+                });
             }
         }
 
         this.input.on('pointermove', function (pointer) {
-            var angle = Phaser.Math.Angle.BetweenPoints(cannon, pointer) + 1.57;
-            cannon.rotation = Phaser.Math.Angle.RotateTo(angle);
+            var angle = Phaser.Math.Angle.BetweenPoints(globalScene.gun, pointer) + 1.57;
+            globalScene.gun.rotation = Phaser.Math.Angle.RotateTo(angle);
         
             if (angle > 0) {
-                boop.x = cannon.x - 75;
+                boop.x = globalScene.gun.x - 75;
                 boop.setFrame('Slicing-81.png');
             }
             else {
-                boop.x = cannon.x + 75;
+                boop.x = globalScene.gun.x + 75;
                 boop.setFrame('Slicing-80.png');
             }
         }, this);
 
         this.input.on('pointerdown', function (pointer) {
             
-            var pie = this.physics.add.image(cannon.x, cannon.y, 'pie');
+            var pie = this.physics.add.image(globalScene.gun.x, globalScene.gun.y, 'pie');
 
             this.tweens.add({
                 targets: pie,
@@ -159,8 +170,9 @@ var Game = new Phaser.Class({
                 var child = children[i];
                 if (checkOverlap(image, child))
                 {
-                    if (child.colour == globalScene.Target.Human) increaseScore(10);
-                    else if (child.colour == globalScene.Target.Animal) globalScene.decreaseLives(1);
+                    if (child.type == globalScene.Target.Human) increaseScore(10);
+                    else if (child.type == globalScene.Target.Animal) globalScene.decreaseLives(1);
+                    else if (child.type == globalScene.Target.Gun) unlockGun(child.gun);
                     
                     hit = child;
 
@@ -208,6 +220,18 @@ var Game = new Phaser.Class({
                 onComplete: onExplosionComplete,
                 onCompleteParams: [ target ]
             });
+        }
+
+        function getNextGun(){
+            for (var key in globalScene.Guns) {
+                if (globalScene.Guns[key] == false) return key;
+            }
+            return null;
+        }
+
+        function unlockGun(gun){
+            globalScene.gun.setTexture('spritesheet', gun + '_Top.png');
+            globalScene.Guns[key] = true;
         }
 
     },
