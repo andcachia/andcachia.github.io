@@ -16,7 +16,7 @@ var MainMenu = new Phaser.Class({
         background.setDisplaySize(game.config.width, game.config.height);
 
         var logo = this.add.image(game.config.width/2, game.config.height/5,'spritesheet','Slicing-02.png');
-        logo.setDisplaySize(game.config.width/2, game.config.height/3);
+        //logo.setDisplaySize(game.config.width/2, game.config.height/3);
         logo.setAlpha(0);
 
         var startButton = this.children.add(new Button(this, 'Slicing-15.png', 'Slicing-03.png', game.config.width/2, game.config.height + 100));
@@ -49,7 +49,7 @@ var MainMenu = new Phaser.Class({
     },
 
     startGame: function() {
-        this.scene.start('game');
+        this.scene.start('howtoplay');
     },
 
     highScores: function() {
@@ -57,7 +57,7 @@ var MainMenu = new Phaser.Class({
     },
 
     moreGames: function() {
-        //window.open("http://planet-boop.com",  "_blank")
+        window.open("http://planetboop.com",  "_blank")
     },
 
     

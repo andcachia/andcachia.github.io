@@ -33,6 +33,8 @@ var Game = new Phaser.Class({
         this.score = 0;
         this.lives = 3;
 
+        this.Guns = { "AK": false, "Duck": false, "Pie": false };
+
         this.input.setDefaultCursor('url(../assets/cursor.png) 50 50, pointer');
 
         var background = this.add.image(game.config.width/2, game.config.height/2,'spritesheet','Slicing-102.png');
@@ -51,11 +53,11 @@ var Game = new Phaser.Class({
         targets = this.physics.add.group();
         timedEventTarget = this.time.addEvent({ delay: 1000, callback: createTarget, args: [[this.Target.Human, this.Target.Animal]], callbackScope: this, loop: true });
         timedEventBomb = this.time.addEvent({ delay: 5000, callback: createTarget, args: [[this.Target.Bomb]], callbackScope: this, loop: true });
-        timedEventGun = this.time.addEvent({ delay: 3000, callback: createTarget, args: [[this.Target.Gun]], callbackScope: this, loop: true });
+        timedEventGun = this.time.addEvent({ delay: 10000, callback: createTarget, args: [[this.Target.Gun]], callbackScope: this, loop: true });
 
         this.gun = this.add.sprite(game.config.width/2, game.config.height-game.config.height/8, 'spritesheet','Gun.png');
-        //cannon.displayHeight = game.config.height/3.8;
-        //cannon.displayWidth = cannon.height/2.1739130;
+        this.gun.rotationOffset = 1.57;
+        this.gun.key = "AK";        
 
         boop = this.add.sprite(this.gun.x + 50, this.gun.y, 'spritesheet','Slicing-80.png');
 
@@ -69,6 +71,21 @@ var Game = new Phaser.Class({
 
         this.livesText = this.add.text(boopIcon.x/1.2, boopIcon.y, "x" + this.lives, { fontSize: '32px', fill: '#FFF' });
 
+        gunIcon = [];
+        index = 0;
+        for(var key in this.Guns){
+            gunIcon[key] = this.add.sprite((75 + (100 * index++)), bottomBar.y, 'spritesheet','Btn_' + key + '_BW.png');
+        };
+
+        targetGrid = [];
+        for (var i = 0; i < 3; i++){
+            targetSubGrid = []
+            for (var j = 0; j < 3; j++) 
+                targetSubGrid.push(false);
+            targetGrid.push(targetSubGrid);
+        }
+          
+
         function createTarget(args) {
 
             paramLength = args.length;
@@ -81,13 +98,23 @@ var Game = new Phaser.Class({
 
                 var image_number = 0;
 
-                var x = Phaser.Math.Between(1,3) * game.config.width/4;
-                var y = Phaser.Math.Between(1,3) * game.config.height/5;
+                taken = true;
+                while (taken){
+                    var i = Phaser.Math.Between(0,2);
+                    var j = Phaser.Math.Between(0,2);
+                    taken = targetGrid[i][j];
+                }
+                targetGrid[i][j] = true;
+
+                var x = (i+1) * game.config.width/4;
+                var y = (j+1) * game.config.height/5;
                
                 var target = targets.create()
                     .setPosition(x, y)
                     .setScale(0,0);
                 target.type = targetType;
+                target.posI = i;
+                target.posJ = j;
 
                 switch(targetType){
                     case globalScene.Target.Animal: image_number = Phaser.Math.Between(23, 45);
@@ -107,7 +134,6 @@ var Game = new Phaser.Class({
                         break;
                 }
 
-
                 function getSpriteName(image_number){
                     var spriteName = 'Slicing-' + image_number + '.png';
                     return spriteName;
@@ -124,14 +150,14 @@ var Game = new Phaser.Class({
                     hold: 1000,
                     yoyo:true,
                     completeDelay: 1500,
-                    onComplete: onExplosionComplete,
+                    onComplete: onTargetAnimComplete,
                     onCompleteParams: [ target ]
                 });
             }
         }
 
         this.input.on('pointermove', function (pointer) {
-            var angle = Phaser.Math.Angle.BetweenPoints(globalScene.gun, pointer) + 1.57;
+            var angle = Phaser.Math.Angle.BetweenPoints(globalScene.gun, pointer) + globalScene.gun.rotationOffset;
             globalScene.gun.rotation = Phaser.Math.Angle.RotateTo(angle);
         
             if (angle > 0) {
@@ -146,17 +172,19 @@ var Game = new Phaser.Class({
 
         this.input.on('pointerdown', function (pointer) {
             
-            var pie = this.physics.add.image(globalScene.gun.x, globalScene.gun.y, 'pie');
+            var bullet = this.physics.add.image(globalScene.gun.x, globalScene.gun.y, 'spritesheet', globalScene.gun.key + '_Projectile_Top.png');
+            var angle = Phaser.Math.Angle.BetweenPoints(globalScene.gun, pointer) + 3.14;
+            bullet.rotation = Phaser.Math.Angle.RotateTo(angle);
 
             this.tweens.add({
-                targets: pie,
+                targets: bullet,
                 x: pointer.x,
                 y: pointer.y,
                 //ease: 'Sine.easeIn',
                 duration: 250,
                 paused: false,
                 onComplete: onShotTargetReached,
-                onCompleteParams: [ pie, targets]
+                onCompleteParams: [ bullet, targets]
             });
 
         }, this);
@@ -180,19 +208,20 @@ var Game = new Phaser.Class({
                 }
             };
 
-            if (hit != null) hit.destroy();
-        
-            var explosion = globalScene.physics.add.image(image.x, image.y, 'explosion');
-            globalScene.tweens.add({
-                targets: explosion,
-                duration: 1000,
-                alpha: 0,
-                paused: false,
-                onComplete: onExplosionComplete,
-                onCompleteParams: [ explosion ]
-            });
+            if (hit != null) destoryTarget(hit);
+
+            globalScene.add.sprite(image.x, image.y).play(globalScene.gun.key + '_Explosion');
         
             image.destroy();
+        }
+
+        function onTargetAnimComplete(tween, targets, image){
+            destoryTarget(image);
+        }
+
+        function destoryTarget(target){
+            targetGrid[target.posI][target.posJ] = false;
+            target.destroy();
         }
 
         function onExplosionComplete(tween, targets, image){
@@ -226,12 +255,20 @@ var Game = new Phaser.Class({
             for (var key in globalScene.Guns) {
                 if (globalScene.Guns[key] == false) return key;
             }
+
+            //if all guns have been unlocked
+            timedEventGun.remove(false);
             return null;
         }
 
-        function unlockGun(gun){
-            globalScene.gun.setTexture('spritesheet', gun + '_Top.png');
-            globalScene.Guns[key] = true;
+        function unlockGun(gunKey){
+            globalScene.gun.key = gunKey;
+            globalScene.gun.setTexture('spritesheet', gunKey + '_Top.png');
+            globalScene.gun.rotationOffset = 3.14;
+            globalScene.Guns[gunKey] = true;
+            gunIcon[gunKey].setTexture('spritesheet','Btn_' + gunKey + '.png')
+
+            if (gunKey == "Pie") timedEventGun.remove(false);
         }
 
     },

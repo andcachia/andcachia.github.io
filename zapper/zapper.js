@@ -27,7 +27,7 @@ window.onload = function() {
                 debug: false
             }
         },
-        scene: [ Preloader, MainMenu, Game, GameOver ]
+        scene: [ Preloader, MainMenu, HowToPlay, Game, GameOver ]
     };
     game = new Phaser.Game(config);
     resize();

@@ -11,17 +11,17 @@ var Preloader = new Phaser.Class({
 
     preload: function ()
     {
-        this.load.multiatlas('spritesheet', 'zapper_assets/assets.json', "zapper_assets");
+        this.load.setPath('zapper_assets');
+        this.load.multiatlas('spritesheet', 'assets.json');
         this.load.image('pie', '../assets/ball.png')
         this.load.image('explosion', '../assets/explosion.png')
     },
 
     create: function ()
     {
-        // this.anims.create({ key: 'diamond', frames: this.anims.generateFrameNames('gems', { prefix: 'diamond_', end: 15, zeroPad: 4 }), repeat: -1 });
-        // this.anims.create({ key: 'prism', frames: this.anims.generateFrameNames('gems', { prefix: 'prism_', end: 6, zeroPad: 4 }), repeat: -1 });
-        // this.anims.create({ key: 'ruby', frames: this.anims.generateFrameNames('gems', { prefix: 'ruby_', end: 6, zeroPad: 4 }), repeat: -1 });
-        // this.anims.create({ key: 'square', frames: this.anims.generateFrameNames('gems', { prefix: 'square_', end: 14, zeroPad: 4 }), repeat: -1 });
+        this.anims.create({ key: 'AK_Explosion', frames: this.anims.generateFrameNames('spritesheet', { prefix: 'Bang_', suffix: '.png', start: 1, end: 8, zeroPad: 3 }), hideOnComplete: true });
+        this.anims.create({ key: 'Duck_Explosion', frames: this.anims.generateFrameNames('spritesheet', { prefix: 'Bam_', suffix: '.png', start: 1, end: 8, zeroPad: 3 }), hideOnComplete: true });
+        this.anims.create({ key: 'Pie_Explosion', frames: this.anims.generateFrameNames('spritesheet', { prefix: 'Spoof_', suffix: '.png', start: 1, end: 8, zeroPad: 3 }), hideOnComplete: true });
 
         this.scene.start('mainmenu');
     }

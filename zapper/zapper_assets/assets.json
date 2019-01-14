@@ -520,7 +520,7 @@
 			]
 		},
 		{
-			"image": "assets-1.png",
+			"image": "assets-11.png",
 			"format": "RGBA8888",
 			"size": {
 				"w": 1889,
@@ -2367,7 +2367,7 @@
 					}
 				},
 				{
-					"filename": "Duck_Projectile_Side.png",
+					"filename": "Duck_Projectile_Top.png",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
@@ -2430,7 +2430,7 @@
 					}
 				},
 				{
-					"filename": "Pie_Projectile.png",
+					"filename": "Pie_Projectile_Top.png",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
@@ -2493,7 +2493,7 @@
 					}
 				},
 				{
-					"filename": "Duck_Projectile_Top.png",
+					"filename": "Duck_Projectile_Top2.png",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
@@ -2850,7 +2850,7 @@
 					}
 				},
 				{
-					"filename": "Pie2_Panel.png",
+					"filename": "Pie_Panel.png",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
@@ -2913,7 +2913,7 @@
 					}
 				},
 				{
-					"filename": "Pie_Panel.png",
+					"filename": "Pie2_Panel.png",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
