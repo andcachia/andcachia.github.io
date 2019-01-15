@@ -16,7 +16,6 @@ var MainMenu = new Phaser.Class({
         background.setDisplaySize(game.config.width, game.config.height);
 
         var logo = this.add.image(game.config.width/2, game.config.height/5,'spritesheet','Slicing-02.png');
-        //logo.setDisplaySize(game.config.width/2, game.config.height/3);
         logo.setAlpha(0);
 
         var startButton = this.children.add(new Button(this, 'Slicing-15.png', 'Slicing-03.png', game.config.width/2, game.config.height + 100));

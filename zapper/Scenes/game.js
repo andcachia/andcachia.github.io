@@ -24,7 +24,6 @@ var Game = new Phaser.Class({
         this.boop;
 
         this.Target = Object.freeze({ Human: 1, Animal: 2, Bomb: 3, Gun: 4 });
-        this.Guns = { "AK": false, "Duck": false, "Pie": false };
     },
 
     create: function ()
@@ -33,7 +32,7 @@ var Game = new Phaser.Class({
         this.score = 0;
         this.lives = 3;
 
-        this.Guns = { "AK": false, "Duck": false, "Pie": false };
+        Guns = { "AK": false, "Duck": false, "Pie": false };
 
         this.input.setDefaultCursor('url(../assets/cursor.png) 50 50, pointer');
 
@@ -73,7 +72,7 @@ var Game = new Phaser.Class({
 
         gunIcon = [];
         index = 0;
-        for(var key in this.Guns){
+        for(var key in Guns){
             gunIcon[key] = this.add.sprite((75 + (100 * index++)), bottomBar.y, 'spritesheet','Btn_' + key + '_BW.png');
         };
 
@@ -93,7 +92,7 @@ var Game = new Phaser.Class({
             for (var i=0; i<paramLength; i++){
                 createColouredTarget(args[i]);
             }
-            
+
             function createColouredTarget(targetType){
 
                 var image_number = 0;
@@ -115,6 +114,7 @@ var Game = new Phaser.Class({
                 target.type = targetType;
                 target.posI = i;
                 target.posJ = j;
+                target.isDestroyed = false;
 
                 switch(targetType){
                     case globalScene.Target.Animal: image_number = Phaser.Math.Between(23, 45);
@@ -149,7 +149,6 @@ var Game = new Phaser.Class({
                     ease: 'Sine.easeOut',
                     hold: 1000,
                     yoyo:true,
-                    completeDelay: 1500,
                     onComplete: onTargetAnimComplete,
                     onCompleteParams: [ target ]
                 });
@@ -184,19 +183,19 @@ var Game = new Phaser.Class({
                 duration: 250,
                 paused: false,
                 onComplete: onShotTargetReached,
-                onCompleteParams: [ bullet, targets]
+                onCompleteParams: [ bullet ]
             });
 
         }, this);
 
-        function onShotTargetReached(tween, targets, image, targets){
+        function onShotTargetReached(_tween, _targets, bullet){
 
             var hit = null;
 
             children = targets.getChildren();
             for(var i=children.length - 1; i >= 0; i--){
                 var child = children[i];
-                if (checkOverlap(image, child))
+                if (checkOverlap(bullet, child))
                 {
                     if (child.type == globalScene.Target.Human) increaseScore(10);
                     else if (child.type == globalScene.Target.Animal) globalScene.decreaseLives(1);
@@ -207,12 +206,15 @@ var Game = new Phaser.Class({
                     break;
                 }
             };
+            
+            if (hit != null) {
+                hit.isDestroyed = true;
+                destoryTarget(hit);
+            }
 
-            if (hit != null) destoryTarget(hit);
-
-            globalScene.add.sprite(image.x, image.y).play(globalScene.gun.key + '_Explosion');
+            globalScene.add.sprite(bullet.x, bullet.y).play(globalScene.gun.key + '_Explosion');
         
-            image.destroy();
+            bullet.destroy();
         }
 
         function onTargetAnimComplete(tween, targets, image){
@@ -224,10 +226,6 @@ var Game = new Phaser.Class({
             target.destroy();
         }
 
-        function onExplosionComplete(tween, targets, image){
-            image.destroy();
-        }
-        
         function checkOverlap(spriteA, spriteB) {
             var boundsA = spriteA.getBounds();
             var boundsB = spriteB.getBounds();
@@ -246,14 +244,19 @@ var Game = new Phaser.Class({
                 alpha: 1,
                 duration: 3000,
                 ease: 'Bounce',
-                onComplete: onExplosionComplete,
+                onComplete: onBombAnimationComplete,
                 onCompleteParams: [ target ]
             });
         }
 
+        function onBombAnimationComplete(_tween, _targets, target){
+            if (!target.isDestroyed) globalScene.decreaseLives(1);
+            target.destroy();
+        }
+
         function getNextGun(){
-            for (var key in globalScene.Guns) {
-                if (globalScene.Guns[key] == false) return key;
+            for (var key in Guns) {
+                if (Guns[key] == false) return key;
             }
 
             //if all guns have been unlocked
@@ -265,7 +268,7 @@ var Game = new Phaser.Class({
             globalScene.gun.key = gunKey;
             globalScene.gun.setTexture('spritesheet', gunKey + '_Top.png');
             globalScene.gun.rotationOffset = 3.14;
-            globalScene.Guns[gunKey] = true;
+            Guns[gunKey] = true;
             gunIcon[gunKey].setTexture('spritesheet','Btn_' + gunKey + '.png')
 
             if (gunKey == "Pie") timedEventGun.remove(false);
@@ -275,24 +278,7 @@ var Game = new Phaser.Class({
 
     update: function (time, delta)
     {
-        if (globalScene.bomb != null && globalScene.bomb.y > game.config.height - (game.config.height / 8)){
-            var explosion = globalScene.physics.add.image(globalScene.bomb.x, globalScene.bomb.y, 'explosion');
-            globalScene.bomb.destroy();
-            globalScene.bomb = null;
-            globalScene.tweens.add({
-                targets: explosion,
-                duration: 1000,
-                alpha: 0,
-                paused: false,
-                onComplete: onExplosionComplete,
-                onCompleteParams: [ explosion ]
-            });
-            globalScene.decreaseLives(1);
-        }
-    
-        function onExplosionComplete(tween, targets, image){
-            image.destroy();
-        }
+        
     },
 
     decreaseLives: function(amount){
