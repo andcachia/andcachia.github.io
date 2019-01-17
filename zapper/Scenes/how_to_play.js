@@ -12,7 +12,7 @@ var HowToPlay = new Phaser.Class({
 
     create: function ()
     {
-        var background = this.add.image(game.config.width/2, game.config.height/2,'spritesheet','Slicing-01.png');
+        var background = this.add.image(game.config.width/2, game.config.height/2,'spritesheet','Slicing-102.png');
         background.setDisplaySize(game.config.width, game.config.height);
         
         var text = this.add.image(game.config.width/2, game.config.height/2,'spritesheet','Avoid-These.png');

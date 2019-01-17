@@ -11,10 +11,46 @@ var Preloader = new Phaser.Class({
 
     preload: function ()
     {
+        this.add.image(game.config.width/2, game.config.height/5, 'logo');
+
+        this.add.text(game.config.width/2, game.config.height/2, "Loading...")
+            .setOrigin(0.5);
+
+        var progress = this.add.graphics();
+        this.load.on('progress', function (value) {
+
+            progress.clear();
+            progress.fillStyle(0xffffff, 1);
+            progress.fillRect(0, game.config.height/1.7, 800 * value, 60);
+    
+        });
+        this.load.on('complete', function () {
+
+            progress.destroy();
+    
+        });
+        
         this.load.setPath('zapper_assets');
         this.load.multiatlas('spritesheet', 'assets.json');
-        this.load.image('pie', '../assets/ball.png')
-        this.load.image('explosion', '../assets/explosion.png')
+        this.load.multiatlas('bomb_animation', 'bomb_explosion.json');
+        this.load.multiatlas('spritesheet', 'assets.json');
+        this.load.multiatlas('bomb_animation', 'bomb_explosion.json');
+        this.load.multiatlas('spritesheet', 'assets.json');
+        this.load.multiatlas('bomb_animation', 'bomb_explosion.json');
+        this.load.multiatlas('spritesheet', 'assets.json');
+        this.load.multiatlas('bomb_animation', 'bomb_explosion.json');
+        this.load.multiatlas('spritesheet', 'assets.json');
+        this.load.multiatlas('bomb_animation', 'bomb_explosion.json');
+        this.load.multiatlas('spritesheet', 'assets.json');
+        this.load.multiatlas('bomb_animation', 'bomb_explosion.json');
+        this.load.multiatlas('spritesheet', 'assets.json');
+        this.load.multiatlas('bomb_animation', 'bomb_explosion.json');
+        this.load.multiatlas('spritesheet', 'assets.json');
+        this.load.multiatlas('bomb_animation', 'bomb_explosion.json');
+        this.load.multiatlas('spritesheet', 'assets.json');
+        this.load.multiatlas('bomb_animation', 'bomb_explosion.json');
+        this.load.multiatlas('spritesheet', 'assets.json');
+        this.load.multiatlas('bomb_animation', 'bomb_explosion.json');
     },
 
     create: function ()
@@ -22,6 +58,8 @@ var Preloader = new Phaser.Class({
         this.anims.create({ key: 'AK_Explosion', frames: this.anims.generateFrameNames('spritesheet', { prefix: 'Bang_', suffix: '.png', start: 1, end: 8, zeroPad: 3 }), hideOnComplete: true });
         this.anims.create({ key: 'Duck_Explosion', frames: this.anims.generateFrameNames('spritesheet', { prefix: 'Bam_', suffix: '.png', start: 1, end: 8, zeroPad: 3 }), hideOnComplete: true });
         this.anims.create({ key: 'Pie_Explosion', frames: this.anims.generateFrameNames('spritesheet', { prefix: 'Spoof_', suffix: '.png', start: 1, end: 8, zeroPad: 3 }), hideOnComplete: true });
+        
+        this.anims.create({ key: 'Bomb_Anim', frames: this.anims.generateFrameNames('bomb_animation'), hideOnComplete: true });
 
         this.scene.start('mainmenu');
     }
