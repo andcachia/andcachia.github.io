@@ -42,7 +42,7 @@ var Preloader = new Phaser.Class({
         
         // this.anims.create({ key: 'Bomb_Anim', frames: this.anims.generateFrameNames('bomb_animation'), hideOnComplete: true });
 
-        this.scene.start('mainmenu');
+        this.scene.start('game');
     }
 
 });
