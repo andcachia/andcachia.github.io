@@ -24,10 +24,10 @@ window.onload = function() {
             default: 'matter',
             matter: {
                 gravity: { y: 0.3 },
-                debug: true
+                debug: false
             }
         },
-        scene: [ Game ]
+        scene: [ Boot, Preloader, MainMenu, HowToPlay, Game, GameOver ]
     };
     game = new Phaser.Game(config);
     resize();

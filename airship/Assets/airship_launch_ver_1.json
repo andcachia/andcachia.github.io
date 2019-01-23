@@ -1,0 +1,1260 @@
+{
+	"textures": [
+		{
+			"image": "airship_launch_ver_1-0.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 1957,
+				"h": 2046
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "background_base.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 647,
+						"h": 1926
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 647,
+						"h": 1926
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 647,
+						"h": 1926
+					}
+				},
+				{
+					"filename": "enemy_rock_02.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 134,
+						"h": 116
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 134,
+						"h": 116
+					},
+					"frame": {
+						"x": 1,
+						"y": 1929,
+						"w": 134,
+						"h": 116
+					}
+				},
+				{
+					"filename": "btn_submit.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 375,
+						"h": 110
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 375,
+						"h": 110
+					},
+					"frame": {
+						"x": 137,
+						"y": 1929,
+						"w": 375,
+						"h": 110
+					}
+				},
+				{
+					"filename": "btn_left.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 141,
+						"h": 110
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 141,
+						"h": 110
+					},
+					"frame": {
+						"x": 514,
+						"y": 1929,
+						"w": 141,
+						"h": 110
+					}
+				},
+				{
+					"filename": "background_dark_shade.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 647,
+						"h": 1926
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 647,
+						"h": 1904
+					},
+					"frame": {
+						"x": 650,
+						"y": 1,
+						"w": 647,
+						"h": 1904
+					}
+				},
+				{
+					"filename": "screen_tutorial.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 657,
+						"h": 971
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 657,
+						"h": 971
+					},
+					"frame": {
+						"x": 1299,
+						"y": 1,
+						"w": 657,
+						"h": 971
+					}
+				},
+				{
+					"filename": "ui_level_bar_fill.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 209,
+						"h": 11
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 209,
+						"h": 11
+					},
+					"frame": {
+						"x": 650,
+						"y": 1907,
+						"w": 209,
+						"h": 11
+					}
+				},
+				{
+					"filename": "btn_high_scores.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 375,
+						"h": 109
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 375,
+						"h": 109
+					},
+					"frame": {
+						"x": 657,
+						"y": 1920,
+						"w": 375,
+						"h": 109
+					}
+				},
+				{
+					"filename": "background_seperator.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 641,
+						"h": 960
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 641,
+						"h": 960
+					},
+					"frame": {
+						"x": 1299,
+						"y": 974,
+						"w": 641,
+						"h": 960
+					}
+				},
+				{
+					"filename": "btn_menu.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 142,
+						"h": 109
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 142,
+						"h": 109
+					},
+					"frame": {
+						"x": 1034,
+						"y": 1936,
+						"w": 142,
+						"h": 109
+					}
+				},
+				{
+					"filename": "btn_ship.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 111,
+						"h": 109
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 111,
+						"h": 109
+					},
+					"frame": {
+						"x": 1178,
+						"y": 1936,
+						"w": 111,
+						"h": 109
+					}
+				},
+				{
+					"filename": "btn_select.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 378,
+						"h": 108
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 0,
+						"w": 376,
+						"h": 108
+					},
+					"frame": {
+						"x": 1291,
+						"y": 1936,
+						"w": 376,
+						"h": 108
+					}
+				},
+				{
+					"filename": "enemy_rock_01.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 113,
+						"h": 98
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 113,
+						"h": 98
+					},
+					"frame": {
+						"x": 1669,
+						"y": 1936,
+						"w": 113,
+						"h": 98
+					}
+				},
+				{
+					"filename": "enemy_propeller.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 152,
+						"h": 58
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 152,
+						"h": 58
+					},
+					"frame": {
+						"x": 1784,
+						"y": 1936,
+						"w": 152,
+						"h": 58
+					}
+				}
+			]
+		},
+		{
+			"image": "airship_launch_ver_1-1.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 1960,
+				"h": 2035
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "background_medium_shade.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 647,
+						"h": 1926
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 647,
+						"h": 1904
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 647,
+						"h": 1904
+					}
+				},
+				{
+					"filename": "background_static.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 641,
+						"h": 960
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 641,
+						"h": 960
+					},
+					"frame": {
+						"x": 650,
+						"y": 1,
+						"w": 641,
+						"h": 960
+					}
+				},
+				{
+					"filename": "title.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 666,
+						"h": 641
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 45,
+						"w": 666,
+						"h": 531
+					},
+					"frame": {
+						"x": 650,
+						"y": 963,
+						"w": 666,
+						"h": 531
+					}
+				},
+				{
+					"filename": "background_title.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 641,
+						"h": 960
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 641,
+						"h": 960
+					},
+					"frame": {
+						"x": 1293,
+						"y": 1,
+						"w": 641,
+						"h": 960
+					}
+				},
+				{
+					"filename": "screen_highscore.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 641,
+						"h": 960
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 641,
+						"h": 960
+					},
+					"frame": {
+						"x": 1318,
+						"y": 963,
+						"w": 641,
+						"h": 960
+					}
+				},
+				{
+					"filename": "explosion_ani_04.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 541,
+						"h": 490
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 539,
+						"h": 490
+					},
+					"frame": {
+						"x": 650,
+						"y": 1496,
+						"w": 539,
+						"h": 490
+					}
+				},
+				{
+					"filename": "btn_more_games.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 375,
+						"h": 109
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 375,
+						"h": 109
+					},
+					"frame": {
+						"x": 1,
+						"y": 1907,
+						"w": 375,
+						"h": 109
+					}
+				},
+				{
+					"filename": "btn_right.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 141,
+						"h": 110
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 141,
+						"h": 110
+					},
+					"frame": {
+						"x": 378,
+						"y": 1907,
+						"w": 141,
+						"h": 110
+					}
+				},
+				{
+					"filename": "btn_back.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 110,
+						"h": 109
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 110,
+						"h": 109
+					},
+					"frame": {
+						"x": 521,
+						"y": 1907,
+						"w": 110,
+						"h": 109
+					}
+				},
+				{
+					"filename": "enemy_rocket.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 54,
+						"h": 168
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 54,
+						"h": 168
+					},
+					"frame": {
+						"x": 1191,
+						"y": 1496,
+						"w": 54,
+						"h": 168
+					}
+				},
+				{
+					"filename": "enemy_spanner.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 53,
+						"h": 155
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 53,
+						"h": 155
+					},
+					"frame": {
+						"x": 1191,
+						"y": 1666,
+						"w": 53,
+						"h": 155
+					}
+				},
+				{
+					"filename": "lock.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 96,
+						"h": 130
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 1,
+						"w": 96,
+						"h": 129
+					},
+					"frame": {
+						"x": 1191,
+						"y": 1823,
+						"w": 96,
+						"h": 129
+					}
+				},
+				{
+					"filename": "btn_start.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 375,
+						"h": 109
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 375,
+						"h": 109
+					},
+					"frame": {
+						"x": 1289,
+						"y": 1925,
+						"w": 375,
+						"h": 109
+					}
+				},
+				{
+					"filename": "btn_replay.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 141,
+						"h": 109
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 141,
+						"h": 109
+					},
+					"frame": {
+						"x": 1666,
+						"y": 1925,
+						"w": 141,
+						"h": 109
+					}
+				},
+				{
+					"filename": "paddle.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 90,
+						"h": 95
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 90,
+						"h": 95
+					},
+					"frame": {
+						"x": 1809,
+						"y": 1925,
+						"w": 90,
+						"h": 95
+					}
+				}
+			]
+		},
+		{
+			"image": "airship_launch_ver_1-2.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 2030,
+				"h": 1992
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "background_clouds_purple.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 641,
+						"h": 925
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 22,
+						"w": 641,
+						"h": 811
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 641,
+						"h": 811
+					}
+				},
+				{
+					"filename": "background_clouds_blue.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 641,
+						"h": 913
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 9,
+						"w": 641,
+						"h": 800
+					},
+					"frame": {
+						"x": 1,
+						"y": 814,
+						"w": 641,
+						"h": 800
+					}
+				},
+				{
+					"filename": "base_ground.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 641,
+						"h": 302
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 38,
+						"w": 641,
+						"h": 264
+					},
+					"frame": {
+						"x": 1,
+						"y": 1616,
+						"w": 641,
+						"h": 264
+					}
+				},
+				{
+					"filename": "btn_launch.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 374,
+						"h": 109
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 374,
+						"h": 109
+					},
+					"frame": {
+						"x": 1,
+						"y": 1882,
+						"w": 374,
+						"h": 109
+					}
+				},
+				{
+					"filename": "background_shop_seperator.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 583,
+						"h": 658
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 583,
+						"h": 658
+					},
+					"frame": {
+						"x": 644,
+						"y": 1,
+						"w": 583,
+						"h": 658
+					}
+				},
+				{
+					"filename": "enemy_planet_01.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 608,
+						"h": 607
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 608,
+						"h": 607
+					},
+					"frame": {
+						"x": 1229,
+						"y": 1,
+						"w": 608,
+						"h": 607
+					}
+				},
+				{
+					"filename": "hero_01.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 181,
+						"h": 392
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 181,
+						"h": 391
+					},
+					"frame": {
+						"x": 1839,
+						"y": 1,
+						"w": 181,
+						"h": 391
+					}
+				},
+				{
+					"filename": "hero_04.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 155,
+						"h": 243
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 3,
+						"w": 155,
+						"h": 240
+					},
+					"frame": {
+						"x": 1839,
+						"y": 394,
+						"w": 155,
+						"h": 240
+					}
+				},
+				{
+					"filename": "ui_game_over.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 494,
+						"h": 619
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 494,
+						"h": 619
+					},
+					"frame": {
+						"x": 1229,
+						"y": 610,
+						"w": 494,
+						"h": 619
+					}
+				},
+				{
+					"filename": "explosion_ani_06.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 283,
+						"h": 281
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 283,
+						"h": 281
+					},
+					"frame": {
+						"x": 1725,
+						"y": 636,
+						"w": 283,
+						"h": 281
+					}
+				},
+				{
+					"filename": "enemy_rock_04.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 304,
+						"h": 259
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 304,
+						"h": 259
+					},
+					"frame": {
+						"x": 1725,
+						"y": 919,
+						"w": 304,
+						"h": 259
+					}
+				},
+				{
+					"filename": "explosion_ani_05.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 289,
+						"h": 271
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 289,
+						"h": 271
+					},
+					"frame": {
+						"x": 1725,
+						"y": 1180,
+						"w": 289,
+						"h": 271
+					}
+				},
+				{
+					"filename": "enemy_planet_02.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 451,
+						"h": 451
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 451,
+						"h": 451
+					},
+					"frame": {
+						"x": 644,
+						"y": 1453,
+						"w": 451,
+						"h": 451
+					}
+				},
+				{
+					"filename": "notification.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 640,
+						"h": 196
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 640,
+						"h": 196
+					},
+					"frame": {
+						"x": 644,
+						"y": 1231,
+						"w": 640,
+						"h": 196
+					}
+				},
+				{
+					"filename": "explosion_ani_03.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 418,
+						"h": 385
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 418,
+						"h": 385
+					},
+					"frame": {
+						"x": 644,
+						"y": 661,
+						"w": 418,
+						"h": 385
+					}
+				},
+				{
+					"filename": "hero_03.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 163,
+						"h": 204
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 163,
+						"h": 204
+					},
+					"frame": {
+						"x": 1064,
+						"y": 661,
+						"w": 163,
+						"h": 204
+					}
+				},
+				{
+					"filename": "hero_01_die.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 158,
+						"h": 159
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 158,
+						"h": 159
+					},
+					"frame": {
+						"x": 1064,
+						"y": 867,
+						"w": 158,
+						"h": 159
+					}
+				},
+				{
+					"filename": "enemy_moon03.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 166,
+						"h": 142
+					},
+					"spriteSourceSize": {
+						"x": 24,
+						"y": 0,
+						"w": 142,
+						"h": 142
+					},
+					"frame": {
+						"x": 1064,
+						"y": 1028,
+						"w": 142,
+						"h": 142
+					}
+				},
+				{
+					"filename": "explosion_ani_02.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 239,
+						"h": 181
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 239,
+						"h": 181
+					},
+					"frame": {
+						"x": 644,
+						"y": 1048,
+						"w": 239,
+						"h": 181
+					}
+				},
+				{
+					"filename": "explosion_ani_01.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 170,
+						"h": 173
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 170,
+						"h": 173
+					},
+					"frame": {
+						"x": 885,
+						"y": 1048,
+						"w": 170,
+						"h": 173
+					}
+				},
+				{
+					"filename": "enemy_moon_01.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 315,
+						"h": 316
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 315,
+						"h": 316
+					},
+					"frame": {
+						"x": 1286,
+						"y": 1231,
+						"w": 315,
+						"h": 316
+					}
+				},
+				{
+					"filename": "hero_02.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 184,
+						"h": 160
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 184,
+						"h": 160
+					},
+					"frame": {
+						"x": 1097,
+						"y": 1429,
+						"w": 184,
+						"h": 160
+					}
+				},
+				{
+					"filename": "ui_ship_shop.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 335,
+						"h": 200
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 335,
+						"h": 200
+					},
+					"frame": {
+						"x": 1603,
+						"y": 1453,
+						"w": 335,
+						"h": 200
+					}
+				},
+				{
+					"filename": "enemy_satelite.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 248,
+						"h": 249
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 248,
+						"h": 249
+					},
+					"frame": {
+						"x": 1283,
+						"y": 1549,
+						"w": 248,
+						"h": 249
+					}
+				},
+				{
+					"filename": "enemy_rock_03.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 182,
+						"h": 156
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 182,
+						"h": 156
+					},
+					"frame": {
+						"x": 1097,
+						"y": 1591,
+						"w": 182,
+						"h": 156
+					}
+				},
+				{
+					"filename": "enemy_moon_02.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 210,
+						"h": 197
+					},
+					"spriteSourceSize": {
+						"x": 13,
+						"y": 0,
+						"w": 197,
+						"h": 197
+					},
+					"frame": {
+						"x": 1533,
+						"y": 1655,
+						"w": 197,
+						"h": 197
+					}
+				},
+				{
+					"filename": "ui_score.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 254,
+						"h": 143
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 254,
+						"h": 143
+					},
+					"frame": {
+						"x": 1097,
+						"y": 1800,
+						"w": 254,
+						"h": 143
+					}
+				},
+				{
+					"filename": "enemy_planet_03.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 188,
+						"h": 191
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 188,
+						"h": 191
+					},
+					"frame": {
+						"x": 1732,
+						"y": 1655,
+						"w": 188,
+						"h": 191
+					}
+				},
+				{
+					"filename": "ui_level_bar.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 253,
+						"h": 141
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 253,
+						"h": 141
+					},
+					"frame": {
+						"x": 1732,
+						"y": 1848,
+						"w": 253,
+						"h": 141
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:4d307d2c82d5d507a40e1eb2458a2d04:79f556e0e9653f930b28d7a971599f97:cdb8b46a54da9e6fede4de772f5f3ed6$"
+	}
+}

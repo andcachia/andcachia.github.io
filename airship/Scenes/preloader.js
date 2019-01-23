@@ -31,8 +31,7 @@ var Preloader = new Phaser.Class({
         });
         
         this.load.setPath('Assets');
-        this.load.multiatlas('spritesheet', 'assets.json');
-        //this.load.multiatlas('bomb_animation', 'Explosion60fps.json');
+        this.load.multiatlas('spritesheet', 'airship_launch_ver_1.json');
     },
 
     create: function ()

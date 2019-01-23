@@ -12,12 +12,14 @@ var HowToPlay = new Phaser.Class({
 
     create: function ()
     {
-        var background = this.add.image(game.config.width/2, game.config.height/2,'spritesheet','Slicing-102.png');
+        var background = this.add.image(game.config.width/2, game.config.height/2, 'spritesheet', 'background_static.png');
         background.setDisplaySize(game.config.width, game.config.height);
         
-        var text = this.add.image(game.config.width/2, game.config.height/2,'spritesheet','Avoid-These.png');
+        this.add.image(game.config.width/2, game.config.height, 'spritesheet', 'base_ground.png').setOrigin(0.5,1);
+        this.add.image(game.config.width/2, game.config.height/1.4, 'spritesheet', 'hero_01.png');
+        this.add.image(game.config.width/2, game.config.height/2,'spritesheet','screen_tutorial.png');
 
-        var startButton = this.children.add(new Button(this, 'Slicing-100.png', 'Slicing-100.png', game.config.width/2, game.config.height + 100));
+        var startButton = this.children.add(new Button(this, 'btn_launch.png', game.config.width/2, game.config.height + 100));
         startButton.on('pointerdown', () => this.startGame() );
 
         var animations = new UIAnimations(this);

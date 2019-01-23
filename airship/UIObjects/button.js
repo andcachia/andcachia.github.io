@@ -4,12 +4,11 @@ var Button = new Phaser.Class({
 
     initialize:
 
-    function Button (scene, image, hoverImage, x, y)
+    function Button (scene, image, x, y)
     {
         Phaser.GameObjects.Image.call(this, scene);
 
         this.image = image;
-        this.hoverImage = hoverImage;
 
         this
             .setTexture('spritesheet', image)
@@ -20,17 +19,17 @@ var Button = new Phaser.Class({
     },
 
     buttonHoverState: function(button) {
-        button.setTexture('spritesheet', this.hoverImage);
+        button.setTint(0xff0000);
     },
 
     buttonNormalState: function(button) {
-        button.setTexture('spritesheet', this.image);
-    },
+        button.clearTint();
+    }
 
-    changeButtonImage: function(button, image, hoverImage) {
-        button.setTexture('spritesheet', hoverImage);
-        this.image = image;
-        this.hoverImage = hoverImage;
-    },
+    // changeButtonImage: function(button, image) {
+    //     button.setTexture('spritesheet');
+    //     this.image = image;
+    //     this.hoverImage = hoverImage;
+    // },
 
 });
