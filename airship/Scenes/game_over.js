@@ -17,41 +17,35 @@ var GameOver = new Phaser.Class({
 
     create: function ()
     {
-        var background = this.add.image(game.config.width/2, game.config.height/2,'spritesheet','Slicing-01.png');
+        var background = this.add.image(game.config.width/2, game.config.height/2, 'spritesheet', 'background_static.png');
         background.setDisplaySize(game.config.width, game.config.height);
 
-        var board = this.add.image(game.config.width/2, game.config.height/2.5, 'spritesheet','Slicing-90.png');
+        var board = this.add.image(game.config.width/2, 0, 'spritesheet','ui_game_over.png').setOrigin(0.5,0);
 
-        var titleSign = this.add.image(game.config.width/2, 0, 'spritesheet','Slicing-89.png');
-        titleSign.y += titleSign.displayHeight/2;
-
-        var scoreText = this.add.text(game.config.width/2, board.y - board.displayHeight/4, 'Your score: ' + this.score, { font: '32px Courier', fill: '#00ff00' });
+        var scoreText = this.add.text(game.config.width/2, board.y + board.displayHeight/2, this.score, { font: '32px Courier', fill: '#00ff00' });
         scoreText.setOrigin(0.5);
-        scoreText.setAlpha(0);    
+        scoreText.setAlpha(0); 
 
-        var boop = this.add.sprite(game.config.width/2, game.config.height/1.89, 'spritesheet','Slicing-91.png');
-        boop.setAlpha(0);    
-
-        var restartButton = this.children.add(new Button(this, 'Slicing-95.png', 'Slicing-93.png', game.config.width/2.7, game.config.height + 100));
+        var restartButton = this.children.add(new Button(this, 'btn_replay.png', game.config.width/2.7, game.config.height + 100));
         restartButton.on('pointerdown', () => this.startGame() );
 
-        var menuButton = this.children.add(new Button(this, 'Slicing-94.png', 'Slicing-92.png', game.config.width/1.55, game.config.height + 100));
+        var menuButton = this.children.add(new Button(this, 'btn_menu.png', game.config.width/1.55, game.config.height + 100));
         menuButton.on('pointerdown', () => this.openMenu() );
 
-        board.setScale(0,0);
-        titleSign.y -= titleSign.height;
+        //board.setScale(0,0);
+        board.y -= board.displayHeight;
 
         var animations = new UIAnimations(this);
-        animations.growIn(board);
-        animations.fallDown(titleSign);
-        animations.fadeIn2(boop);
+        //animations.growIn(board);
+        animations.fallDown(board);
+        //animations.fadeIn2(boop);
         animations.fadeIn2(scoreText);
         animations.moveUp(restartButton, game.config.height/1.55, 500, 750);
         animations.moveUp(menuButton, game.config.height/1.55, 500, 900);
 
-        var highScore = localStorage.getItem("highscore");
+        var highScore = localStorage.getItem("highscore_airship");
         if (highScore === null || this.score > highScore){
-            localStorage.setItem("highscore", this.score);
+            localStorage.setItem("highscore_airship", this.score);
         }        
     },
 

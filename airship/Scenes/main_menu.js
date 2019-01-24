@@ -33,18 +33,18 @@ var MainMenu = new Phaser.Class({
         animations.moveUp(highScoresButton, game.config.height/2, 250, 250);
         animations.moveUp(moreGamesButton,game.config.height/1.55, 250, 500);
 
-        // var highScore = localStorage.getItem("highscore");
-        // if (!(highScore === null)){
-        //     var highScoreLabel = this.add.text(game.config.width/2, game.config.height/1.15, 'High Score', { font: '32px Courier', fill: '#0033ff' });
-        //     highScoreLabel.setOrigin(0.5);
-        //     highScoreLabel.setAlpha(0);   
-        //     animations.fadeIn2(highScoreLabel);
+        var highScore = localStorage.getItem("highscore_airship");
+        if (!(highScore === null)){
+            var highScoreLabel = this.add.text(game.config.width/2, game.config.height/1.15, 'High Score', { font: '32px Courier', fill: '#0033ff' });
+            highScoreLabel.setOrigin(0.5);
+            highScoreLabel.setAlpha(0);   
+            animations.fadeIn2(highScoreLabel);
 
-        //     var highScoreText = this.add.text(game.config.width/2, game.config.height/1.1, highScore, { font: '32px Courier', fill: '#00ff00' });
-        //     highScoreText.setOrigin(0.5);
-        //     highScoreText.setAlpha(0);   
-        //     animations.fadeIn2(highScoreText);
-        // }  
+            var highScoreText = this.add.text(game.config.width/2, game.config.height/1.1, highScore, { font: '32px Courier', fill: '#00ff00' });
+            highScoreText.setOrigin(0.5);
+            highScoreText.setAlpha(0);   
+            animations.fadeIn2(highScoreText);
+        }  
     },
 
     startGame: function() {
