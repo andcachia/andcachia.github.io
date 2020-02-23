@@ -657,7 +657,7 @@ var MainMenu = new Phaser.Class({
         animations.moveUp(highScoresButton, game.config.height/1.55, 250, 250);
         animations.moveUp(moreGamesButton,game.config.height/1.3, 250, 500);
 
-        var highScore = localStorage.getItem("stack-a-boop_highscore");
+        var highScore = localStorage.getItem("stackaboop_highscore");
         if (!(highScore === null)){
             var highScoreLabel = this.add.text(game.config.width/1.5, game.config.height/1.1, 'High Score', { font: '32px Courier', fill: '#00ff33' });
             highScoreLabel.setOrigin(0.5);
@@ -970,7 +970,7 @@ window.onload = function() {
             default: 'arcade',
             arcade: {
                 gravity: { y: 2000 },
-                debug: true
+                debug: false
             }
         },
         scene: [ Boot, Preloader, MainMenu, HowToPlay, game_Game, GameOver ]
