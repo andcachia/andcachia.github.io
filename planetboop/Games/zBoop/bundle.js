@@ -713,6 +713,7 @@ var game_Game = new Phaser.Class({
         this.midY = game.config.height/2;
 
         this.player;
+        this.speed = 5;
         this.followingPlayer = false;
         this.background;
 
@@ -760,12 +761,12 @@ var game_Game = new Phaser.Class({
         }
 
         this.player = this.physics.add.sprite(game.config.width/2, game.config.height/3,'Sprites','boop_1.png')
-            .setVelocity(-56.5 * 3, -30 * 3)
+            .setVelocity(-56.5 * this.speed, -30 * this.speed)
             //.setOrigin(0.5,1)
             .setDepth(9999)
             //.setSize(30, 30);
 
-        var timedEventTarget = this.time.addEvent({ delay: 200, callback: this.addNewBox, callbackscope: this, loop: true });
+        var timedEventTarget = this.time.addEvent({ delay: 30, callback: this.addNewBox, callbackscope: this, loop: true });
 
         this.score = 0;
         this.scoreBar = this.add.image(0, 0, 'Sprites', 'ui_textbar.png');
