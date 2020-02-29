@@ -715,7 +715,8 @@ var game_Game = new Phaser.Class({
         this.followingPlayer = false;
         this.background;
 
-        this.boxDelaySecondsRange = [2000,3000];
+        this.boxSpeed = 550;
+        this.boxDelaySecondsRange = [1250,3000];
         this.boxDelaySeconds = 3000;
         this.boxDelayPreviousTime;
 
@@ -739,7 +740,7 @@ var game_Game = new Phaser.Class({
             .setScrollFactor(0);
 
         this.player = this.physics.add.sprite(game.config.width/2, game.config.height/1.9,'Sprites','asset_boop_jumper.png');
-        this.player.setCircle(75);
+        this.player.setSize(110);
         this.player.setBounce(0.1);
 
         var backgroundBase = this.add.image(game.config.width/2, game.config.height,'Sprites','background_base.png');
@@ -790,7 +791,7 @@ var game_Game = new Phaser.Class({
         target.x = game.config.width/2;
         target.y = this.currentBoxYPos;
 
-        this.physics.moveToObject(newBox, target, 450);
+        this.physics.moveToObject(newBox, target, globalScene.boxSpeed);
 
         this.currentBoxYPos -= newBox.displayHeight;
 
@@ -801,7 +802,7 @@ var game_Game = new Phaser.Class({
 
             this.suckerLeft.x = boxStartingPos - this.suckerLeft.displayWidth/2 - newBox.displayWidth/2;
             this.suckerLeft.y = newBox.y;
-            this.physics.moveToObject(this.suckerLeft, target2, 450);
+            this.physics.moveToObject(this.suckerLeft, target2, globalScene.boxSpeed);
         }
         else{
             var target2 = {};
@@ -810,7 +811,7 @@ var game_Game = new Phaser.Class({
 
             this.suckerRight.x = boxStartingPos + this.suckerLeft.displayWidth/2 + newBox.displayWidth/2;
             this.suckerRight.y = newBox.y;
-            this.physics.moveToObject(this.suckerRight, target2, 450);
+            this.physics.moveToObject(this.suckerRight, target2, globalScene.boxSpeed);
         }
     },
 
@@ -841,6 +842,8 @@ var game_Game = new Phaser.Class({
             this.boxDelaySeconds = Phaser.Math.Between(this.boxDelaySecondsRange[0], this.boxDelaySecondsRange[1]);
         }
 
+        var toBeRemoved = null;
+
         this.boxGroup.children.iterate(function(child){
             if (child.active && 
                 (child.body.touching.up || (child.x > globalScene.midX - 10 && child.x < globalScene.midX + 10))){
@@ -849,9 +852,11 @@ var game_Game = new Phaser.Class({
                 child.active = false;
             }
             if (child.y > globalScene.cameras.main.midPoint.y + game.config.height/2 + 200){
-                globalScene.boxGroup.remove(child, true, true);
+                toBeRemoved = child;
             }
         });
+
+        if (toBeRemoved != null) globalScene.boxGroup.remove(toBeRemoved, true, true);
         
         if (this.player.body.touching.left || this.player.body.touching.right){
             this.scene.start('gameover', { score: this.score });
@@ -970,7 +975,7 @@ window.onload = function() {
             default: 'arcade',
             arcade: {
                 gravity: { y: 2000 },
-                debug: false
+                debug: true
             }
         },
         scene: [ Boot, Preloader, MainMenu, HowToPlay, game_Game, GameOver ]
