@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 11);
+/******/ 	return __webpack_require__(__webpack_require__.s = 15);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -89,12 +89,16 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./audio/death.wav": 2,
-	"./audio/turnLeftToRight.wav": 3,
-	"./audio/turnRightToLeft.wav": 4,
-	"./audio/zDream.wav": 5,
+	"./audio/click1.wav": 2,
+	"./audio/click2.wav": 3,
+	"./audio/death.wav": 4,
+	"./audio/pop1.wav": 5,
+	"./audio/pop2.wav": 6,
+	"./audio/turnLeftToRight.wav": 7,
+	"./audio/turnRightToLeft.wav": 8,
+	"./audio/zDream.wav": 9,
 	"./sprites/Sprites.json": 1,
-	"./sprites/Sprites.png": 6
+	"./sprites/Sprites.png": 10
 };
 
 
@@ -127,34 +131,58 @@ module.exports = JSON.parse("{\"textures\":[{\"image\":\"zBoop.png\",\"format\":
 /* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "be498074d4820e0f044580dff48ee4c9.wav";
+module.exports = __webpack_require__.p + "81251d4140661231ab50864acf3ac2ea.wav";
 
 /***/ }),
 /* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "c8f881cc793e80942932a08bd0d77a2f.wav";
+module.exports = __webpack_require__.p + "ecf1605bb9cba77b440e65041ad02418.wav";
 
 /***/ }),
 /* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "71ca7739e360fb57a3229d7e17217fdf.wav";
+module.exports = __webpack_require__.p + "be498074d4820e0f044580dff48ee4c9.wav";
 
 /***/ }),
 /* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "74b4c3377be4b795c6b8314af528075d.wav";
+module.exports = __webpack_require__.p + "40baad2b81e047997e193cbcd1772763.wav";
 
 /***/ }),
 /* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "684127f5af3a306b11003140796fb817.png";
+module.exports = __webpack_require__.p + "be36f7f12b7fe2e52e32e12aedfec1d2.wav";
 
 /***/ }),
 /* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "c8f881cc793e80942932a08bd0d77a2f.wav";
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "71ca7739e360fb57a3229d7e17217fdf.wav";
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "74b4c3377be4b795c6b8314af528075d.wav";
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "684127f5af3a306b11003140796fb817.png";
+
+/***/ }),
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_RESULT__;/* Web Font Loader v1.6.28 - (c) Adobe Systems, Google. License: Apache 2.0 */(function(){function aa(a,b,c){return a.call.apply(a.bind,arguments)}function ba(a,b,c){if(!a)throw Error();if(2<arguments.length){var d=Array.prototype.slice.call(arguments,2);return function(){var c=Array.prototype.slice.call(arguments);Array.prototype.unshift.apply(c,d);return a.apply(b,c)}}return function(){return a.apply(b,arguments)}}function p(a,b,c){p=Function.prototype.bind&&-1!=Function.prototype.bind.toString().indexOf("native code")?aa:ba;return p.apply(null,arguments)}var q=Date.now||function(){return+new Date};function ca(a,b){this.a=a;this.o=b||a;this.c=this.o.document}var da=!!window.FontFace;function t(a,b,c,d){b=a.c.createElement(b);if(c)for(var e in c)c.hasOwnProperty(e)&&("style"==e?b.style.cssText=c[e]:b.setAttribute(e,c[e]));d&&b.appendChild(a.c.createTextNode(d));return b}function u(a,b,c){a=a.c.getElementsByTagName(b)[0];a||(a=document.documentElement);a.insertBefore(c,a.lastChild)}function v(a){a.parentNode&&a.parentNode.removeChild(a)}
@@ -178,7 +206,7 @@ g,0<d.length&&(d=za[d[0]])&&(a.c[e]=d))}a.c[e]||(d=za[e])&&(a.c[e]=d);for(d=0;d<
 
 
 /***/ }),
-/* 8 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -203,19 +231,23 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 8;
+webpackContext.id = 12;
 
 /***/ }),
-/* 9 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./audio/death.wav": 2,
-	"./audio/turnLeftToRight.wav": 3,
-	"./audio/turnRightToLeft.wav": 4,
-	"./audio/zDream.wav": 5,
+	"./audio/click1.wav": 2,
+	"./audio/click2.wav": 3,
+	"./audio/death.wav": 4,
+	"./audio/pop1.wav": 5,
+	"./audio/pop2.wav": 6,
+	"./audio/turnLeftToRight.wav": 7,
+	"./audio/turnRightToLeft.wav": 8,
+	"./audio/zDream.wav": 9,
 	"./sprites/Sprites.json": 1,
-	"./sprites/Sprites.png": 6
+	"./sprites/Sprites.png": 10
 };
 
 
@@ -236,10 +268,10 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 9;
+webpackContext.id = 13;
 
 /***/ }),
-/* 10 */
+/* 14 */
 /***/ (function(module, exports) {
 
 function webpackEmptyContext(req) {
@@ -250,10 +282,10 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 10;
+webpackEmptyContext.id = 14;
 
 /***/ }),
-/* 11 */
+/* 15 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -286,7 +318,7 @@ var Boot = new Phaser.Class({
 
 
 // EXTERNAL MODULE: ./node_modules/webfontloader/webfontloader.js
-var webfontloader = __webpack_require__(7);
+var webfontloader = __webpack_require__(11);
 var webfontloader_default = /*#__PURE__*/__webpack_require__.n(webfontloader);
 
 // CONCATENATED MODULE: ./node_modules/phaser-webpack-loader/src/index.js
@@ -420,7 +452,7 @@ class src_WebpackLoader extends Phaser.Plugins.ScenePlugin {
   _loadSprite(name, ext) {
     const dir = 'sprites/';
     const file = __webpack_require__(0)(`./${dir}${name}${this.postfix}.${ext}`);
-    const data = __webpack_require__(8)(`./${dir}${name}${this.postfix}.json`);
+    const data = __webpack_require__(12)(`./${dir}${name}${this.postfix}.json`);
     this.scene.load.atlas(name, file, data);
   }
 
@@ -431,7 +463,7 @@ class src_WebpackLoader extends Phaser.Plugins.ScenePlugin {
    */
   _loadAudio(name, ext) {
     const dir = 'audio/';
-    const file = __webpack_require__(9)(`./${dir}${name}.${ext}`);
+    const file = __webpack_require__(13)(`./${dir}${name}.${ext}`);
     this.scene.load.audio(name, file);
   }
 
@@ -443,7 +475,7 @@ class src_WebpackLoader extends Phaser.Plugins.ScenePlugin {
   _loadBitmapFont(name, ext) {
     const dir = 'fonts/';
     const file = __webpack_require__(0)(`./${dir}${name}${this.postfix}.${ext}`);
-    const data = __webpack_require__(10)(`./${dir}${name}${this.postfix}.xml`);
+    const data = __webpack_require__(14)(`./${dir}${name}${this.postfix}.xml`);
     this.scene.load.bitmapFont(name, file, data);
   }
 }
@@ -458,6 +490,9 @@ const AssetManifest = {
       'turnLeftToRight.wav',
       'turnRightToLeft.wav',
       'death.wav',
+      'pop1.wav',
+      'pop2.wav',
+      'click1.wav'
     ]
   }
 
@@ -585,22 +620,24 @@ var UIAnimations = new Phaser.Class({
 // CONCATENATED MODULE: ./src/UIObjects/button.js
 var Button = new Phaser.Class({
 
-    Extends: Phaser.GameObjects.Image,
+    Extends: Phaser.GameObjects.Sprite,
 
     initialize:
 
-    function Button (scene, spritesheetName, imageName, x, y)
+    function Button (scene, spritesheetName, imageName, x, y, onClickFunction)
     {
-        Phaser.GameObjects.Image.call(this, scene);
+        Phaser.GameObjects.Sprite.call(this, scene);
 
         this.image = imageName;
+        this.sfx = scene.sound.add('click1');
 
         this
             .setTexture(spritesheetName, imageName)
             .setInteractive()
             .setPosition(x, y)
             .on('pointerover', () => this.buttonHoverState(this) )
-            .on('pointerout', () => this.buttonNormalState(this) );
+            .on('pointerout', () => this.buttonNormalState(this) )
+            .on('pointerdown', () => this.onButtonClick(this, onClickFunction));
     },
 
     buttonHoverState: function(button) {
@@ -609,8 +646,12 @@ var Button = new Phaser.Class({
 
     buttonNormalState: function(button) {
         button.clearTint();
-    }
+    },
 
+    onButtonClick: function(button, onClickFunction) {
+        button.sfx.play();
+        onClickFunction();
+    }
 });
 
 
@@ -651,8 +692,8 @@ var HowToPlay = new Phaser.Class({
         var titleText = this.add.text(titleBar.x, titleBar.y + 30, "How To Play", { font: '32px Courier', fill: '#FFFFFF' })
             .setOrigin(0.5);
 
-        var startButton = this.children.add(new Button(this,'Sprites','btn_start.png', game.config.width/2, game.config.height + 120));
-        startButton.on('pointerdown', () => this.startGame() );
+        var startButton = this.children.add(new Button(this,'Sprites','btn_start.png', game.config.width/2, game.config.height + 120, this.startGame.bind(this)));
+        //startButton.on('pointerdown', () => this.startGame() );
 
         var animations = new UIAnimations(this);
         animations.moveUp(startButton, game.config.height/1.15, 250, 0);
@@ -698,14 +739,11 @@ var MainMenu = new Phaser.Class({
         highScoreFrame.setAlpha(0);
         highScoreText.setAlpha(0);
 
-        var startButton = this.children.add(new Button(this,'Sprites','btn_start.png', game.config.width/2, game.config.height + 100));
-        startButton.on('pointerdown', () => this.startGame() );
+        var startButton = this.children.add(new Button(this,'Sprites','btn_start.png', game.config.width/2, game.config.height + 100, this.startGame.bind(this)));
 
-        var highScoresButton = this.children.add(new Button(this,'Sprites','btn_high_scores.png', game.config.width/2 - 150, game.config.height + 100));
-        highScoresButton.on('pointerdown', () => this.highScores() );
+        var highScoresButton = this.children.add(new Button(this,'Sprites','btn_high_scores.png', game.config.width/2 - 150, game.config.height + 100, this.highScores.bind(this)));
 
-        var moreGamesButton = this.children.add(new Button(this,'Sprites','btn_more_games.png', game.config.width/2 + 150, game.config.height + 100));
-        moreGamesButton.on('pointerdown', () => this.moreGames() );
+        var moreGamesButton = this.children.add(new Button(this,'Sprites','btn_more_games.png', game.config.width/2 + 150, game.config.height + 100, this.moreGames.bind(this)));
 
         var animations = new UIAnimations(this);
         animations.fadeIn(logo);    
@@ -714,17 +752,6 @@ var MainMenu = new Phaser.Class({
         animations.moveUp(startButton, game.config.height - 260, 250, 0);
         animations.moveUp(highScoresButton, game.config.height - 140, 250, 250);
         animations.moveUp(moreGamesButton,game.config.height - 140, 250, 500);
-        
-        // if (!(highScore === null)){
-        //     var highScoreLabel = this.add.text(game.config.width/2.2, game.config.height - 120, 'High Score', { font: '32px Courier', fill: '#000000' });
-        //     highScoreLabel.setOrigin(0.5);
-        //     highScoreLabel.setAlpha(0);   
-        //     animations.fadeIn2(highScoreLabel);
-
-        //     highScoreText.setOrigin(0.5);
-        //     highScoreText.setAlpha(0);   
-        //     animations.fadeIn2(highScoreText);
-        // }  
 
         var websiteText = this.add.text(game.config.width/2, game.config.height - 50, 'www.planetboop.com', { font: '20px Courier', fill: '#FFFFFF' });
         websiteText.setOrigin(0.5);
@@ -786,6 +813,7 @@ var game_Game = new Phaser.Class({
 
         this.sfxLeft;
         this.sfxRight;
+        this.sfxPotato;
     },
 
     create: function ()
@@ -798,17 +826,18 @@ var game_Game = new Phaser.Class({
         this.falling = false;
         this.previousTime = 0;
         
-        this.sfxLeft = this.sound.add('turnRightToLeft');
-        this.sfxRight = this.sound.add('turnLeftToRight');
+        this.sfxLeft = this.sound.add('pop1');
+        this.sfxRight = this.sound.add('pop2');
+        this.sfxPotato = this.sound.add('turnLeftToRight');
 
         this.background = this.add.image(game.config.width/2, game.config.height/2,'Sprites','background_base.png')
             .setDisplaySize(game.config.width, game.config.height)
             .setScrollFactor(0);
 
         this.boxGroup = this.physics.add.staticGroup();
+        this.potatoGroup = this.physics.add.staticGroup();
 
-        //var initialBox = this.boxGroup.create(game.config.width/2 + (i*100), game.config.height/2 - (j*50), 'Sprites','asset_cube.png');
-        var initialBox = this.boxGroup.create(game.config.width/2, game.config.height/2 - 100, 'Sprites','asset_cube.png');
+        var initialBox = this.boxGroup.create(game.config.width/2, game.config.height/2, 'Sprites','asset_cube.png');
         initialBox.setOrigin(0.8,0.6);
         initialBox.setDepth(9998);
         initialBox.setSize(50,50);
@@ -821,11 +850,11 @@ var game_Game = new Phaser.Class({
             }
         }
 
-        this.player = this.physics.add.sprite(game.config.width/2, game.config.height/3,'Sprites','boop_4.png')
+        this.player = this.physics.add.sprite(initialBox.x - 50, initialBox.y - 100,'Sprites','boop_4.png')
             .setVelocity(56.5 * this.speed, -30 * this.speed)
-            .setOrigin(0.5,1)
-            .setDepth(9999)
-            .setSize(50, 50);
+            .setDepth(10000)
+            .setSize(30,30)
+            .setOffset(25,50);
 
         var timedEventTarget = this.time.addEvent({ delay: 50, callback: this.addNewBox, callbackscope: this, loop: true });
 
@@ -833,15 +862,16 @@ var game_Game = new Phaser.Class({
         this.scoreBar = this.add.image(0, 0, 'Sprites', 'ui_textbar.png');
         this.scoreBar.setPosition(game.config.width/2, this.scoreBar.displayHeight/2 - 40)
             .setScrollFactor(0)
-            .setDepth(10000);
+            .setDepth(10001);
         this.scoreText = this.add.text(this.scoreBar.x, this.scoreBar.y + 30, "0", { font: '32px Courier', fill: '#FFFFFF' })
             .setOrigin(0.5)
             .setScrollFactor(0)
-            .setDepth(10001);
+            .setDepth(10002);
 
         this.input.on('pointerdown', this.changeDirection, this);
 
         this.physics.add.overlap(this.player, this.boxGroup);
+        this.physics.add.overlap(this.player, this.potatoGroup, this.walkedOverPotato);
 
         this.cameras.main.startFollow(this.player, true);
     },
@@ -872,9 +902,9 @@ var game_Game = new Phaser.Class({
 
     addNewBox: function()
     {
-        var boxSide = Phaser.Math.Between(0, 1);
-        var boxXPos = globalScene.currentBox.x + ((boxSide == 0) ? -globalScene.currentBox.displayWidth/2 + 10 : globalScene.currentBox.displayWidth/2 - 10);
-        var boxYPos = globalScene.currentBox.y - ((boxSide == 0) ? 28 : 30);
+        var boxDirection = Phaser.Math.Between(0, 1);
+        var boxXPos = globalScene.currentBox.x + ((boxDirection == 0) ? -globalScene.currentBox.displayWidth/2 + 10 : globalScene.currentBox.displayWidth/2 - 10);
+        var boxYPos = globalScene.currentBox.y - ((boxDirection == 0) ? 28 : 30);
 
         var depth = globalScene.currentBox.depth - 1;
         var newBox = globalScene.boxGroup.create(boxXPos, boxYPos,'Sprites','asset_cube.png');
@@ -882,6 +912,25 @@ var game_Game = new Phaser.Class({
         newBox.setDepth(depth);
         newBox.setSize(60,60);
         globalScene.currentBox = newBox;
+
+        globalScene.addPotato(boxXPos - 40, boxYPos - 60);
+    },
+
+    addPotato: function(posX, posY)
+    {
+        var chance = Phaser.Math.Between(0, 10);
+
+        if (chance > 1) return;
+
+        var newPotato = globalScene.potatoGroup.create(posX, posY,'Sprites','asset_potatoe.png');
+        newPotato.setDepth(9999);
+    },
+
+    walkedOverPotato: function(player, potato)
+    {
+        globalScene.potatoGroup.killAndHide(potato);
+        potato.body.enable = false;
+        globalScene.sfxPotato.play();
     },
 
     changeDirection: function()
@@ -968,11 +1017,9 @@ var GameOver = new Phaser.Class({
         scoreText.setOrigin(0.5);
         scoreText.setAlpha(0);   
 
-        var restartButton = this.children.add(new Button(this, 'Sprites', 'btn_replay.png', game.config.width/3.3, game.config.height + 175));
-        restartButton.on('pointerdown', () => this.startGame() );
+        var restartButton = this.children.add(new Button(this, 'Sprites', 'btn_replay.png', game.config.width/3.3, game.config.height + 175, this.startGame.bind(this)));
 
-        var menuButton = this.children.add(new Button(this, 'Sprites', 'btn_main_menu.png', game.config.width/1.4, game.config.height + 175));
-        menuButton.on('pointerdown', () => this.openMenu() );
+        var menuButton = this.children.add(new Button(this, 'Sprites', 'btn_main_menu.png', game.config.width/1.4, game.config.height + 175, this.openMenu.bind(this)));
 
         var animations = new UIAnimations(this);
         animations.fallDown(boop);
