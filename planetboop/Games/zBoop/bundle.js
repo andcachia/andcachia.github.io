@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 15);
+/******/ 	return __webpack_require__(__webpack_require__.s = 14);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -89,16 +89,15 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./audio/click1.wav": 2,
-	"./audio/click2.wav": 3,
+	"./audio/clickDeep.wav": 2,
+	"./audio/clickHigh.wav": 3,
 	"./audio/death.wav": 4,
 	"./audio/pop1.wav": 5,
 	"./audio/pop2.wav": 6,
-	"./audio/turnLeftToRight.wav": 7,
-	"./audio/turnRightToLeft.wav": 8,
-	"./audio/zDream.wav": 9,
+	"./audio/potato.wav": 7,
+	"./audio/zDream.wav": 8,
 	"./sprites/Sprites.json": 1,
-	"./sprites/Sprites.png": 10
+	"./sprites/Sprites.png": 9
 };
 
 
@@ -131,13 +130,13 @@ module.exports = JSON.parse("{\"textures\":[{\"image\":\"zBoop.png\",\"format\":
 /* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "81251d4140661231ab50864acf3ac2ea.wav";
+module.exports = __webpack_require__.p + "fea5b188a8711c461e00e76e6581c37a.wav";
 
 /***/ }),
 /* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "ecf1605bb9cba77b440e65041ad02418.wav";
+module.exports = __webpack_require__.p + "fac013acab006cc76d9ee25a2846becd.wav";
 
 /***/ }),
 /* 4 */
@@ -161,28 +160,22 @@ module.exports = __webpack_require__.p + "be36f7f12b7fe2e52e32e12aedfec1d2.wav";
 /* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "c8f881cc793e80942932a08bd0d77a2f.wav";
+module.exports = __webpack_require__.p + "cee95e159c29edaf703b84dd4f8517b3.wav";
 
 /***/ }),
 /* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "71ca7739e360fb57a3229d7e17217fdf.wav";
+module.exports = __webpack_require__.p + "74b4c3377be4b795c6b8314af528075d.wav";
 
 /***/ }),
 /* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "74b4c3377be4b795c6b8314af528075d.wav";
-
-/***/ }),
-/* 10 */
-/***/ (function(module, exports, __webpack_require__) {
-
 module.exports = __webpack_require__.p + "684127f5af3a306b11003140796fb817.png";
 
 /***/ }),
-/* 11 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_RESULT__;/* Web Font Loader v1.6.28 - (c) Adobe Systems, Google. License: Apache 2.0 */(function(){function aa(a,b,c){return a.call.apply(a.bind,arguments)}function ba(a,b,c){if(!a)throw Error();if(2<arguments.length){var d=Array.prototype.slice.call(arguments,2);return function(){var c=Array.prototype.slice.call(arguments);Array.prototype.unshift.apply(c,d);return a.apply(b,c)}}return function(){return a.apply(b,arguments)}}function p(a,b,c){p=Function.prototype.bind&&-1!=Function.prototype.bind.toString().indexOf("native code")?aa:ba;return p.apply(null,arguments)}var q=Date.now||function(){return+new Date};function ca(a,b){this.a=a;this.o=b||a;this.c=this.o.document}var da=!!window.FontFace;function t(a,b,c,d){b=a.c.createElement(b);if(c)for(var e in c)c.hasOwnProperty(e)&&("style"==e?b.style.cssText=c[e]:b.setAttribute(e,c[e]));d&&b.appendChild(a.c.createTextNode(d));return b}function u(a,b,c){a=a.c.getElementsByTagName(b)[0];a||(a=document.documentElement);a.insertBefore(c,a.lastChild)}function v(a){a.parentNode&&a.parentNode.removeChild(a)}
@@ -206,7 +199,7 @@ g,0<d.length&&(d=za[d[0]])&&(a.c[e]=d))}a.c[e]||(d=za[e])&&(a.c[e]=d);for(d=0;d<
 
 
 /***/ }),
-/* 12 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -231,23 +224,22 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 12;
+webpackContext.id = 11;
 
 /***/ }),
-/* 13 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./audio/click1.wav": 2,
-	"./audio/click2.wav": 3,
+	"./audio/clickDeep.wav": 2,
+	"./audio/clickHigh.wav": 3,
 	"./audio/death.wav": 4,
 	"./audio/pop1.wav": 5,
 	"./audio/pop2.wav": 6,
-	"./audio/turnLeftToRight.wav": 7,
-	"./audio/turnRightToLeft.wav": 8,
-	"./audio/zDream.wav": 9,
+	"./audio/potato.wav": 7,
+	"./audio/zDream.wav": 8,
 	"./sprites/Sprites.json": 1,
-	"./sprites/Sprites.png": 10
+	"./sprites/Sprites.png": 9
 };
 
 
@@ -268,10 +260,10 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 13;
+webpackContext.id = 12;
 
 /***/ }),
-/* 14 */
+/* 13 */
 /***/ (function(module, exports) {
 
 function webpackEmptyContext(req) {
@@ -282,14 +274,18 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 14;
+webpackEmptyContext.id = 13;
 
 /***/ }),
-/* 15 */
+/* 14 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+// ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, "game", function() { return /* binding */ game; });
 
 // CONCATENATED MODULE: ./src/Scenes/boot.js
 var Boot = new Phaser.Class({
@@ -318,7 +314,7 @@ var Boot = new Phaser.Class({
 
 
 // EXTERNAL MODULE: ./node_modules/webfontloader/webfontloader.js
-var webfontloader = __webpack_require__(11);
+var webfontloader = __webpack_require__(10);
 var webfontloader_default = /*#__PURE__*/__webpack_require__.n(webfontloader);
 
 // CONCATENATED MODULE: ./node_modules/phaser-webpack-loader/src/index.js
@@ -452,7 +448,7 @@ class src_WebpackLoader extends Phaser.Plugins.ScenePlugin {
   _loadSprite(name, ext) {
     const dir = 'sprites/';
     const file = __webpack_require__(0)(`./${dir}${name}${this.postfix}.${ext}`);
-    const data = __webpack_require__(12)(`./${dir}${name}${this.postfix}.json`);
+    const data = __webpack_require__(11)(`./${dir}${name}${this.postfix}.json`);
     this.scene.load.atlas(name, file, data);
   }
 
@@ -463,7 +459,7 @@ class src_WebpackLoader extends Phaser.Plugins.ScenePlugin {
    */
   _loadAudio(name, ext) {
     const dir = 'audio/';
-    const file = __webpack_require__(13)(`./${dir}${name}.${ext}`);
+    const file = __webpack_require__(12)(`./${dir}${name}.${ext}`);
     this.scene.load.audio(name, file);
   }
 
@@ -475,7 +471,7 @@ class src_WebpackLoader extends Phaser.Plugins.ScenePlugin {
   _loadBitmapFont(name, ext) {
     const dir = 'fonts/';
     const file = __webpack_require__(0)(`./${dir}${name}${this.postfix}.${ext}`);
-    const data = __webpack_require__(14)(`./${dir}${name}${this.postfix}.xml`);
+    const data = __webpack_require__(13)(`./${dir}${name}${this.postfix}.xml`);
     this.scene.load.bitmapFont(name, file, data);
   }
 }
@@ -487,12 +483,12 @@ const AssetManifest = {
     ],
     audio: [
       'zDream.wav',
-      'turnLeftToRight.wav',
-      'turnRightToLeft.wav',
+      'potato.wav',
       'death.wav',
       'pop1.wav',
       'pop2.wav',
-      'click1.wav'
+      'clickHigh.wav',
+      'clickDeep.wav'
     ]
   }
 
@@ -536,6 +532,7 @@ var Preloader = new Phaser.Class({
         });
         
         this.load.scenePlugin('WebpackLoader', src_WebpackLoader, 'loader', 'loader');
+        this.load.script('https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont');
     },
 
     create: function ()
@@ -546,6 +543,13 @@ var Preloader = new Phaser.Class({
 
             var music = this.sound.add('zDream', { loop: true });
             music.play();
+
+            WebFont.load({
+                active: () => this.loaded = true,
+                google: {
+                  families: ['Montserrat:700'],
+                }
+              });
             
             this.scene.start('mainmenu');
         });
@@ -629,7 +633,7 @@ var Button = new Phaser.Class({
         Phaser.GameObjects.Sprite.call(this, scene);
 
         this.image = imageName;
-        this.sfx = scene.sound.add('click1');
+        this.sfx = scene.sound.add('clickHigh');
 
         this
             .setTexture(spritesheetName, imageName)
@@ -689,7 +693,7 @@ var HowToPlay = new Phaser.Class({
         var titleBar = this.add.image(0, 0, 'Sprites', 'ui_textbar.png');
         titleBar.setPosition(game.config.width/2, titleBar.displayHeight/2 - 20);
 
-        var titleText = this.add.text(titleBar.x, titleBar.y + 30, "How To Play", { font: '32px Courier', fill: '#FFFFFF' })
+        var titleText = this.add.text(titleBar.x, titleBar.y + 30, "How To Play", { font: '36px Montserrat', fill: '#FFFFFF' })
             .setOrigin(0.5);
 
         var startButton = this.children.add(new Button(this,'Sprites','btn_start.png', game.config.width/2, game.config.height + 120, this.startGame.bind(this)));
@@ -733,7 +737,7 @@ var MainMenu = new Phaser.Class({
 
         var highScore = localStorage.getItem("zboop_highscore");
         var highScoreFrame = this.add.image(game.config.width/2, game.config.height/2 + 20,'Sprites','ui_high_score.png');
-        var highScoreText = this.add.text(game.config.width/2, highScoreFrame.y + 35, highScore, { font: '32px Courier', fill: '#FFFFFF' });
+        var highScoreText = this.add.text(game.config.width/2, highScoreFrame.y + 35, highScore, { font: '32px Montserrat', fill: '#FFFFFF' });
         highScoreText.setOrigin(0.5);
 
         highScoreFrame.setAlpha(0);
@@ -753,7 +757,7 @@ var MainMenu = new Phaser.Class({
         animations.moveUp(highScoresButton, game.config.height - 140, 250, 250);
         animations.moveUp(moreGamesButton,game.config.height - 140, 250, 500);
 
-        var websiteText = this.add.text(game.config.width/2, game.config.height - 50, 'www.planetboop.com', { font: '20px Courier', fill: '#FFFFFF' });
+        var websiteText = this.add.text(game.config.width/2, game.config.height - 50, 'www.planetboop.com', { font: '20px Montserrat', fill: '#FFFFFF' });
         websiteText.setOrigin(0.5);
         websiteText.setAlpha(0);
         animations.fadeIn2(websiteText);
@@ -828,7 +832,7 @@ var game_Game = new Phaser.Class({
         
         this.sfxLeft = this.sound.add('pop1');
         this.sfxRight = this.sound.add('pop2');
-        this.sfxPotato = this.sound.add('turnLeftToRight');
+        this.sfxPotato = this.sound.add('potato');
 
         this.background = this.add.image(game.config.width/2, game.config.height/2,'Sprites','background_base.png')
             .setDisplaySize(game.config.width, game.config.height)
@@ -863,7 +867,7 @@ var game_Game = new Phaser.Class({
         this.scoreBar.setPosition(game.config.width/2, this.scoreBar.displayHeight/2 - 40)
             .setScrollFactor(0)
             .setDepth(10001);
-        this.scoreText = this.add.text(this.scoreBar.x, this.scoreBar.y + 30, "0", { font: '32px Courier', fill: '#FFFFFF' })
+        this.scoreText = this.add.text(this.scoreBar.x, this.scoreBar.y + 30, "0", { font: '40px Montserrat', fill: '#FFFFFF' })
             .setOrigin(0.5)
             .setScrollFactor(0)
             .setDepth(10002);
@@ -1005,15 +1009,15 @@ var GameOver = new Phaser.Class({
         var titleBar = this.add.image(0, 0, 'Sprites', 'ui_textbar.png');
         titleBar.setPosition(game.config.width/2, titleBar.displayHeight/2 - 20);
 
-        var titleText = this.add.text(titleBar.x, titleBar.y + 30, "Oh Boop...", { font: '32px Courier', fill: '#FFFFFF' })
+        var titleText = this.add.text(titleBar.x, titleBar.y + 30, "Oh Boop...", { font: '38px Montserrat', fill: '#FFFFFF' })
             .setOrigin(0.5);
 
         var boop = this.add.image(game.config.width/2, 100, 'Sprites','ui_game_over.png');
 
-        var scoreLabel = this.add.text(game.config.width/2, game.config.height - 300, 'Your score', { font: '42px Courier', fill: '#FFFFFF' });
+        var scoreLabel = this.add.text(game.config.width/2, game.config.height - 300, 'Your score', { font: '42px Montserrat', fill: '#FFFFFF' });
         scoreLabel.setOrigin(0.5);
         scoreLabel.setAlpha(0);  
-        var scoreText = this.add.text(game.config.width/2, game.config.height - 250, this.score, { font: '42px Courier', fill: '#000000' });
+        var scoreText = this.add.text(game.config.width/2, game.config.height - 250, this.score, { font: '42px Montserrat', fill: '#000000' });
         scoreText.setOrigin(0.5);
         scoreText.setAlpha(0);   
 
@@ -1046,13 +1050,13 @@ var GameOver = new Phaser.Class({
 
 
 // CONCATENATED MODULE: ./src/index.js
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "game", function() { return game; });
 
 
 
 
 
 
+//import './style.scss';
 
 var game;
 
