@@ -1,0 +1,84 @@
+body{
+    background-color: rgb(26, 27, 36);
+    color: white;
+    font-family: 'Montserrat';
+    font-weight: 800;
+}
+
+h1,h2,h3,h4,h5{
+    font-weight: 800;
+}
+
+p{
+    font-weight: 400;
+}
+
+.container{
+    width: 95%;
+}
+
+#Logo{
+    width: 120px;
+    height: auto;
+}
+
+.section-title-div{
+    background-color: rgb(8, 10, 17);
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.section-title{
+    margin-left: 5%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+/**** Top nav bar ****/
+
+nav {
+    position: relative;
+    z-index: 99999999;
+    background-color: rgb(66, 0, 128, 0.3);
+    text-align: center;
+}
+
+.nav-wrapper {
+    text-align: center;
+}
+
+.menu-wrapper{
+    margin-left: 10%;
+}
+
+
+/*** Game screen ***/
+
+.game-screen{
+    margin: auto;
+    height: 90%;
+}
+
+#inlineFrame{
+    width:100%;
+    height:100%;
+    border:0;
+}
+
+/*** Footer ***/
+.footer{
+    display: inline-block;
+    padding: 5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    background-color: rgb(8, 10, 17);
+}
+
+.social-media-icon{
+    width: 30px;
+    height: 30px;
+}
+
+.green-text{
+    color: green;
+}

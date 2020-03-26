@@ -1,0 +1,269 @@
+body{
+    background-color: rgb(26, 27, 36);
+    color: white;
+    font-family: 'Montserrat';
+    font-weight: 800;
+}
+
+h1,h2,h3,h4,h5{
+    font-weight: 800;
+}
+
+p{
+    font-weight: 400;
+}
+
+.container{
+    width: 95%;
+}
+
+#Logo{
+    width: 120px;
+    height: auto;
+}
+
+.section-title-div{
+    background-color: rgb(8, 10, 17);
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.section-title{
+    margin-left: 5%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+/*** Banner ***/
+
+.banner-div{
+    position:relative;
+    height:100%;
+}
+
+#banner-background{
+    height:100%;
+}
+
+#banner-foreground{
+    position: absolute;
+    top: 0;
+    left: -300;
+    height: 100%;
+}
+
+#banner-logo{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    scale: 50%;
+    transform: translate(-100%, -100%);
+}
+
+/**** Top nav bar ****/
+
+nav {
+    position: fixed;
+    z-index: 99999999;
+    background-color: rgb(66, 0, 128, 0.3);
+    text-align: center;
+}
+
+.nav-wrapper {
+    text-align: center;
+}
+
+.menu-wrapper{
+    margin-left: 10%;
+}
+
+/**** Side bar ****/
+
+.sidenav {
+    z-index: 999999999;
+}
+
+.img-icon{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin: 8px;
+}
+
+.inventory-component{
+    margin-left: 15px;
+}
+
+.inventory-component .img-icon{
+    margin-left: 15px;
+    height: 64px;
+    width: 64px;
+}
+
+/**** Games Carousel ****/
+
+.carousel-wrapper{
+    display: inline-flex;
+    width:100%;
+}
+
+.games-carousel{
+    display: flex;
+    white-space:nowrap;
+    overflow:hidden;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    transition: 450ms transform;
+}
+
+.games-carousel:hover{
+  transform: translateX(-60px);
+}
+
+.games-carousel-new{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.games-component{
+    display: inline-block;
+    width: 400px;
+    height: auto; 
+    transition: 450ms;
+    transform-origin: center left;
+}
+
+.games-component:hover { 
+    transform: scale(1.3); 
+}
+
+.games-component:hover ~ .games-component{ 
+  transform: translate3d(30%, 0, 0)
+}
+
+.card-image{   
+    width: 100%;
+}
+
+.list-slider{
+    display:flex;
+}
+
+/* .list-enter-active, .list-leave-active {
+    transition: 1s;
+}
+.list-enter{
+    transform: translate(-100%, 0);
+}
+.list-leave-to {
+    transform: translate(100%, 0);
+}  */
+
+.list-enter,
+.list-leave-to {
+    transform: translate(-100%, 0);
+}
+.list-leave-active{
+  display: none;
+  position: absolute;
+}
+.list-move {
+  transition: all 1s;
+}
+
+
+/*** Expanding Info Box ***/
+
+.selected, .selected.closed {
+    background-color: rgba(8, 10, 17, 0.3);
+    /* max-height: 400px;  */
+    padding: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+
+    overflow: hidden;
+    height:auto; 
+    width: 100%;
+    display: inline-block;
+
+    -webkit-transition: max-height 0.5s ease-in-out;
+    -moz-transition: max-height 0.5s ease-in-out;
+    -o-transition: max-height 0.5s ease-in-out;
+    transition: max-height 0.5s ease-in-out;
+}
+
+.selected.closed { 
+    padding: 0;
+    max-height: 0px;
+}
+
+.play_now_button{
+    margin-top: 5%;
+    margin-bottom: 2%;
+}
+
+
+/**** Trohpies ****/
+
+#bronze-circle {
+    background-color: rgb(80, 59, 3);
+}
+#silver-circle {
+    background-color: silver;
+}
+#gold-circle {
+    background-color: gold;
+}
+
+.trophy-circle {
+    border-radius: 50%;
+    height: 10px;
+    width: 10px;
+    display: inline-block;
+    background-color: #fff;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.trophy-circles{
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+
+/*** Footer ***/
+
+.about-section{
+    margin: 2%;
+    margin-top: 7%;
+    margin-bottom: 5%;
+    padding: 4%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    font-size: 12px;
+    background-color: rgb(8, 10, 17);
+}
+
+.footer{
+    display: inline-block;
+    padding: 5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    width: 100%;
+    background-color: rgb(8, 10, 17);
+}
+
+/* .footer-section-1{
+    display: inline-flex;
+} */
+
+.social-media-icon{
+    width: 30px;
+    height: 30px;
+}
+
+.green-text{
+    color: green;
+}
