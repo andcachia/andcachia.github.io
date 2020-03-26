@@ -14,7 +14,7 @@ new Vue({
             { id:1, title: 'Face Zapper', url_param: 'zapper', thumbnail_source: "Assets/Zapper Thumbnail.png", gameplay_img_src: "Assets/Zapper Thumbnail.png" },
             { id:2, title: 'zBoop', url_param: 'zboop', thumbnail_source: "Assets/PlanetBoop - Coming Soon.jpeg", gameplay_img_src: "Assets/PlanetBoop - Coming Soon.jpeg" },
             { id:3, title: 'Airship Release',  url_param: 'airship', thumbnail_source: "Assets/Airship Thumbnail.png", gameplay_img_src: "Assets/Airship Thumbnail.png" },
-            { id:4, title: 'Memory Game',  url_param: 'memory_game', thumbnail_source: "Assets/Memory Game Thumbnail2.png", gameplay_img_src: "Assets/Memory Game Thumbnail2.png" },
+            { id:4, title: 'Memory Game',  url_param: 'memorygame', thumbnail_source: "Assets/Memory Game Thumbnail2.png", gameplay_img_src: "Assets/Memory Game Thumbnail2.png" },
             { id:5, title: 'Stack-A-Boop',  url_param: 'stack_a_boop', thumbnail_source: "Assets/PlanetBoop - Coming Soon.jpeg", gameplay_img_src: "Assets/PlanetBoop - Coming Soon.jpeg" }
         ],
         selected_game: { },
