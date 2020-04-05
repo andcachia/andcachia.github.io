@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 14);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -89,8 +89,15 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
+	"./audio/Jump.wav": 2,
+	"./audio/LandOnCardboard.wav": 3,
+	"./audio/LandOnMetal.wav": 4,
+	"./audio/LandOnWood.wav": 5,
+	"./audio/MachineWhir.wav": 6,
+	"./audio/Punch.wav": 7,
+	"./audio/WumpaStackTheme.wav": 8,
 	"./sprites/Sprites.json": 1,
-	"./sprites/Sprites.png": 2
+	"./sprites/Sprites.png": 9
 };
 
 
@@ -123,10 +130,52 @@ module.exports = JSON.parse("{\"textures\":[{\"image\":\"Sprites.png\",\"format\
 /* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "2ca256f6c17ba36456d4e0ef3fe3c3b8.png";
+module.exports = __webpack_require__.p + "f6f7bd7dc828a8abdb46899c6ff24233.wav";
 
 /***/ }),
 /* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "ae9d6452ab3545683ad4ea906e7d37c7.wav";
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "44ae9eb22a66ec52d7d9b696bcb5786b.wav";
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "a02c06cd0ddaf37c6b0ebe5fbd12f63c.wav";
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "c2007e93457df967ff3686ba39d9ad4a.wav";
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "75b4e0aee7afbe783e18f9b60c881006.wav";
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "6198b5ae9ce9b6c43eb235f74cd0030f.wav";
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "2ca256f6c17ba36456d4e0ef3fe3c3b8.png";
+
+/***/ }),
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_RESULT__;/* Web Font Loader v1.6.28 - (c) Adobe Systems, Google. License: Apache 2.0 */(function(){function aa(a,b,c){return a.call.apply(a.bind,arguments)}function ba(a,b,c){if(!a)throw Error();if(2<arguments.length){var d=Array.prototype.slice.call(arguments,2);return function(){var c=Array.prototype.slice.call(arguments);Array.prototype.unshift.apply(c,d);return a.apply(b,c)}}return function(){return a.apply(b,arguments)}}function p(a,b,c){p=Function.prototype.bind&&-1!=Function.prototype.bind.toString().indexOf("native code")?aa:ba;return p.apply(null,arguments)}var q=Date.now||function(){return+new Date};function ca(a,b){this.a=a;this.o=b||a;this.c=this.o.document}var da=!!window.FontFace;function t(a,b,c,d){b=a.c.createElement(b);if(c)for(var e in c)c.hasOwnProperty(e)&&("style"==e?b.style.cssText=c[e]:b.setAttribute(e,c[e]));d&&b.appendChild(a.c.createTextNode(d));return b}function u(a,b,c){a=a.c.getElementsByTagName(b)[0];a||(a=document.documentElement);a.insertBefore(c,a.lastChild)}function v(a){a.parentNode&&a.parentNode.removeChild(a)}
@@ -150,7 +199,7 @@ g,0<d.length&&(d=za[d[0]])&&(a.c[e]=d))}a.c[e]||(d=za[e])&&(a.c[e]=d);for(d=0;d<
 
 
 /***/ }),
-/* 4 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -175,15 +224,22 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 4;
+webpackContext.id = 11;
 
 /***/ }),
-/* 5 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
+	"./audio/Jump.wav": 2,
+	"./audio/LandOnCardboard.wav": 3,
+	"./audio/LandOnMetal.wav": 4,
+	"./audio/LandOnWood.wav": 5,
+	"./audio/MachineWhir.wav": 6,
+	"./audio/Punch.wav": 7,
+	"./audio/WumpaStackTheme.wav": 8,
 	"./sprites/Sprites.json": 1,
-	"./sprites/Sprites.png": 2
+	"./sprites/Sprites.png": 9
 };
 
 
@@ -204,10 +260,10 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 5;
+webpackContext.id = 12;
 
 /***/ }),
-/* 6 */
+/* 13 */
 /***/ (function(module, exports) {
 
 function webpackEmptyContext(req) {
@@ -218,10 +274,10 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 6;
+webpackEmptyContext.id = 13;
 
 /***/ }),
-/* 7 */
+/* 14 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -254,7 +310,7 @@ var Boot = new Phaser.Class({
 
 
 // EXTERNAL MODULE: ./node_modules/webfontloader/webfontloader.js
-var webfontloader = __webpack_require__(3);
+var webfontloader = __webpack_require__(10);
 var webfontloader_default = /*#__PURE__*/__webpack_require__.n(webfontloader);
 
 // CONCATENATED MODULE: ./node_modules/phaser-webpack-loader/src/index.js
@@ -388,7 +444,7 @@ class src_WebpackLoader extends Phaser.Plugins.ScenePlugin {
   _loadSprite(name, ext) {
     const dir = 'sprites/';
     const file = __webpack_require__(0)(`./${dir}${name}${this.postfix}.${ext}`);
-    const data = __webpack_require__(4)(`./${dir}${name}${this.postfix}.json`);
+    const data = __webpack_require__(11)(`./${dir}${name}${this.postfix}.json`);
     this.scene.load.atlas(name, file, data);
   }
 
@@ -399,7 +455,7 @@ class src_WebpackLoader extends Phaser.Plugins.ScenePlugin {
    */
   _loadAudio(name, ext) {
     const dir = 'audio/';
-    const file = __webpack_require__(5)(`./${dir}${name}.${ext}`);
+    const file = __webpack_require__(12)(`./${dir}${name}.${ext}`);
     this.scene.load.audio(name, file);
   }
 
@@ -411,7 +467,7 @@ class src_WebpackLoader extends Phaser.Plugins.ScenePlugin {
   _loadBitmapFont(name, ext) {
     const dir = 'fonts/';
     const file = __webpack_require__(0)(`./${dir}${name}${this.postfix}.${ext}`);
-    const data = __webpack_require__(6)(`./${dir}${name}${this.postfix}.xml`);
+    const data = __webpack_require__(13)(`./${dir}${name}${this.postfix}.xml`);
     this.scene.load.bitmapFont(name, file, data);
   }
 }
@@ -420,6 +476,15 @@ class src_WebpackLoader extends Phaser.Plugins.ScenePlugin {
 const AssetManifest = {
     sprites: [
       'Sprites.png'
+    ],
+    audio: [
+      'Jump.wav',
+      'LandOnCardboard.wav',
+      'LandOnMetal.wav',
+      'LandOnWood.wav',
+      'MachineWhir.wav',
+      'Punch.wav',
+      'WumpaStackTheme.wav'
     ]
   }
 
@@ -463,6 +528,7 @@ var Preloader = new Phaser.Class({
         });
         
         this.load.scenePlugin('WebpackLoader', src_WebpackLoader, 'loader', 'loader');
+        this.load.script('https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont');
     },
 
     create: function ()
@@ -470,8 +536,16 @@ var Preloader = new Phaser.Class({
         this.loader.start(AssetManifest_0);
         this.loader.load().then(() => {
             // Done loading!
+
+            var music = this.sound.add('WumpaStackTheme', { loop: true });
+            music.play();
             
-            this.scene.start('mainmenu');
+            WebFont.load({
+                active: () => this.scene.start('mainmenu'),
+                google: {
+                  families: ['Montserrat:800'],
+                }
+              });
         });
     }
 
@@ -598,7 +672,7 @@ var HowToPlay = new Phaser.Class({
 
     create: function ()
     {
-        var background = this.add.image(game.config.width/2, game.config.height/2,'Sprites','background_level.png');
+        var background = this.add.image(game.config.width/2, game.config.height/2,'Sprites','background_tutorial.png');
         background.setDisplaySize(game.config.width, game.config.height);
 
         var tutorial = this.add.image(game.config.width/2, game.config.height/2.2,'Sprites','tutorial.png');
@@ -636,42 +710,44 @@ var MainMenu = new Phaser.Class({
 
     create: function ()
     {
-        var background = this.add.image(game.config.width/2, game.config.height/2,'Sprites','background_tutorial.png');
+        var background = this.add.image(game.config.width/2, game.config.height/2,'Sprites','background_level.png');
         background.setDisplaySize(game.config.width, game.config.height);
 
-        var logo = this.add.image(game.config.width/2, game.config.height/4,'Sprites','title.png');
+        var logo = this.add.image(game.config.width/2, game.config.height/5,'Sprites','title.png');
         logo.setAlpha(0);
 
         var startButton = this.children.add(new Button(this,'Sprites','btn_play_now.png', game.config.width/2, game.config.height + 100));
         startButton.on('pointerdown', () => this.startGame() );
 
-        var highScoresButton = this.children.add(new Button(this,'Sprites','btn_hight_scores.png', game.config.width/2, game.config.height + 100));
+        var highScoresButton = this.children.add(new Button(this,'Sprites','btn_hight_scores.png', game.config.width/2 - 135, game.config.height + 100));
         highScoresButton.on('pointerdown', () => this.highScores() );
 
-        var moreGamesButton = this.children.add(new Button(this,'Sprites','btn_more_games.png', game.config.width/2, game.config.height + 100));
+        var moreGamesButton = this.children.add(new Button(this,'Sprites','btn_more_games.png', game.config.width/2 + 135, game.config.height + 100));
         moreGamesButton.on('pointerdown', () => this.moreGames() );
 
         var animations = new UIAnimations(this);
         animations.fadeIn(logo);      
-        animations.moveUp(startButton, game.config.height/2, 250, 0);
-        animations.moveUp(highScoresButton, game.config.height/1.55, 250, 250);
-        animations.moveUp(moreGamesButton,game.config.height/1.3, 250, 500);
+        animations.moveUp(startButton, 565, 250, 0);
+        animations.moveUp(highScoresButton, 680, 250, 250);
+        animations.moveUp(moreGamesButton, 680, 250, 500);
 
         var highScore = localStorage.getItem("stackaboop_highscore");
         if (!(highScore === null)){
-            var highScoreLabel = this.add.text(game.config.width/1.5, game.config.height/1.1, 'High Score', { font: '32px Courier', fill: '#00ff33' });
+            var highScoreLabel = this.add.text(game.config.width/2, game.config.height/2 - 75, 'MY TOP STACK', { fontFamily: "Montserrat", fontSize: 32, color: '#00ff33' }).setFontStyle('bold italic');
             highScoreLabel.setOrigin(0.5);
             highScoreLabel.setAlpha(0);   
             animations.fadeIn2(highScoreLabel);
 
-            var highScoreText = this.add.text(highScoreLabel.x + 150, highScoreLabel.y, highScore, { font: '32px Courier', fill: '#FFFFFF' });
+            var highScoreText = this.add.text(highScoreLabel.x, highScoreLabel.y + 50, highScore, { fontFamily: "Montserrat", fontSize: 50, color: "#FFFFFF" }).setFontStyle('bold italic');
             highScoreText.setOrigin(0.5);
             highScoreText.setAlpha(0);   
             animations.fadeIn2(highScoreText);
         }  
 
-        var websiteText = this.add.text(game.config.width/2, game.config.height/1.1, 'www.planetboop.com', { font: '20px Courier', fill: '#FFFFFF' });
-        websiteText.setOrigin(0.5);
+        var backgroundBase = this.add.image(game.config.width/2, game.config.height,'Sprites','background_base.png');
+        backgroundBase.y -= backgroundBase.displayHeight/2;
+
+        var websiteText = this.add.text(game.config.width/2 + 25, 908, 'www.planetboop.com', { fontFamily: "Montserrat", fontSize: 20, color: "#FFFFFF" });
         websiteText.setAlpha(0);
         animations.fadeIn2(websiteText);
     },
@@ -715,61 +791,104 @@ var game_Game = new Phaser.Class({
         this.followingPlayer = false;
         this.background;
 
-        this.boxSpeed = 550;
-        this.boxDelaySecondsRange = [1250,3000];
-        this.boxDelaySeconds = 3000;
-        this.boxDelayPreviousTime;
-
         this.boxGroup;
         this.currentBoxYPos;
 
-        this.score = 0;
         this.scoreBar;
         this.scoreText;
 
         this.suckerLeft;
         this.suckerRight;
+
+        this.sfxJump;
+        this.sfxLandOnCardboard;
+        this.sfxLandOnMetal;
+        this.sfxLandOnWood;
+        this.sfxMachineWhir;
+        this.sfxPunch;
+
+        this.currentBoxSound;
+
+        this.initVariables();
+    },
+
+    initVariables : function()
+    {
+        this.boxSpeed = 550;
+        this.boxDelaySecondsRange = [1250,2000];
+        this.boxDelaySeconds = 2000;
+        this.boxDelayPreviousTime = 0
+        this.boxSide = 0;
+
+        this.lastIncreasedSpeedTime = 0;
+        this.increaseSpeedDelay = 5000;
+
+        this.score = 0;
     },
 
     create: function ()
     {
         globalScene = this;
 
+        this.initVariables();
+
+        // Set sfx
+        this.sfxJump = this.sound.add('Jump');
+        this.sfxLandOnCardboard = this.sound.add('LandOnCardboard');
+        this.sfxLandOnMetal = this.sound.add('LandOnMetal');
+        this.sfxLandOnWood = this.sound.add('LandOnWood');
+        this.sfxMachineWhir = this.sound.add('MachineWhir');
+        this.sfxMachineWhir.volume = 0.3;
+        this.sfxPunch = this.sound.add('Punch');
+        this.currentBoxSound = this.sfxLandOnWood;
+
+        // Set background
         this.background = this.add.image(game.config.width/2, game.config.height/2,'Sprites','background_level.png')
             .setDisplaySize(game.config.width, game.config.height)
             .setScrollFactor(0);
 
+        // Player config
         this.player = this.physics.add.sprite(game.config.width/2, game.config.height/1.9,'Sprites','asset_boop_jumper.png');
         this.player.setSize(110);
         this.player.setBounce(0.1);
 
+        // Set bottom floor
         var backgroundBase = this.add.image(game.config.width/2, game.config.height,'Sprites','background_base.png');
+        var backgroundBase2 = this.add.image(game.config.width/2, game.config.height,'Sprites','background_base.png');
         backgroundBase.y -= backgroundBase.displayHeight/2;
+        backgroundBase2.y += backgroundBase.displayHeight/2;
 
+        // NPC
         var npcBoop = this.add.image(game.config.width * 0.8, game.config.height,'Sprites','asset_boop_player.png')
         npcBoop.y -= backgroundBase.displayHeight + npcBoop.displayHeight/2;
 
+        // Define box group
         this.boxGroup = this.physics.add.group({
             allowGravity: false,
             immovable: true
         });
+
+        // Initial starting box
         var initialBox = this.boxGroup.create(game.config.width/2, game.config.height, 'Sprites','box_4.png');
         initialBox.y -= backgroundBase.displayHeight + initialBox.displayHeight/2;
         this.currentBoxYPos = initialBox.y - initialBox.displayHeight;
         this.boxDelayPreviousTime = 0;
 
-        this.score = 0;
-        this.scoreBar = this.add.image(0, 0, 'Sprites', 'ui_textbar.png');
-        this.scoreBar.setPosition(this.scoreBar.displayWidth/2, this.scoreBar.displayHeight/2)
+        // Score bar
+        this.scoreBar = this.add.image(0, 0, 'Sprites', 'asset_top_screen_score.png');
+        this.scoreBar.setPosition(this.scoreBar.displayWidth/2 + 3, this.scoreBar.displayHeight/2)
             .setScrollFactor(0);
-        this.scoreText = this.add.text(this.scoreBar.x, this.scoreBar.y + 40, "0")
+        this.scoreText = this.add.text(this.scoreBar.x, this.scoreBar.y, "0", { fontFamily: "Montserrat", fontSize: 40, color: "#FFFFFF" })
             .setOrigin(0.5)
             .setScrollFactor(0);
 
+        // Define collider
         this.physics.add.collider(this.player, this.boxGroup);
 
+        // Define jump funciton on click
         this.input.on('pointerdown', this.jump, this);
 
+        // Left and right suckers config
         this.suckerLeft = this.physics.add.sprite(-100, -100,'Sprites','asset_toilet_sucker_1.png');
         this.suckerRight = this.physics.add.sprite(-100, -100,'Sprites','asset_toilet_sucker_2.png');
         this.suckerLeft.range = this.suckerLeft.width/2;
@@ -780,38 +899,52 @@ var game_Game = new Phaser.Class({
 
     addNewBox: function()
     {
-        var boxSide = Phaser.Math.Between(0, 1);
-        var boxStartingPos = (boxSide == 0) ? -100 : (game.config.width + 100);
+        // Alternating left and right
+        this.boxSide = (this.boxSide == 0) ? 1 : 0;
+        var boxStartingPos = (this.boxSide == 0) ? -100 : (game.config.width + 100);
 
+        // Box image + repsective sound
         var boxImage = Phaser.Math.Between(1, 6);
         var newBox = this.boxGroup.create(boxStartingPos, this.currentBoxYPos,'Sprites','box_'+boxImage+'.png');
         newBox.active = true;
+        this.currentBoxSound = setBoxSound(boxImage);
 
+        // Move box to center
         var target = {};
         target.x = game.config.width/2;
         target.y = this.currentBoxYPos;
-
         this.physics.moveToObject(newBox, target, globalScene.boxSpeed);
 
         this.currentBoxYPos -= newBox.displayHeight;
 
-        if (boxSide == 0){
-            var target2 = {};
-            target2.x = this.suckerLeft.displayWidth/2 - 90;
-            target2.y = target.y;
+        // Move suckers with box
+        var target2 = {};
+        target2.y = target.y; 
 
+        if (this.boxSide == 0){
+            target2.x = this.suckerLeft.displayWidth/2 - 90;
             this.suckerLeft.x = boxStartingPos - this.suckerLeft.displayWidth/2 - newBox.displayWidth/2;
             this.suckerLeft.y = newBox.y;
             this.physics.moveToObject(this.suckerLeft, target2, globalScene.boxSpeed);
         }
         else{
-            var target2 = {};
             target2.x = game.config.width - this.suckerLeft.displayWidth/2 + 100;
-            target2.y = target.y;
-
             this.suckerRight.x = boxStartingPos + this.suckerLeft.displayWidth/2 + newBox.displayWidth/2;
             this.suckerRight.y = newBox.y;
             this.physics.moveToObject(this.suckerRight, target2, globalScene.boxSpeed);
+        }
+
+        this.sfxMachineWhir.play();
+
+        function setBoxSound(boxImage){
+            switch(boxImage){
+                case 1:
+                case 2: return globalScene.sfxLandOnCardboard;
+                case 3: return globalScene.sfxLandOnMetal;
+                case 4:
+                case 5:
+                case 6: return globalScene.sfxLandOnWood;
+            }
         }
     },
 
@@ -819,7 +952,14 @@ var game_Game = new Phaser.Class({
     {
         if (this.player.body.touching.down){
             this.player.setVelocityY(-900);
+            this.sfxJump.play();
         }
+    },
+
+    increaseSpeed: function()
+    {
+        this.boxSpeed += 50;
+        console.log("Speed increased");
     },
 
     increaseScore: function()
@@ -829,12 +969,13 @@ var game_Game = new Phaser.Class({
 
     update: function (time, delta)
     {
+        // Camera to start following player after first jump
         if (!this.followingPlayer && this.player.y < this.midY){
             this.cameras.main.startFollow(this.player, true);
         }
 
+        // Push new box
         if (this.boxDelayPreviousTime == 0) this.boxDelayPreviousTime = time;
-
         var elapsedTimeSinceLastBox = time - this.boxDelayPreviousTime;
         if (elapsedTimeSinceLastBox >= this.boxDelaySeconds){
             this.addNewBox();
@@ -842,14 +983,19 @@ var game_Game = new Phaser.Class({
             this.boxDelaySeconds = Phaser.Math.Between(this.boxDelaySecondsRange[0], this.boxDelaySecondsRange[1]);
         }
 
+        // Destroy boxes which are out of screen to save resources
         var toBeRemoved = null;
-
         this.boxGroup.children.iterate(function(child){
-            if (child.active && 
-                (child.body.touching.up || (child.x > globalScene.midX - 10 && child.x < globalScene.midX + 10))){
-                child.setVelocity(0);
-                globalScene.increaseScore();
-                child.active = false;
+            if (child.active){
+                if (child.body.touching.up){
+                    child.setVelocity(0);
+                    globalScene.increaseScore();
+                    child.active = false;
+                    globalScene.currentBoxSound.play();
+                }
+                else if (child.x > globalScene.midX - 10 && child.x < globalScene.midX + 10){
+                    child.setVelocity(0);
+                }
             }
             if (child.y > globalScene.cameras.main.midPoint.y + game.config.height/2 + 200){
                 toBeRemoved = child;
@@ -858,17 +1004,27 @@ var game_Game = new Phaser.Class({
 
         if (toBeRemoved != null) globalScene.boxGroup.remove(toBeRemoved, true, true);
         
+        // Detect if player has been hit
         if (this.player.body.touching.left || this.player.body.touching.right){
+            this.sfxPunch.play();
             this.scene.start('gameover', { score: this.score });
         }
 
-        if (this.suckerLeft.range - 10 < this.suckerLeft.x && this.suckerLeft.x < this.suckerLeft.range + 10)
+        // Change sucker direction once it has pushed box to center
+        if (this.suckerLeft.range - 15 < this.suckerLeft.x && this.suckerLeft.x < this.suckerLeft.range + 15)
         {
             this.suckerLeft.setVelocity(-this.suckerLeft.body.velocity.x, 0);
         }
-        if (this.suckerRight.range - 10 < this.suckerRight.x && this.suckerRight.x < this.suckerRight.range + 10)
+        if (this.suckerRight.range - 15 < this.suckerRight.x && this.suckerRight.x < this.suckerRight.range + 15)
         {
             this.suckerRight.setVelocity(-this.suckerRight.body.velocity.x, 0);
+        }
+
+        // Increase speed
+        if (this.lastIncreasedSpeedTime == 0) this.lastIncreasedSpeedTime = time;
+        if (time - this.lastIncreasedSpeedTime > this.increaseSpeedDelay) {
+            this.lastIncreasedSpeedTime = time;
+            this.increaseSpeed();
         }
     }
 });
@@ -905,7 +1061,11 @@ var GameOver = new Phaser.Class({
         var board = this.add.image(game.config.width/2, 0, 'Sprites','ui_game_over.png');
         board.y -= board.displayHeight/2;
 
-        var scoreText = this.add.text(game.config.width/2, game.config.height - 250, 'Your score: ' + this.score, { font: '32px Courier', fill: '#00ff00' });
+        var scoreLabel = this.add.text(game.config.width/2, game.config.height/4 - 20, 'YOUR SCORE', { fontFamily: "Montserrat", fontSize: 32, color: '#00ff33' }).setFontStyle('italic');
+        scoreLabel.setOrigin(0.5);
+        scoreLabel.setAlpha(0);   
+
+        var scoreText = this.add.text(scoreLabel.x, scoreLabel.y + 50, this.score , { fontFamily: "Montserrat", fontSize: 50, color: "#FFFFFF" }).setFontStyle('italic');
         scoreText.setOrigin(0.5);
         scoreText.setAlpha(0);   
 
@@ -917,9 +1077,10 @@ var GameOver = new Phaser.Class({
 
         var animations = new UIAnimations(this);
         animations.fallDown(board);
+        animations.fadeIn2(scoreLabel);
         animations.fadeIn2(scoreText);
-        animations.moveUp(restartButton, game.config.height - 120, 500, 750);
-        animations.moveUp(menuButton, game.config.height - 120, 500, 900);
+        animations.moveUp(restartButton, game.config.height - 225, 500, 750);
+        animations.moveUp(menuButton, game.config.height - 225, 500, 900);
 
         var highScore = localStorage.getItem("stackaboop_highscore");
         if (highScore === null || this.score > highScore){
@@ -975,7 +1136,7 @@ window.onload = function() {
             default: 'arcade',
             arcade: {
                 gravity: { y: 2000 },
-                debug: true
+                debug: false
             }
         },
         scene: [ Boot, Preloader, MainMenu, HowToPlay, game_Game, GameOver ]
