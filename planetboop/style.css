@@ -196,13 +196,25 @@ nav {
     background-color: rgb(8, 10, 17);
 }
 
+#footer-social-icons{
+    padding: 2%;
+}
+
 .footer{
-    display: inline-block;
-    padding: 5%;
-    padding-top: 1%;
-    padding-bottom: 1%;
+    padding-left: 5%;
+    padding-top: 0;
+    margin-bottom: 0;
     width: 100%;
     background-color: rgb(8, 10, 17);
+}
+
+.footer-section-1{
+    margin-top: 2%;
+}
+
+.footer p{
+    margin-top:10;
+    margin-bottom:10;
 }
 
 .social-media-icon{
