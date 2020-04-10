@@ -788,7 +788,8 @@ var game_Game = new Phaser.Class({
         this.midY = game.config.height/2;
 
         this.player;
-        this.followingPlayer = false;
+        this.playerHit;
+        this.followingPlayer;
         this.background;
 
         this.boxGroup;
@@ -814,6 +815,9 @@ var game_Game = new Phaser.Class({
 
     initVariables : function()
     {
+        this.playerHit = false;
+        this.followingPlayer = false;
+
         this.boxSpeed = 550;
         this.boxDelaySecondsRange = [1250,2000];
         this.boxDelaySeconds = 2000;
@@ -821,7 +825,7 @@ var game_Game = new Phaser.Class({
         this.boxSide = 0;
 
         this.lastIncreasedSpeedTime = 0;
-        this.increaseSpeedDelay = 5000;
+        this.increaseSpeedDelay = 10000;
 
         this.score = 0;
     },
@@ -895,6 +899,8 @@ var game_Game = new Phaser.Class({
         this.suckerRight.range = game.config.width - this.suckerRight.width/2;
         this.suckerLeft.body.allowGravity = false;
         this.suckerRight.body.allowGravity = false;
+
+        //this.cameras.main.startFollow(this.player, true, 0.5, 0.5);
     },
 
     addNewBox: function()
@@ -950,7 +956,7 @@ var game_Game = new Phaser.Class({
 
     jump: function()
     {
-        if (this.player.body.touching.down){
+        if (!this.playerHit && this.player.body.touching.down){
             this.player.setVelocityY(-900);
             this.sfxJump.play();
         }
@@ -971,7 +977,8 @@ var game_Game = new Phaser.Class({
     {
         // Camera to start following player after first jump
         if (!this.followingPlayer && this.player.y < this.midY){
-            this.cameras.main.startFollow(this.player, true);
+            this.followingPlayer = true;
+            this.cameras.main.startFollow(this.player, true, 0.5, 0.5);
         }
 
         // Push new box
@@ -1006,8 +1013,18 @@ var game_Game = new Phaser.Class({
         
         // Detect if player has been hit
         if (this.player.body.touching.left || this.player.body.touching.right){
+            this.playerHit = true;
             this.sfxPunch.play();
-            this.scene.start('gameover', { score: this.score });
+            this.cameras.main.stopFollow();
+        }
+
+        if (this.playerHit){
+            this.player.rotation += 0.01;
+
+            if (this.player.x < -100 || this.player.x > game.config.width + 100)
+            {
+                this.scene.start('gameover', { score: this.score });
+            }
         }
 
         // Change sucker direction once it has pushed box to center
