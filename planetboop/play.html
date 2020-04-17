@@ -1,61 +1,43 @@
 <html>
     <head>
-        <script src="vue.js"></script>
+        <title>Planet Boop</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2"></script> -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
         
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,800&display=swap" rel="stylesheet">         
         <link rel="stylesheet" type="text/css" href="play.css">
+        <link rel="stylesheet" type="text/css" href="Components/header-footer-style.css">
 
         <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
         <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-        <script src="play.js"></script>
     </head>
     <body>
-        <!-- Menu Bar  -->
-        <nav>
-            <div class="nav-wrapper">
-                <!-- Sidebar Menu Icon -->
-                <!-- <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large"><i class="material-icons">menu</i></a>    -->
-                <!-- <div class="menu-wrapper"> -->
-                    <img id="Logo" src="Assets/Logo.png">
-                <!-- </div> -->
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="#">HOME</a></li>
-                    <li><a href="#">GAMES</a></li>
-                    <li><a target="_blank" href="https://www.instagram.com/planetboop/">COMICS</a></li>
-                    <li><a target="_blank" href="https://planetboop.threadless.com/">STORE</a></li>
-                  </ul>
-            </div>
-        </nav>
+        <div id="editor" class="hide-on-small-only">
 
-       <div class="center-align">
-            <img id="phone" src="Assets/phone.png">
-                <iframe id="inlineFrame"
-                    title="Inline Frame"
-                    src="Games/{0}/dist/index.html"
-                    allowfullscreen="allowfullscreen"
-                    mozallowfullscreen="mozallowfullscreen" 
-                    msallowfullscreen="msallowfullscreen" 
-                    oallowfullscreen="oallowfullscreen" 
-                    webkitallowfullscreen="webkitallowfullscreen">
-                </iframe>
+            <common-header></common-header>
+
+            <div class="center-align">
+                <img id="phone" class="portrait hide-on-small-only" src="Assets/phone.png" />
+            </div>
+
+            <common-footer></common-footer>
         </div>
 
-        <div class="footer">
-            <div class="footer-section-1">
-                <div>
-                    <a target="_blank" href="https://www.facebook.com/planetboop"><img class="social-media-icon" src="Assets/social_media_facebook.png"></a>
-                    <a target="_blank" href="https://www.instagram.com/planetboop/"><img class="social-media-icon" src="Assets/social_media_insta.png"></a>
-                    <a target="_blank" href="#"><img class="social-media-icon" src="Assets/social_media_youtube.png"></a>
-                </div>
-                <div>
-                    <p>Terms of Use | Privacy Policy | Trademarks | License Agreements</p>
-                    <p class="green-text">Copyright(c) 2020 | NightOwl Studios and/or their affiliates. All Rights Reserved.</p>
-                </div>
-            </div>
-            <p>Planet Boop is a product of NightOwl Studios and any names or images are used as trademarks. Boops, artwork and anything related is protected and can be used freely but with permission if for business.</p>
-        </div>
+        <iframe id="inlineFrame"
+            class="portrait"
+            title="Inline Frame"
+            src="Games/{0}/dist/index.html"
+            allowfullscreen="allowfullscreen"
+            mozallowfullscreen="mozallowfullscreen" 
+            msallowfullscreen="msallowfullscreen" 
+            oallowfullscreen="oallowfullscreen" 
+            webkitallowfullscreen="webkitallowfullscreen">
+        </iframe>
+
+        <script src="Components/header_footer.js"></script>
+        <script src="play.js"></script>
     </body>
 </html>

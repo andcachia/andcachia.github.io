@@ -258,6 +258,10 @@ webpackEmptyContext.id = 10;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+var scoreHandler_namespaceObject = {};
+__webpack_require__.r(scoreHandler_namespaceObject);
+__webpack_require__.d(scoreHandler_namespaceObject, "getHighScore", function() { return getHighScore; });
+__webpack_require__.d(scoreHandler_namespaceObject, "checkHighScore", function() { return checkHighScore; });
 
 // CONCATENATED MODULE: ./src/Scenes/boot.js
 var Boot = new Phaser.Class({
@@ -693,7 +697,32 @@ var SelectPlayers = new Phaser.Class({
 });
 
 
+// CONCATENATED MODULE: ./node_modules/@nightowlstudios/planetboop-common-modules/modules/scoreHandler.js
+function getHighScore(gameName) {
+    if (gameName === null){
+        console.error("Game name not set");
+        return;
+    }
+
+    var highScore = localStorage.getItem("highscore_" + gameName);
+    return highScore;
+}
+
+function checkHighScore(gameName, score) {
+    var highScore = getHighScore(gameName);
+
+    if (highScore === null || score > highScore){
+        localStorage.setItem("highscore_" + gameName, score);
+    }       
+}
+
+
+// CONCATENATED MODULE: ./node_modules/@nightowlstudios/planetboop-common-modules/index.js
+
+
+
 // CONCATENATED MODULE: ./src/Scenes/main_menu.js
+
 
 
 
@@ -734,7 +763,7 @@ var MainMenu = new Phaser.Class({
         animations.moveUp(highScoresButton, game.config.height/2.5, 250, 250);
         animations.moveUp(moreGamesButton,game.config.height/1.7, 250, 500);
 
-        var highScore = localStorage.getItem("memorygame_highscore");
+        var highScore = scoreHandler_namespaceObject.getHighScore(gameName);
         if (!(highScore === null)){
             var highScoreLabel = this.add.text(game.config.width/1.5, game.config.height/1.1, 'High Score', { font: '32px Montserrat', fill: '#00ff33' });
             highScoreLabel.setOrigin(0.5);
@@ -1046,6 +1075,7 @@ var Game = new Phaser.Class({
 
 
 
+
 var GameOver = new Phaser.Class({
 
     Extends: Phaser.Scene,
@@ -1093,10 +1123,7 @@ var GameOver = new Phaser.Class({
         animations.moveUp(restartButton, game.config.height/1.425, 500, 750);
         animations.moveUp(menuButton, game.config.height/1.425, 500, 900);
 
-        var highScore = localStorage.getItem("memorygame_highscore");
-        if (highScore === null || this.score > highScore){
-            localStorage.setItem("memorygame_highscore", this.score);
-        }        
+        scoreHandler_namespaceObject.checkHighScore(gameName, this.score);  
     },
 
     startGame: function() {
@@ -1112,6 +1139,7 @@ var GameOver = new Phaser.Class({
 
 // CONCATENATED MODULE: ./src/memory_game.js
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "game", function() { return game; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "gameName", function() { return gameName; });
 
 
 
@@ -1121,6 +1149,7 @@ var GameOver = new Phaser.Class({
 
 
 var game;
+var gameName = "memorygame";
 
 function resize() {
     var canvas = document.querySelector("canvas");

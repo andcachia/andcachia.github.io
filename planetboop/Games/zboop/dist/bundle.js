@@ -286,6 +286,13 @@ __webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, "game", function() { return /* binding */ game; });
+__webpack_require__.d(__webpack_exports__, "gameName", function() { return /* binding */ gameName; });
+
+// NAMESPACE OBJECT: ./node_modules/@nightowlstudios/planetboop-common-modules/modules/scoreHandler.js
+var scoreHandler_namespaceObject = {};
+__webpack_require__.r(scoreHandler_namespaceObject);
+__webpack_require__.d(scoreHandler_namespaceObject, "getHighScore", function() { return getHighScore; });
+__webpack_require__.d(scoreHandler_namespaceObject, "checkHighScore", function() { return checkHighScore; });
 
 // CONCATENATED MODULE: ./src/Scenes/boot.js
 var Boot = new Phaser.Class({
@@ -709,7 +716,32 @@ var HowToPlay = new Phaser.Class({
 });
 
 
+// CONCATENATED MODULE: ./node_modules/@nightowlstudios/planetboop-common-modules/modules/scoreHandler.js
+function getHighScore(gameName) {
+    if (gameName === null){
+        console.error("Game name not set");
+        return;
+    }
+
+    var highScore = localStorage.getItem("highscore_" + gameName);
+    return highScore;
+}
+
+function checkHighScore(gameName, score) {
+    var highScore = getHighScore(gameName);
+
+    if (highScore === null || score > highScore){
+        localStorage.setItem("highscore_" + gameName, score);
+    }       
+}
+
+
+// CONCATENATED MODULE: ./node_modules/@nightowlstudios/planetboop-common-modules/index.js
+
+
+
 // CONCATENATED MODULE: ./src/Scenes/main_menu.js
+
 
 
 
@@ -735,7 +767,7 @@ var MainMenu = new Phaser.Class({
         var logo = this.add.image(game.config.width/2, 220,'Sprites','title.png');
         logo.setAlpha(0);
 
-        var highScore = localStorage.getItem("zboop_highscore");
+        var highScore = scoreHandler_namespaceObject.getHighScore(gameName);
         var highScoreFrame = this.add.image(game.config.width/2, game.config.height/2 + 20,'Sprites','ui_high_score.png');
         var highScoreText = this.add.text(game.config.width/2, highScoreFrame.y + 35, highScore, { font: '32px Montserrat', fill: '#FFFFFF' });
         highScoreText.setOrigin(0.5);
@@ -810,6 +842,9 @@ var game_Game = new Phaser.Class({
         this.currentBox;
         this.boxGroup;
 
+        this.currentPotatoCounter;
+        this.nextPotatoCounter;
+
         this.initialCheck = true;
         this.falling = false;
 
@@ -818,6 +853,7 @@ var game_Game = new Phaser.Class({
         this.sfxLeft;
         this.sfxRight;
         this.sfxPotato;
+        this.sfxDeath;
     },
 
     create: function ()
@@ -829,10 +865,14 @@ var game_Game = new Phaser.Class({
         this.initialCheck = true;
         this.falling = false;
         this.previousTime = 0;
+
+        this.currentPotatoCounter = 0;
+        this.nextPotatoCounter = 10;
         
         this.sfxLeft = this.sound.add('pop1');
         this.sfxRight = this.sound.add('pop2');
         this.sfxPotato = this.sound.add('potato');
+        this.sfxDeath = this.sound.add('death');
 
         this.background = this.add.image(game.config.width/2, game.config.height/2,'Sprites','background_base.png')
             .setDisplaySize(game.config.width, game.config.height)
@@ -847,20 +887,15 @@ var game_Game = new Phaser.Class({
         initialBox.setSize(50,50);
         this.currentBox = initialBox;
 
-        for (var i=0; i<2; i++){
-            for (var j=0; j<2; j++)
-            {
-                globalScene.initialBoxes(j);
-            }
-        }
+        globalScene.setInitialBoxes();
 
-        this.player = this.physics.add.sprite(initialBox.x - 50, initialBox.y - 100,'Sprites','boop_4.png')
+        this.player = this.physics.add.sprite(initialBox.x - 50, initialBox.y - 80,'Sprites','boop_4.png')
             .setVelocity(56.5 * this.speed, -30 * this.speed)
             .setDepth(10000)
             .setSize(30,30)
             .setOffset(25,50);
 
-        var timedEventTarget = this.time.addEvent({ delay: 50, callback: this.addNewBox, callbackscope: this, loop: true });
+        var timedEventTarget = this.time.addEvent({ delay: 175, callback: this.pathCreator, callbackscope: this, loop: true });
 
         this.score = 0;
         this.scoreBar = this.add.image(0, 0, 'Sprites', 'ui_textbar.png');
@@ -880,61 +915,55 @@ var game_Game = new Phaser.Class({
         this.cameras.main.startFollow(this.player, true);
     },
 
-    initialBoxes: function(index)
+    setInitialBoxes: function()
     {
-        var box1XPos = globalScene.currentBox.x + -globalScene.currentBox.displayWidth/2 + 10;
-        var box1YPos = globalScene.currentBox.y - 28;
+        for (var i=0; i<7; i++){
+            globalScene.currentBox = globalScene.addNewBox(globalScene.currentBox , 1);
+        };
 
-        var box2XPos = globalScene.currentBox.x + globalScene.currentBox.displayWidth/2 - 10;
-        var box2YPos = globalScene.currentBox.y - 30;
-
-        var depth = globalScene.currentBox.depth - 1;
-
-        var newBox1 = globalScene.boxGroup.create(box1XPos, box1YPos,'Sprites','asset_cube.png');
-        newBox1.setOrigin(0.75,0.5);
-        newBox1.setDepth(depth);
-        newBox1.setSize(60,60);
-
-        var newBox2 = globalScene.boxGroup.create(box2XPos, box2YPos,'Sprites','asset_cube.png');
-        newBox2.setOrigin(0.75,0.5);
-        newBox2.setDepth(depth);
-        newBox2.setSize(60,60);
-
-        if (index == 0) globalScene.currentBox = newBox2;
-        if (index == 1) globalScene.currentBox = newBox1;
+        for (var i=0; i<20; i++){
+            globalScene.pathCreator();
+        }
     },
 
-    addNewBox: function()
+    pathCreator()
     {
         var boxDirection = Phaser.Math.Between(0, 1);
-        var boxXPos = globalScene.currentBox.x + ((boxDirection == 0) ? -globalScene.currentBox.displayWidth/2 + 10 : globalScene.currentBox.displayWidth/2 - 10);
-        var boxYPos = globalScene.currentBox.y - ((boxDirection == 0) ? 28 : 30);
+        globalScene.currentBox = globalScene.addNewBox(globalScene.currentBox, boxDirection);
+    },
 
-        var depth = globalScene.currentBox.depth - 1;
+    addNewBox: function(targetBox, boxDirection)
+    {
+        var boxXPos = targetBox.x + ((boxDirection == 0) ? -targetBox.displayWidth/2 + 10 : targetBox.displayWidth/2 - 10);
+        var boxYPos = targetBox.y - ((boxDirection == 0) ? 28 : 30);
+
+        var depth = targetBox.depth - 1;
         var newBox = globalScene.boxGroup.create(boxXPos, boxYPos,'Sprites','asset_cube.png');
         newBox.setOrigin(0.75,0.5);
         newBox.setDepth(depth);
         newBox.setSize(60,60);
-        globalScene.currentBox = newBox;
 
-        globalScene.addPotato(boxXPos - 40, boxYPos - 60);
+        globalScene.checkWhetherToAddPotato(boxXPos - 40, boxYPos - 60);
+
+        return newBox;
     },
 
-    addPotato: function(posX, posY)
+    checkWhetherToAddPotato: function(posX, posY)
     {
-        var chance = Phaser.Math.Between(0, 10);
-
-        if (chance > 1) return;
-
-        var newPotato = globalScene.potatoGroup.create(posX, posY,'Sprites','asset_potatoe.png');
-        newPotato.setDepth(9999);
+        if (++this.currentPotatoCounter >= this.nextPotatoCounter)
+        {
+            var newPotato = globalScene.potatoGroup.create(posX, posY,'Sprites','asset_potatoe.png');
+            newPotato.setDepth(9999);
+            this.currentPotatoCounter = 0;
+            this.nextPotatoCounter = Phaser.Math.Between(5, 15);
+        }
     },
 
     walkedOverPotato: function(player, potato)
     {
-        globalScene.potatoGroup.killAndHide(potato);
-        potato.body.enable = false;
+        globalScene.potatoGroup.remove(potato, true, true);
         globalScene.sfxPotato.play();
+        globalScene.increaseScore(5);
     },
 
     changeDirection: function()
@@ -946,22 +975,28 @@ var game_Game = new Phaser.Class({
         else this.sfxRight.play();
     },
 
-    increaseScore: function()
+    increaseScore: function(amount)
     {
-        this.scoreText.setText(++this.score);
+        this.score += amount;
+        this.scoreText.setText(this.score);
     },
 
     update: function (time, delta)
     {
+        // The initial check is done as on the very first update cycle, the player body would not be registering a collision with the platform yet.
         if (this.initialCheck)
         {
             this.initialCheck = false;
         }
         else if (this.player.body.touching.none)
         {
-            this.player.setVelocity(0,400);
-            this.player.setDepth(1);
-            this.cameras.main.stopFollow();
+            if (!this.falling){
+                this.falling = true;
+                this.player.setVelocity(0,400);
+                this.player.setDepth(this.currentBox.depth - 1);
+                this.cameras.main.stopFollow();
+                this.sfxDeath.play();
+            }
 
             if (this.player.y > this.cameras.main.midPoint.y + game.config.height / 2) 
             {
@@ -971,14 +1006,27 @@ var game_Game = new Phaser.Class({
 
         if (time - this.previousTime > 500)
         {
-            this.increaseScore();
+            this.increaseScore(1);
             this.previousTime = time;
         }
+
+        var boxesOutOfRange = [];
+        this.boxGroup.children.each(function(box) {
+            if (box.y > this.cameras.main.midPoint.y + game.config.height)
+            {
+                boxesOutOfRange.push(box);
+            }
+        }, this);
+
+        boxesOutOfRange.forEach(function(box) {
+            globalScene.boxGroup.remove(box, true, true);
+        });
     }
 });
 
 
 // CONCATENATED MODULE: ./src/Scenes/game_over.js
+
 
 
 
@@ -1032,10 +1080,7 @@ var GameOver = new Phaser.Class({
         animations.moveUp(restartButton, game.config.height - 120, 500, 750);
         animations.moveUp(menuButton, game.config.height - 120, 500, 900);
 
-        var highScore = localStorage.getItem("zboop_highscore");
-        if (highScore === null || this.score > highScore){
-            localStorage.setItem("zboop_highscore", this.score);
-        }        
+        scoreHandler_namespaceObject.checkHighScore(gameName, this.score);
     },
 
     startGame: function() {
@@ -1056,9 +1101,9 @@ var GameOver = new Phaser.Class({
 
 
 
-//import './style.scss';
 
 var game;
+var gameName = "zboop";
 
 function resize() {
     var canvas = document.querySelector("canvas");

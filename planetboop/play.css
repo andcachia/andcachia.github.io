@@ -34,57 +34,46 @@ p{
     padding-bottom: 5px;
 }
 
-/**** Top nav bar ****/
-
-nav {
-    position: relative;
-    z-index: 99999999;
-    background-color: rgb(66, 0, 128, 0.3);
-    text-align: center;
+#editor{
+    margin: 0;
 }
-
-.nav-wrapper {
-    text-align: center;
-}
-
-.menu-wrapper{
-    margin-left: 10%;
-}
-
 
 /*** Game screen ***/
 
 #phone{
-    margin: 3%;
+    margin: 6%;
+}
+
+#phone.landscape{
+    transform: rotate(90deg);
 }
 
 #inlineFrame{
     position: absolute;
-    width:550px;
-    height:570px;
     border:0;
-    margin-top:200px;
+
+    width:100%;
+    height:100%;
 
     top: 0;
     left: 50%;
-    transform: translate(-50%, 0);
     -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
 }
 
-/*** Footer ***/
-.footer{
-    display: inline-block;
-    padding: 5%;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    background-color: rgb(8, 10, 17);
+@media only screen and (min-width : 600px) {
+    #inlineFrame{
+        margin-top:200px;
+    }
+
+    #inlineFrame.portrait{
+        width:550px;
+        height:570px;
+    }
+    
+    #inlineFrame.landscape{
+        width:550px;
+        height:570px;
+    }
 }
 
-.social-media-icon{
-    width: 30px;
-    height: 30px;
-}
-
-.green-text{
-    color: green;
-}
