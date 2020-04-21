@@ -1,0 +1,163 @@
+{
+    "skeleton": {
+        "hash": "oP3TMYqLUpOBGrfvEb3a3AUfs/4",
+        "spine": "3.8.91",
+        "x": -480,
+        "y": -480,
+        "width": 960,
+        "height": 960,
+        "images": "./images/",
+        "audio": ""
+    },
+    "bones": [
+        {
+            "name": "root"
+        },
+        {
+            "name": "bone",
+            "parent": "root",
+            "length": 477.97,
+            "rotation": 90,
+            "x": -0.25,
+            "y": -473.92
+        },
+        {
+            "name": "bone2",
+            "parent": "bone",
+            "length": 29.39,
+            "x": 477.97
+        }
+    ],
+    "slots": [
+        {
+            "name": "orientation_portrait",
+            "bone": "root",
+            "attachment": "portrait"
+        },
+        {
+            "name": "orientation_landscape",
+            "bone": "bone",
+            "attachment": "landscape"
+        },
+        {
+            "name": "logo",
+            "bone": "bone2",
+            "attachment": "logo"
+        }
+    ],
+    "skins": [
+        {
+            "name": "default",
+            "attachments": {
+                "logo": {
+                    "logo": {
+                        "x": -4.05,
+                        "y": -0.25,
+                        "rotation": -90,
+                        "width": 408,
+                        "height": 176
+                    }
+                },
+                "orientation_landscape": {
+                    "landscape": {
+                        "x": 473.92,
+                        "y": -0.25,
+                        "rotation": -90,
+                        "width": 960,
+                        "height": 640
+                    }
+                },
+                "orientation_portrait": {
+                    "portrait": {
+                        "width": 640,
+                        "height": 960
+                    }
+                }
+            }
+        }
+    ],
+    "animations": {
+        "orientation_landscape": {
+            "slots": {
+                "logo": {
+                    "color": [
+                        {
+                            "time": 1.1667,
+                            "color": "ffffffff"
+                        },
+                        {
+                            "time": 1.5,
+                            "color": "ffffff00"
+                        }
+                    ]
+                },
+                "orientation_portrait": {
+                    "color": [
+                        {
+                            "color": "ffffff00"
+                        }
+                    ]
+                }
+            },
+            "bones": {
+                "bone2": {
+                    "scale": [
+                        {
+                            "x": 4.36,
+                            "y": 4.36
+                        },
+                        {
+                            "time": 0.3333,
+                            "x": 0.854,
+                            "y": 0.854
+                        },
+                        {
+                            "time": 0.5
+                        }
+                    ]
+                }
+            }
+        },
+        "orientation_portrait": {
+            "slots": {
+                "logo": {
+                    "color": [
+                        {
+                            "time": 1.1667,
+                            "color": "ffffffff"
+                        },
+                        {
+                            "time": 1.5,
+                            "color": "ffffff00"
+                        }
+                    ]
+                },
+                "orientation_landscape": {
+                    "color": [
+                        {
+                            "color": "ffffff00"
+                        }
+                    ]
+                }
+            },
+            "bones": {
+                "bone2": {
+                    "scale": [
+                        {
+                            "x": 4.36,
+                            "y": 4.36
+                        },
+                        {
+                            "time": 0.3333,
+                            "x": 0.854,
+                            "y": 0.854
+                        },
+                        {
+                            "time": 0.5
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

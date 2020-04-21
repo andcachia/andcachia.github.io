@@ -93,23 +93,6 @@ p{
     }
 }
 
-/**** Top nav bar ****/
-
-nav {
-    position: fixed;
-    z-index: 99999999;
-    background-color: rgb(66, 0, 128, 0.3);
-    text-align: center;
-}
-
-.nav-wrapper {
-    text-align: center;
-}
-
-.menu-wrapper{
-    margin-left: 10%;
-}
-
 /**** Games Carousel ****/
 
 .games-carousel-new{
@@ -180,48 +163,4 @@ nav {
 .play_now_button{
     margin-top: 5%;
     margin-bottom: 2%;
-}
-
-
-/*** Footer ***/
-
-.about-section{
-    margin: 2%;
-    margin-top: 2%;
-    margin-bottom: 3%;
-    padding: 4%;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    font-size: 12px;
-    background-color: rgb(8, 10, 17);
-}
-
-#footer-social-icons{
-    padding: 2%;
-}
-
-.footer{
-    padding-left: 5%;
-    padding-top: 0;
-    margin-bottom: 0;
-    width: 100%;
-    background-color: rgb(8, 10, 17);
-}
-
-.footer-section-1{
-    margin-top: 2%;
-}
-
-.footer p{
-    margin-top:10;
-    margin-bottom:10;
-}
-
-.social-media-icon{
-    width: 30px;
-    height: 30px;
-}
-
-.green-text{
-    color: green;
 }

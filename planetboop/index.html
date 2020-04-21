@@ -1,9 +1,11 @@
 <html>
     <head>
         <title>Planet Boop</title>
-        <script src="vue.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         
         <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
         <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
@@ -11,30 +13,20 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,800&display=swap" rel="stylesheet">         
         <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="Components/header-footer-style.css">
     </head>
     <body>
-        <!-- Menu Bar  -->
-        <nav>
-            <div class="nav-wrapper">
-                <img id="Logo" src="Assets/Logo.png">
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="#">HOME</a></li>
-                    <li><a href="#">GAMES</a></li>
-                    <li><a target="_blank" href="https://www.instagram.com/planetboop/">COMICS</a></li>
-                    <li><a target="_blank" href="https://planetboop.threadless.com/">STORE</a></li>
-                  </ul>
-            </div>
-        </nav>
-
-        <div class="banner-div valign-wrapper center-align">
-            <div id="banner"></div>
-            <div id="banner-foreground"></div>
-            <img id="banner-logo" src="Assets/PlanetBoop.png">
-        </div>
-
         <div id="editor">
+
+            <common-header></common-header>
+
+            <div class="banner-div valign-wrapper center-align">
+                <div id="banner"></div>
+                <div id="banner-foreground"></div>
+                <img id="banner-logo" src="Assets/PlanetBoop.png">
+            </div>
             <div class="section-title-div">
-                <h5 class="section-title">TRENDING GAMES</h5>
+                <h5 id="games" class="section-title">TRENDING GAMES</h5>
             </div>
             <div class="games-carousel-new">   
                 <games-component
@@ -54,38 +46,20 @@
                     <img class="responsive-img" v-bind:src="selected_game.gameplay_img_src" />
                 </div>
             </div>
-        </div>
 
-        <div class="about-section">
-            <h5>ABOUT PLANET BOOP</h5>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-        </div>
-
-        <footer class="footer row">
-            <div class="col s12 m8 l8">
-                <div class="footer-section-1 row">
-                    <div id="footer-social-icons" class="col s12 m2 l2">
-                        <a target="_blank" href="https://www.facebook.com/planetboop"><img class="social-media-icon" src="Assets/social_media_facebook.png"></a>
-                        <a target="_blank" href="https://www.instagram.com/planetboop/"><img class="social-media-icon" src="Assets/social_media_insta.png"></a>
-                        <a target="_blank" href="#"><img class="social-media-icon" src="Assets/social_media_youtube.png"></a>
-                    </div>
-                    <div class="col s12 m10 l10">
-                        <p>Terms of Use | Privacy Policy | Trademarks | License Agreements</p>
-                        <p class="green-text">Copyright(c) 2020 | NightOwl Studios and/or their affiliates. All Rights Reserved.</p>
-                    </div>
-                </div>
-                <p>Planet Boop is a product of NightOwl Studios and any names or images are used as trademarks. Boops, artwork and anything related is protected and can be used freely but with permission if for business.</p>
+            <div class="about-section">
+                <h5>ABOUT PLANET BOOP</h5>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
             </div>
-            <div class="col s12 m4 l4">
-                <img class="responsive-img" src="Assets/boop-footer.png">
-            </div>
-        </footer>
 
+            <common-footer></common-footer>
+        </div>
 
         <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
         <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
         <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
+        <script src="Components/header_footer.js"></script>
         <script src="main.js"></script>
     </body>
 </html>
