@@ -2,7 +2,7 @@ Vue.component('games-component', {
     props: ['game'],
     template: `
         <div class="games-component">
-            <img class="card-image responsive-img" v-bind:src="game.thumbnail_source">
+            <img class="card-image responsive-img" v-bind:src="'Assets/Thumbnails/800_x_600-' + game.thumbnail_source + '.png'">
         </div>
     `
 })
@@ -11,11 +11,11 @@ new Vue({
     el: '#editor',
     data: {
         trending_games: [
-            { id:1, title: 'Face Zapper', url_param: 'zapper', thumbnail_source: "Assets/Zapper Thumbnail.png", gameplay_img_src: "Assets/Zapper Thumbnail.png" },
-            { id:2, title: 'zBoop', url_param: 'zboop', thumbnail_source: "Assets/PlanetBoop - Coming Soon.jpeg", gameplay_img_src: "Assets/PlanetBoop - Coming Soon.jpeg" },
-            { id:3, title: 'Airship Release',  url_param: 'airship', thumbnail_source: "Assets/Airship Thumbnail.png", gameplay_img_src: "Assets/Airship Thumbnail.png" },
-            { id:4, title: 'Memory Game',  url_param: 'memory_game', thumbnail_source: "Assets/Memory Game Thumbnail2.png", gameplay_img_src: "Assets/Memory Game Thumbnail2.png" },
-            { id:5, title: 'Stack-A-Boop',  url_param: 'stack_a_boop', thumbnail_source: "Assets/PlanetBoop - Coming Soon.jpeg", gameplay_img_src: "Assets/PlanetBoop - Coming Soon.jpeg" }
+            { id:1, title: 'Face Zapper', url_param: 'zapper', thumbnail_source: "FaceZapper" },
+            { id:2, title: 'zBoop', url_param: 'zboop', thumbnail_source: "zBoop"  },
+            { id:3, title: 'Airship Release',  url_param: 'airship', thumbnail_source: "AirshipRelease"  },
+            { id:4, title: 'Match-A-Boop',  url_param: 'memory_game', thumbnail_source: "MatchABoop"  },
+            { id:5, title: 'Stack-A-Boop',  url_param: 'stack_a_boop', thumbnail_source: "StackABoop" }
         ],
         selected_game: { },
         carouselNumber: 2,
@@ -23,7 +23,11 @@ new Vue({
         current_games: [],
         ratio: 0
     },
-    computed: {
+    computed:{
+        thumbnailPath: function(){
+            debugger;
+            return "Assets/Thumbnails/" + "" + ".png";
+        }
     },
     methods: {
         selectGame: function(game){

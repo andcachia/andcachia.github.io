@@ -5,10 +5,10 @@
     var iFrame = document.getElementById("inlineFrame");
 
     if (game == "memory_game"){
-        document.getElementById("phone").toggle('portrait');
-        document.getElementById("phone").toggle('landscape');
-        iFrame.toggle('portrait');
-        iFrame.toggle('landscape');
+        document.getElementById("phone").classList.toggle('portrait');
+        document.getElementById("phone").classList.toggle('landscape');
+        iFrame.classList.toggle('portrait');
+        iFrame.classList.toggle('landscape');
     }
 
     var srcString = iFrame.getAttribute("src");

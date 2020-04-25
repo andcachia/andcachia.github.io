@@ -3,7 +3,7 @@
         <title>Planet Boop</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 
-        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         
@@ -43,7 +43,7 @@
                     <button class="waves-effect waves-light btn-large play_now_button" v-on:click="getUrl(selected_game.url_param)">Play Now</button>
                 </div>
                 <div class="col s12 m6 l6">
-                    <img class="responsive-img" v-bind:src="selected_game.gameplay_img_src" />
+                    <img class="responsive-img" v-bind:src="'Assets/Thumbnails/1200_x_680-' + selected_game.thumbnail_source + '.png'" />
                 </div>
             </div>
 
