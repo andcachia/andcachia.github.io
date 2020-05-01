@@ -26,7 +26,7 @@
                 <img id="banner-logo" src="Assets/PlanetBoop.png">
             </div>
             <div class="section-title-div">
-                <h5 id="games" class="section-title">TRENDING GAMES</h5>
+                <h5 id="games" class="section-title">LATEST GAMES</h5>
             </div>
             <div class="games-carousel-new">   
                 <games-component
@@ -36,10 +36,10 @@
                     v-bind:game="game"
                 ></games-component>
             </div>
-            <div id="selected-new-game" class="selected closed row">
+            <div id="selected-new-game" class="selected closed row hide-on-small-only">
                 <div class="col s12 m6 l6">
                     <h4>{{ selected_game.title }}</h4>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
+                    <p>{{ selected_game.description }}</p>
                     <button class="waves-effect waves-light btn-large play_now_button" v-on:click="getUrl(selected_game.url_param)">Play Now</button>
                 </div>
                 <div class="col s12 m6 l6">
@@ -47,9 +47,24 @@
                 </div>
             </div>
 
+            <div id="selected-new-game-mobile" class="selected closed row hide-on-med-and-up">
+                <div class="selected-game-container">
+                    <button class="close-button right btn" v-on:click="closeGameViewer()"><i class="material-icons">close</i></button>
+                    <div class="col s12">
+                        <img class="responsive-img" v-bind:src="'Assets/Thumbnails/1200_x_680-' + selected_game.thumbnail_source + '.png'" />
+                    </div>
+                    <div class="col s12 m6 l6">
+                        <h5>{{ selected_game.title }}</h5>
+                        <p>{{ selected_game.description }}</p>
+                        <button class="waves-effect waves-light btn-large play_now_button" v-on:click="getUrl(selected_game.url_param)">Play Now</button>
+                    </div>
+                </div>
+                
+            </div>
+
             <div class="about-section">
                 <h5>ABOUT PLANET BOOP</h5>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <p>Welcome our tiny green friends from a not-so-distant planet - Boops! Fight off Darkies, solve puzzles and gather potatoes as you join Boops on their various adventures throughout PlanetBoop. Read stories about Boops though the comics, and browse through the store for any Boop merchandise you may fancy.</p>
             </div>
 
             <common-footer></common-footer>

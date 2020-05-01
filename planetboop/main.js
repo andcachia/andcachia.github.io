@@ -11,11 +11,11 @@ new Vue({
     el: '#editor',
     data: {
         trending_games: [
-            { id:1, title: 'Face Zapper', url_param: 'zapper', thumbnail_source: "FaceZapper" },
-            { id:2, title: 'zBoop', url_param: 'zboop', thumbnail_source: "zBoop"  },
-            { id:3, title: 'Airship Release',  url_param: 'airship', thumbnail_source: "AirshipRelease"  },
-            { id:4, title: 'Match-A-Boop',  url_param: 'memory_game', thumbnail_source: "MatchABoop"  },
-            { id:5, title: 'Stack-A-Boop',  url_param: 'stack_a_boop', thumbnail_source: "StackABoop" }
+            { id:1, title: 'FACE ZAPPER', url_param: 'zapper', thumbnail_source: "FaceZapper", description: "Practice fighting off Darkies! Shoot them down but protect Boops!" },
+            { id:2, title: 'ZBOOP', url_param: 'zboop', thumbnail_source: "zBoop", description: "Quick reactions are needed to help Boop keep balance as he collects potatoes!"  },
+            { id:3, title: 'AIRSHIP RELEASE',  url_param: 'airship', thumbnail_source: "AirshipRelease", description: "Ready for takeoff! Protect the spaceship from all obstacles."  },
+            { id:4, title: 'MATCH-A-BOOP',  url_param: 'memory_game', thumbnail_source: "MatchABoop", description: "Find the matching cards across the deck. Great to play with friends!"  },
+            { id:5, title: 'STACK-A-BOOP',  url_param: 'stack_a_boop', thumbnail_source: "StackABoop", description: "How high can you go?" }
         ],
         selected_game: { },
         carouselNumber: 2,
@@ -23,27 +23,30 @@ new Vue({
         current_games: [],
         ratio: 0
     },
-    computed:{
-        thumbnailPath: function(){
-            debugger;
-            return "Assets/Thumbnails/" + "" + ".png";
-        }
-    },
     methods: {
         selectGame: function(game){
-            var gameViewer = document.getElementById("selected-new-game");
+            var gameViewers = document.getElementsByClassName("selected");
 
-            if (!gameViewer.classList.contains('closed') && this.selected_game == game){
-                gameViewer.classList.add('closed');
-                gameViewer.classList.remove('opened');
-            }
-            else{
-                this.selected_game = game;
-                if (gameViewer.classList.contains('closed')) {
-                    gameViewer.classList.remove('closed');
-                    gameViewer.classList.add('opened');
+            for(var gameViewer of gameViewers)
+            {
+                if (!gameViewer.classList.contains('closed') && this.selected_game == game){
+                    gameViewer.classList.add('closed');
+                    gameViewer.classList.remove('opened');
+                }
+                else{
+                    this.selected_game = game;
+                    if (gameViewer.classList.contains('closed')) {
+                        gameViewer.classList.remove('closed');
+                        gameViewer.classList.add('opened');
+                    }
                 }
             }
+        },
+        closeGameViewer: function(){
+            var gameViewer = document.getElementById("selected-new-game-mobile");
+            gameViewer.classList.add('closed');
+            gameViewer.classList.remove('opened');
+
         },
         getUrl: function(url_param){
             location.href='play.html?game=' + url_param;
@@ -80,7 +83,7 @@ $(document).ready(function(){
             {
             breakpoint: 480,
             settings: {
-                slidesToShow: 1,
+                slidesToShow: 2,
                 slidesToScroll: 1
             }
             }

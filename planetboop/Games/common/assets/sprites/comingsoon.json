@@ -1,0 +1,83 @@
+{
+	"textures": [
+		{
+			"image": "comingsoon.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 1604,
+				"h": 962
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "comingsoon_landscape.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 960,
+						"h": 640
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 960,
+						"h": 640
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 960,
+						"h": 640
+					}
+				},
+				{
+					"filename": "comingsoon_portrait.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 640,
+						"h": 960
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 640,
+						"h": 960
+					},
+					"frame": {
+						"x": 963,
+						"y": 1,
+						"w": 640,
+						"h": 960
+					}
+				},
+				{
+					"filename": "back_button.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 261,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 261,
+						"h": 80
+					},
+					"frame": {
+						"x": 1,
+						"y": 643,
+						"w": 261,
+						"h": 80
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:c1e0ad9796f901b71217f6d1ec28cba8:32b714354728ca1a5a6e8797f398183d:b945d47d438641c9bb396a1f40371223$"
+	}
+}
