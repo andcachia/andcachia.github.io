@@ -1,0 +1,370 @@
+{
+    "ControllerBoop":{
+        "skeleton": {
+            "hash": "yl4rokONvXW3JWvhNMZYS+oUQuA",
+            "spine": "3.8.95",
+            "x": -99.57,
+            "y": -0.11,
+            "width": 152.49,
+            "height": 134.72,
+            "images": "./images/",
+            "audio": ""
+        },
+        "bones": [
+            {
+                "name": "root"
+            },
+            {
+                "name": "bone",
+                "parent": "root",
+                "length": 90.41,
+                "rotation": -0.8
+            },
+            {
+                "name": "bone2",
+                "parent": "bone",
+                "length": 39.7,
+                "rotation": 92.16,
+                "x": -1.01,
+                "y": 18
+            },
+            {
+                "name": "bone3",
+                "parent": "bone2",
+                "length": 49.46,
+                "rotation": 87.54,
+                "x": 71.83,
+                "y": -0.45
+            },
+            {
+                "name": "bone4",
+                "parent": "bone2",
+                "length": 93.55,
+                "rotation": 88.64,
+                "x": 32.69,
+                "y": -16.53
+            }
+        ],
+        "slots": [
+            {
+                "name": "ControllerBody",
+                "bone": "bone2",
+                "attachment": "ControllerBody"
+            },
+            {
+                "name": "ControllerEyes",
+                "bone": "bone3",
+                "attachment": "ControllerEyes"
+            },
+            {
+                "name": "ControlerArm",
+                "bone": "bone4",
+                "attachment": "ControlerArm"
+            }
+        ],
+        "skins": [
+            {
+                "name": "default",
+                "attachments": {
+                    "ControlerArm": {
+                        "ControlerArm": {
+                            "x": 52.06,
+                            "y": -7.58,
+                            "rotation": -180,
+                            "width": 122,
+                            "height": 85
+                        }
+                    },
+                    "ControllerBody": {
+                        "ControllerBody": {
+                            "x": 46.93,
+                            "y": 0.27,
+                            "rotation": -91.36,
+                            "width": 110,
+                            "height": 130
+                        }
+                    },
+                    "ControllerEyes": {
+                        "ControllerEyes": {
+                            "x": 18.84,
+                            "y": 1.66,
+                            "rotation": -178.91,
+                            "width": 87,
+                            "height": 53
+                        }
+                    }
+                }
+            }
+        ],
+        "animations": {
+            "animation": {
+                "bones": {
+                    "bone4": {
+                        "rotate": [
+                            {
+                                "angle": 9.03
+                            },
+                            {
+                                "time": 0.5,
+                                "angle": -2.97
+                            },
+                            {
+                                "time": 1,
+                                "angle": 9.03
+                            }
+                        ]
+                    },
+                    "bone": {
+                        "scale": [
+                            {},
+                            {
+                                "time": 0.5,
+                                "y": 1.06
+                            },
+                            {
+                                "time": 1
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "CassatBoop": {
+        "skeleton": {
+            "hash": "H/g9zzIndiFRAkx7VnYS/Z+IpT8",
+            "spine": "3.8.95",
+            "x": -61.29,
+            "y": -0.52,
+            "width": 178.87,
+            "height": 149,
+            "images": "animations/stack_a_boop/images/",
+            "audio": ""
+        },
+        "bones": [
+            {
+                "name": "root"
+            },
+            {
+                "name": "bone",
+                "parent": "root",
+                "length": 78.81
+            },
+            {
+                "name": "bone2",
+                "parent": "bone",
+                "length": 22.68,
+                "rotation": 90,
+                "x": -0.45,
+                "y": 29.35
+            },
+            {
+                "name": "LeftArm",
+                "parent": "bone2",
+                "length": 65.15,
+                "rotation": -36.15,
+                "x": 34.65,
+                "y": -45.04
+            },
+            {
+                "name": "RightArm",
+                "parent": "bone2",
+                "length": 63.56,
+                "rotation": -39.37,
+                "x": 19.53,
+                "y": 32.13
+            }
+        ],
+        "slots": [
+            {
+                "name": "CassatLeft2",
+                "bone": "LeftArm",
+                "attachment": "CassatLeft"
+            },
+            {
+                "name": "CassatBody",
+                "bone": "bone2",
+                "attachment": "CassatBody"
+            },
+            {
+                "name": "CassatEyes",
+                "bone": "bone2",
+                "attachment": "CassatEyes"
+            },
+            {
+                "name": "CassatLeft",
+                "bone": "RightArm",
+                "attachment": "CassatLeft"
+            }
+        ],
+        "skins": [
+            {
+                "name": "default",
+                "attachments": {
+                    "CassatBody": {
+                        "CassatBody": {
+                            "x": 44.64,
+                            "y": -0.65,
+                            "rotation": -90,
+                            "width": 123,
+                            "height": 149
+                        }
+                    },
+                    "CassatEyes": {
+                        "CassatEyes": {
+                            "x": 69.93,
+                            "y": -23.31,
+                            "rotation": -90,
+                            "width": 98,
+                            "height": 60
+                        }
+                    },
+                    "CassatLeft": {
+                        "CassatLeft": {
+                            "x": 41.49,
+                            "y": -1.4,
+                            "rotation": -50.63,
+                            "width": 88,
+                            "height": 81
+                        }
+                    },
+                    "CassatLeft2": {
+                        "CassatLeft": {
+                            "x": 35.92,
+                            "y": -9.65,
+                            "rotation": -53.85,
+                            "width": 88,
+                            "height": 81
+                        }
+                    }
+                }
+            }
+        ],
+        "animations": {
+            "idle": {
+                "bones": {
+                    "LeftArm": {
+                        "rotate": [
+                            {
+                                "angle": -100.81
+                            },
+                            {
+                                "time": 0.5,
+                                "angle": -121.52
+                            },
+                            {
+                                "time": 1,
+                                "angle": -100.81
+                            }
+                        ],
+                        "translate": [
+                            {
+                                "x": 15.75
+                            }
+                        ]
+                    },
+                    "RightArm": {
+                        "rotate": [
+                            {
+                                "angle": -83.6
+                            },
+                            {
+                                "time": 0.5,
+                                "angle": -98.44
+                            },
+                            {
+                                "time": 1,
+                                "angle": -83.6
+                            }
+                        ],
+                        "translate": [
+                            {
+                                "x": 16.06
+                            }
+                        ]
+                    },
+                    "bone": {
+                        "scale": [
+                            {},
+                            {
+                                "time": 0.5,
+                                "y": 1.058
+                            },
+                            {
+                                "time": 1
+                            }
+                        ]
+                    }
+                }
+            },
+            "jump": {
+                "bones": {
+                    "LeftArm": {
+                        "rotate": [
+                            {
+                                "angle": -100.81
+                            },
+                            {
+                                "time": 0.3333,
+                                "angle": 2.29
+                            },
+                            {
+                                "time": 0.5,
+                                "angle": -120.44
+                            },
+                            {
+                                "time": 0.6667,
+                                "angle": -100.81
+                            }
+                        ],
+                        "translate": [
+                            {
+                                "x": 15.75
+                            }
+                        ]
+                    },
+                    "RightArm": {
+                        "rotate": [
+                            {
+                                "angle": -83.6
+                            },
+                            {
+                                "time": 0.3333,
+                                "angle": 4.35
+                            },
+                            {
+                                "time": 0.5,
+                                "angle": -106.1
+                            },
+                            {
+                                "time": 0.6667,
+                                "angle": -83.6
+                            }
+                        ],
+                        "translate": [
+                            {
+                                "x": 16.06
+                            }
+                        ]
+                    },
+                    "bone": {
+                        "scale": [
+                            {},
+                            {
+                                "time": 0.3333,
+                                "y": 1.208
+                            },
+                            {
+                                "time": 0.5,
+                                "y": 0.938
+                            },
+                            {
+                                "time": 0.6667
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}
