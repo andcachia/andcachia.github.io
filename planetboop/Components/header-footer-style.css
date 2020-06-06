@@ -9,10 +9,17 @@ nav {
 
 .nav-wrapper {
     text-align: center;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 .menu-wrapper{
     margin-left: 10%;
+}
+
+#Logo{
+    width: 120px;
+    height: auto;
 }
 
 /*** Footer ***/

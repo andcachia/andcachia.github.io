@@ -17,11 +17,6 @@ p{
     width: 95%;
 }
 
-#Logo{
-    width: 120px;
-    height: auto;
-}
-
 .section-title-div{
     background-color: rgb(8, 10, 17);
     margin-top: 5%;
@@ -58,7 +53,7 @@ p{
     top: 0;
 }
 
-@media only screen and (min-width : 800px) {
+@media only screen and (min-width : 993px) {
     #inlineFrame{
         left: 50%;
     }

@@ -2,7 +2,7 @@ Vue.component('common-header', {
     template: `
         <nav>
             <div class="nav-wrapper">
-                <img id="Logo" src="Assets/Logo.png">
+                <img id="Logo" class="left" src="Assets/Logo.png">
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="/">HOME</a></li>
                     <li><a href="/#games">GAMES</a></li>

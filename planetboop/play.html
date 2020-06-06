@@ -1,5 +1,15 @@
 <html>
     <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-152959465-2"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-152959465-2');
+        </script>
+
         <title>Planet Boop</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 
@@ -13,12 +23,12 @@
         <link rel="stylesheet" type="text/css" href="Components/header-footer-style.css">
     </head>
     <body>
-        <div id="editor" class="hide-on-small-only">
+        <div id="editor" class="hide-on-med-and-down">
 
             <common-header></common-header>
 
             <div class="center-align">
-                <img id="phone" class="portrait hide-on-small-only" src="Assets/phone.png" />
+                <img id="phone" class="portrait hide-on-med-and-down" src="Assets/phone.png" />
             </div>
 
             <common-footer></common-footer>
